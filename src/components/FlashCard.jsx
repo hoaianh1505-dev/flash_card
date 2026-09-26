@@ -34,12 +34,17 @@ export default function FlashCard({
     }
   };
 
+  const handleCardClick = (e) => {
+    // Prevent flipping if user is selecting text or clicking tool buttons
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <>
       <div
         className={`card ${isFlipped ? 'flipped' : ''}`}
         id="flashcard"
-        onClick={() => setIsFlipped(!isFlipped)}
+        onClick={handleCardClick}
       >
         <span className="cardCount" id="cardCount">
           {currentIndex + 1} / {totalFiltered}
@@ -51,8 +56,7 @@ export default function FlashCard({
             id="speechSpeedBtn"
             onClick={(e) => {
               e.stopPropagation();
-              const nextRate = speechRate === 0.85 ? 0.65 : 0.85;
-              setSpeechRate(nextRate);
+              setSpeechRate((prev) => (prev === 0.85 ? 0.65 : 0.85));
             }}
             title="Đổi tốc độ đọc (Bình thường / Chậm)"
             style={{ fontSize: 12, fontWeight: 700, width: 44, borderRadius: 12 }}
@@ -67,6 +71,7 @@ export default function FlashCard({
           >
             🔊
           </button>
+
           <button
             id="editIconBtn"
             onClick={(e) => {
@@ -107,17 +112,45 @@ export default function FlashCard({
         </div>
       </div>
 
+      {/* Controls */}
       <div className="controls">
-        <button className="soft" onClick={onPrev}>
+        <button
+          className="soft"
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+        >
           ← Trước
         </button>
-        <button className="danger" onClick={() => onMark(false)}>
+
+        <button
+          className="danger"
+          onClick={(e) => {
+            e.stopPropagation();
+            onMark(false);
+          }}
+        >
           ✗ Chưa thuộc <kbd style={{ marginLeft: 4 }}>C</kbd>
         </button>
-        <button className="success" onClick={() => onMark(true)}>
+
+        <button
+          className="success"
+          onClick={(e) => {
+            e.stopPropagation();
+            onMark(true);
+          }}
+        >
           ✓ Đã thuộc <kbd style={{ marginLeft: 4 }}>V</kbd>
         </button>
-        <button className="soft" onClick={onNext}>
+
+        <button
+          className="soft"
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+        >
           Tiếp →
         </button>
       </div>
