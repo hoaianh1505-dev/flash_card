@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Flashcard TOEIC — 1205 từ vựng</title>
+  <style>
+    :root {
+      --paper: #f6f2e7;
+      --card-bg: #fffdf7;
+      --ink: #22262f;
+      --ink-soft: #5b6270;
+      --ink-faint: #8a8f9b;
+      --line: #ded6c2;
+      --line-soft: #eae4d5;
+      --teal: #2f6f5e;
+      --teal-deep: #204c40;
+      --teal-bg: #e3efe9;
+      --rust: #b1462f;
+      --rust-bg: #fbeae5;
+      --gold: #a97d24;
+      --gold-bg: #f5ecd6;
+      --shadow: 0 14px 34px rgba(34, 38, 47, .10);
+      --shadow-sm: 0 4px 14px rgba(34, 38, 47, .07);
+      --radius: 18px;
+      --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+      --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #191d22;
+      --card-bg: #21262d;
+      --ink: #eef0ea;
+      --ink-soft: #aab0ba;
+      --ink-faint: #767c87;
+      --line: #343b44;
+      --line-soft: #2a3038;
+      --teal: #57b39a;
+      --teal-deep: #3f8c78;
+      --teal-bg: #1c332c;
+      --rust: #e07b60;
+      --rust-bg: #3a241f;
+      --gold: #dcb862;
+      --gold-bg: #362c1a;
+      --shadow: 0 14px 34px rgba(0, 0, 0, .35);
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, .25);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-ui);
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.5;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .app {
+      max-width: 880px;
+      margin: auto;
+      padding: 26px 18px 70px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .headTitle h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -.2px;
+    }
+
+    .headTitle p {
+      margin: 6px 0 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .headActions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+      border: 1.5px solid var(--line);
+      border-radius: 13px;
+      padding: 10px 14px;
+      font-size: 15px;
+      background: var(--card-bg);
+      color: var(--ink);
+    }
+
+    button {
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .12s ease, filter .12s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      filter: brightness(0.97)
+    }
+
+    button:active {
+      transform: scale(.96)
+    }
+
+    input:focus,
+    select:focus,
+    button:focus-visible {
+      outline: 3px solid var(--teal-bg);
+      outline-offset: 1px;
+      border-color: var(--teal);
+    }
+
+    .iconBtn {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .primary {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+    }
+
+    .primary:hover {
+      background: var(--teal-deep)
+    }
+
+    .soft {
+      background: var(--teal-bg);
+      color: var(--teal-deep);
+      border: 1.5px solid transparent;
+    }
+
+    .ghost {
+      background: transparent;
+      border: 1.5px solid var(--line);
+      color: var(--ink-soft);
+    }
+
+    .success {
+      background: var(--teal-bg);
+      color: var(--teal-deep);
+      border: 1.5px solid var(--teal);
+    }
+
+    .danger {
+      background: var(--rust-bg);
+      color: var(--rust);
+      border: 1.5px solid transparent;
+    }
+
+    .small {
+      padding: 7px 12px;
+      font-size: 13px;
+      border-radius: 10px;
+    }
+
+    /* stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .stat {
+      background: var(--card-bg);
+      border: 1.5px solid var(--line-soft);
+      border-radius: var(--radius);
+      padding: 14px 10px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 26px;
+      letter-spacing: -.4px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .stat.mastery b {
+      color: var(--teal);
+    }
+
+    /* mode + filter bar */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1.5px solid var(--line-soft);
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .modeBar {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .modeBtn {
+      background: var(--paper);
+      color: var(--ink-soft);
+      border: 1.5px solid transparent;
+      border-radius: 12px;
+      padding: 8px 13px;
+      font-size: 14px;
+    }
+
+    .modeBtn.active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .searchBox {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .typeChips {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 2px 2px 6px;
+      margin-top: 10px;
+      scrollbar-width: thin;
+    }
+
+    .chip {
+      flex: none;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      color: var(--ink-soft);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: var(--gold-bg);
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+
+    /* flashcard */
+    .card {
+      perspective: 1600px;
+      margin: 26px 0 18px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cardCount {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      font-size: 12px;
+      color: var(--ink-faint);
+      font-family: var(--font-mono);
+      z-index: 2;
+    }
+
+    .cardTools {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .cardTools button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      padding: 0;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+    }
+
+    .inner {
+      position: relative;
+      min-height: 300px;
+      transform-style: preserve-3d;
+      transition: transform .5s cubic-bezier(.4, .2, .2, 1);
+    }
+
+    .card.flipped .inner {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      background: var(--card-bg);
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 46px 30px 30px;
+    }
+
+    .face.back {
+      transform: rotateY(180deg);
+      justify-content: flex-start;
+      padding-top: 60px;
+      overflow-y: auto;
+    }
+
+    .label {
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: .3px;
+      margin-bottom: 14px;
+    }
+
+    .word {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      word-break: break-word;
+    }
+
+    .wordMeta { display:none !important;
+      
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .typeTag {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal-deep);
+      background: var(--teal-bg);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .phonTag {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .speakBtn {
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      font-size: 14px;
+    }
+
+    .hint {
+      margin-top: 22px;
+      color: var(--ink-faint);
+      font-size: 13px;
+    }
+
+    .meaningList {
+      width: 100%;
+      max-width: 420px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .meaningItem {
+      background: var(--paper);
+      border: 1.5px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-family: var(--font-display);
+      font-size: 18px;
+    }
+
+    .meaningItem .mi-head {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      font-family: var(--font-ui);
+      margin-bottom: 3px;
+    }
+
+    .mi-num {
+      font-family: var(--font-mono);
+      color: var(--ink-faint);
+      font-size: 12px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1.3fr 1fr;
+      gap: 8px;
+    }
+
+    .controls button {
+      padding: 13px 8px;
+    }
+
+    .statusRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      margin: 16px 0 8px;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--rust);
+    }
+
+    .dot.ok {
+      background: var(--teal);
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--line-soft);
+      overflow: hidden;
+    }
+
+    #progressBar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      width: 0%;
+      transition: width .4s ease;
+    }
+
+    .kbdHint {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 10px;
+    }
+
+    kbd {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 1px 6px;
+      font-family: var(--font-mono);
+    }
+
+    .bottomGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .bottom {
+      background: var(--card-bg);
+      border: 1.5px solid var(--line-soft);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bottom b {
+      font-family: var(--font-display);
+    }
+
+    .note {
+      color: var(--ink-soft);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    /* modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 22, 26, .48);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      overflow-y: auto;
+      z-index: 50;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .box {
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 26px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow);
+      animation: pop .18s ease;
+    }
+
+    .box.wide {
+      max-width: 640px;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(.96);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    .box h2 {
+      margin: 0 0 16px;
+      font-family: var(--font-display);
+      font-size: 22px;
+    }
+
+    .closeX {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      color: var(--ink-faint);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      padding: 0;
+    }
+
+    .closeX:hover {
+      background: var(--paper);
+    }
+
+    .box label {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .box input,
+    .box select {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .enterHint {
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 5px;
+    }
+
+    .meaningRow {
+      border: 1.5px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      background: var(--paper);
+    }
+
+    .miTopRow {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .miTopRow input {
+      margin-top: 0;
+    }
+
+    .miType {
+      width: 90px !important;
+      flex: none;
+    }
+
+    .miPhon {
+      flex: 1;
+      font-family: var(--font-mono);
+    }
+
+    .rowRemove {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      border-radius: 50%;
+      background: var(--rust-bg);
+      color: var(--rust);
+      border: none;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .formBtns {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .tab.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    .tabCount {
+      opacity: .8;
+      margin-left: 3px;
+    }
+
+    #reviewSearch {
+      width: 100%;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 52vh;
+      overflow-y: auto;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: var(--paper);
+    }
+
+    .item.learned {
+      border-color: var(--teal);
+      background: var(--teal-bg);
+    }
+
+    .item.current {
+      outline: 2px solid var(--gold);
+    }
+
+    .itemInfo {
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .itemWord {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 16px;
+    }
+
+    .itemMeaning {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-soft);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .item button {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--ink-faint);
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    /* quiz */
+    .quizQ {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .quizQ .qWord {
+      font-family: var(--font-display);
+      font-size: 30px;
+    }
+
+    .quizOptions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .quizOpt {
+      text-align: left;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+
+    .quizOpt.correct {
+      background: var(--teal-bg);
+      border-color: var(--teal);
+      color: var(--teal-deep);
+    }
+
+    .quizOpt.wrong {
+      background: var(--rust-bg);
+      border-color: var(--rust);
+      color: var(--rust);
+    }
+
+    .quizFoot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 560px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .word {
+        font-size: 32px;
+      }
+
+      .bottomGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      .inner,
+      .toast {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* ===== CLEAN READING OVERRIDES ===== */
+    :root {
+      --font-display: "Segoe UI", Arial, Helvetica, sans-serif;
+      --font-ui: "Segoe UI", Arial, Helvetica, sans-serif;
+      --font-mono: "Cascadia Code", Consolas, "Courier New", monospace;
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-ui);
+      font-weight: 400;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .word, .meaningItem, .itemWord, .quizQ .qWord, .box h2, .headTitle h1 {
+      font-family: var(--font-display);
+    }
+    .word {
+      font-size: clamp(34px, 6vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -.4px;
+    }
+    .meaningItem {
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    .meaningItem > div:last-child { overflow-wrap: anywhere; }
+    .meaningList { max-width: 560px; }
+    .mi-head { display: none !important; }
+    .wordMeta { display:none !important;
+       display: none !important; }
+    .face { padding-left: 24px; padding-right: 24px; }
+    .face.back { padding-top: 52px; }
+    .modal .box { font-family: var(--font-ui); }
+    .modal input {
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .meaningRow {
+      padding: 12px;
+      background: var(--paper);
+    }
+    .meaningRow .miText {
+      width: 100%;
+      margin-top: 0;
+    }
+    .meaningRow .miTopRow { display: none; }
+    .rowRemove { top: 9px; }
+    @media (max-width: 560px) {
+      .app { padding: 18px 12px 50px; }
+      .headTitle h1 { font-size: 28px; }
+      .word { font-size: 34px; }
+      .meaningItem { font-size: 17px; }
+      .face { padding: 42px 18px 24px; }
+    }
+
+  
+    /* Simple add-word UX */
+    #editModal .box.wide { max-width: 460px; }
+    #editModal .box label { margin-bottom: 12px; }
+    #editModal .meaningRow { margin-bottom: 8px; }
+    #editModal .rowRemove { display: none; }
+    #editModal .enterHint { display: block; }
+
+    /* Final visual tuning */
+    .headTitle h1 {
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .headTitle {
+      flex: 1;
+    }
+
+    .card {
+      margin: 30px 0 20px;
+    }
+
+    .inner {
+      min-height: 350px;
+    }
+
+    .face {
+      min-height: 350px;
+      padding: 52px 36px 36px;
+      justify-content: center;
+    }
+
+    .word {
+      font-size: 48px;
+      text-transform: capitalize;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .face.back {
+      padding: 70px 40px 40px;
+      justify-content: center;
+    }
+
+    .meaningList {
+      max-width: 520px;
+    }
+
+    .meaningItem {
+      font-size: 22px;
+      line-height: 1.5;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .label {
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .headTitle h1 {
+        font-size: 28px;
+      }
+
+      .inner,
+      .face {
+        min-height: 310px;
+      }
+
+      .word {
+        font-size: 36px;
+      }
+
+      .meaningItem {
+        font-size: 19px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <div class="headTitle">
+        <h1>Flashcard TOEIC</h1>
+        <p>1205 từ vựng thông dụng · bấm vào thẻ để lật</p>
+      </div>
+      <div class="headActions">
+        <button class="iconBtn ghost" id="themeBtn" onclick="toggleTheme()" title="Đổi giao diện sáng/tối">🌙</button>
+        <button class="ghost" id="dataBtn" onclick="openModal('dataModal')" title="Sao lưu / phục hồi">⇅ Dữ liệu</button>
+        <button class="primary" onclick="openAdd()">+ Thêm từ</button>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="stat"><b id="totalCount">0</b><span>Tổng số thẻ</span></div>
+      <div class="stat"><b id="learnedCount">0</b><span>Đã thuộc</span></div>
+      <div class="stat"><b id="remainCount">0</b><span>Chưa thuộc</span></div>
+      <div class="stat mastery"><b id="masteryPct">0%</b><span>Mức độ thuộc</span></div>
+    </div>
+
+    <div class="toolbar">
+      <div class="modeBar">
+        <button class="modeBtn" id="mode-all" onclick="setMode('all')">Tất cả</button>
+        <button class="modeBtn" id="mode-unlearned" onclick="setMode('unlearned')">Chưa thuộc</button>
+        <button class="modeBtn" id="mode-learned" onclick="setMode('learned')">Đã thuộc</button>
+      </div>
+      <input class="searchBox" id="quickSearch" oninput="onQuickSearch()" placeholder="🔎 Tìm nhanh & nhảy tới thẻ...">
+      <button class="ghost" onclick="shuffleView()" title="Trộn ngẫu nhiên">🔀 Trộn</button>
+      <button class="ghost" onclick="openQuiz()" title="Trắc nghiệm nhanh">📝 Trắc nghiệm</button>
+    </div>
+
+    <div class="card" id="flashcard" onclick="flipCard()">
+      <span class="cardCount" id="cardCount"></span>
+      <div class="cardTools">
+        <button id="speakIconBtn" onclick="event.stopPropagation(); speakCurrent()" title="Phát âm">🔊</button>
+        <button id="editIconBtn" onclick="event.stopPropagation(); editCurrentCard()" title="Sửa từ và nghĩa">✎</button>
+      </div>
+      <div class="inner">
+        <div class="face">
+          <div class="label">ENGLISH</div>
+          <div class="word" id="word"></div>
+          <div class="wordMeta" id="wordMeta"></div>
+          <div class="hint">👆 Bấm vào thẻ để xem nghĩa</div>
+        </div>
+        <div class="face back">
+          <div class="label">TIẾNG VIỆT</div>
+          <div class="meaningList" id="meaningList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="soft" onclick="previousCard()">← Trước</button>
+      <button class="danger" onclick="mark(false)">✗ Chưa thuộc <kbd style="margin-left:4px">C</kbd></button>
+      <button class="success" onclick="mark(true)">✓ Đã thuộc <kbd style="margin-left:4px">V</kbd></button>
+      <button class="soft" onclick="nextCard()">Tiếp →</button>
+    </div>
+
+    <div class="statusRow"><span class="dot" id="statusDot"></span><span id="statusText">Chưa thuộc</span></div>
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+    <div class="kbdHint">Phím tắt: <kbd>←</kbd> <kbd>→</kbd> chuyển thẻ · <kbd>Space</kbd> lật thẻ · <kbd>C</kbd> chưa
+      thuộc · <kbd>V</kbd> đã thuộc · <kbd>S</kbd> phát âm</div>
+
+    <div class="bottomGrid">
+      <div class="bottom">
+        <div><b>📋 Quản lý</b>
+          <div class="note">Xem, sửa, gộp hoặc xoá flashcard.</div>
+        </div>
+        <button class="primary" onclick="openReview()">Mở</button>
+      </div>
+      <div class="bottom">
+        <div><b>📝 Trắc nghiệm</b>
+          <div class="note">Kiểm tra nhanh 10 từ ngẫu nhiên.</div>
+        </div>
+        <button class="primary" onclick="openQuiz()">Bắt đầu</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="editModal">
+    <div class="box wide">
+      <button class="closeX" onclick="closeModal('editModal')" aria-label="Đóng">×</button>
+      <h2 id="editTitle">Thêm từ mới</h2>
+
+      <label>Từ / cụm từ tiếng Anh
+        <input id="wordInput" placeholder="Ví dụ: precise" autocomplete="off">
+      </label>
+
+      <div id="meaningRows"></div>
+
+      <div class="formBtns">
+        <button class="soft" onclick="closeModal('editModal')">Huỷ</button>
+        <button class="primary" onclick="saveCard()">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="reviewModal">
+    <div class="box wide">
+      <button class="closeX" onclick="closeModal('reviewModal')" aria-label="Đóng">×</button>
+      <h2>📋 Quản lý Flashcard</h2>
+      <div class="tabs">
+        <button class="tab active" id="tab-all" onclick="setReview('all')">Tất cả <span class="tabCount"
+            id="count-all"></span></button>
+        <button class="tab" id="tab-learned" onclick="setReview('learned')">✓ Đã thuộc <span class="tabCount"
+            id="count-learned"></span></button>
+        <button class="tab" id="tab-unlearned" onclick="setReview('unlearned')">✗ Chưa thuộc <span class="tabCount"
+            id="count-unlearned"></span></button>
+      </div>
+      <input id="reviewSearch" oninput="renderReview()" placeholder="🔎 Tìm từ tiếng Anh hoặc nghĩa...">
+      <div class="list" id="reviewList" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="quizModal">
+    <div class="box">
+      <button class="closeX" onclick="closeModal('quizModal')" aria-label="Đóng">×</button>
+      <h2>📝 Trắc nghiệm nhanh</h2>
+      <div id="quizBody"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="dataModal">
+    <div class="box">
+      <button class="closeX" onclick="closeModal('dataModal')" aria-label="Đóng">×</button>
+      <h2>⇅ Sao lưu / phục hồi</h2>
+      <p class="note" style="margin-bottom:14px">Tải file JSON để sao lưu tiến độ học, hoặc phục hồi từ file đã lưu
+        trước đó.</p>
+      <div class="formBtns" style="justify-content:flex-start; flex-wrap:wrap">
+        <button class="soft" onclick="exportData()">⬇ Tải xuống JSON</button>
+        <button class="soft" onclick="document.getElementById('importFile').click()">⬆ Phục hồi từ file</button>
+        <button class="danger" onclick="resetProgress()">↺ Đặt lại tiến độ học</button>
+      </div>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const DEFAULT_CARDS = [{"id":1,"word":"Precise = certainty = accuracy","meanings":[{"text":"chắc chắn / chính xác","type":"","phonetic":""}],"learned":false},{"id":2,"word":"Justice","meanings":[{"text":"công lý","type":"","phonetic":""},{"text":"sự công bằng, luật pháp","type":"n","phonetic":"/ˈdʒʌs.tɪs/"}],"learned":false},{"id":3,"word":"Undergo","meanings":[{"text":"trải qua","type":"","phonetic":""}],"learned":false},{"id":4,"word":"Absorb","meanings":[{"text":"hấp thụ","type":"","phonetic":""}],"learned":false},{"id":5,"word":"Overwhelm","meanings":[{"text":"áp đảo / quá tải","type":"","phonetic":""}],"learned":false},{"id":6,"word":"Engage","meanings":[{"text":"tham gia / gắn bó","type":"","phonetic":""}],"learned":false},{"id":7,"word":"Intend","meanings":[{"text":"dự định","type":"","phonetic":""},{"text":"định, có ý định","type":"v","phonetic":"/ɪnˈtend/"}],"learned":false},{"id":8,"word":"Productivity","meanings":[{"text":"hiệu suất / năng suất","type":"","phonetic":""}],"learned":false},{"id":9,"word":"Aim = target","meanings":[{"text":"hướng đến","type":"","phonetic":""}],"learned":false},{"id":10,"word":"Loudly","meanings":[{"text":"ầm ĩ / cười to","type":"","phonetic":""}],"learned":false},{"id":11,"word":"Appropriate","meanings":[{"text":"phù hợp","type":"","phonetic":""}],"learned":false},{"id":12,"word":"Onto","meanings":[{"text":"lên trên / vào","type":"","phonetic":""}],"learned":false},{"id":13,"word":"Upon","meanings":[{"text":"vào lúc","type":"","phonetic":""}],"learned":false},{"id":14,"word":"Entrepreneur","meanings":[{"text":"doanh nhân","type":"","phonetic":""}],"learned":false},{"id":15,"word":"Patent","meanings":[{"text":"bằng sáng chế","type":"","phonetic":""},{"text":"tài tình, khéo léo, tinh xảo","type":"adj","phonetic":"/'peitənt/"}],"learned":false},{"id":16,"word":"Heat-exchange","meanings":[{"text":"trao đổi nhiệt","type":"","phonetic":""}],"learned":false},{"id":17,"word":"Valve","meanings":[{"text":"cái van","type":"","phonetic":""}],"learned":false},{"id":18,"word":"Thus","meanings":[{"text":"do đó","type":"","phonetic":""}],"learned":false},{"id":19,"word":"Relatively","meanings":[{"text":"tương đối","type":"","phonetic":""}],"learned":false},{"id":20,"word":"Interfere","meanings":[{"text":"can thiệp","type":"","phonetic":""}],"learned":false},{"id":21,"word":"Itemized","meanings":[{"text":"liệt kê chi tiết","type":"","phonetic":""}],"learned":false},{"id":22,"word":"Fold","meanings":[{"text":"gấp","type":"","phonetic":""},{"text":"gấp, vén; nếp gấp","type":"v, n","phonetic":"/foʊld/"}],"learned":false},{"id":23,"word":"Portrait","meanings":[{"text":"chân dung","type":"","phonetic":""}],"learned":false},{"id":24,"word":"Opposed","meanings":[{"text":"phản đối","type":"","phonetic":""}],"learned":false},{"id":25,"word":"Objectionable","meanings":[{"text":"đáng bị phản đối","type":"","phonetic":""}],"learned":false},{"id":26,"word":"Adamantly","meanings":[{"text":"kiên quyết","type":"","phonetic":""}],"learned":false},{"id":27,"word":"Then","meanings":[{"text":"sau đó","type":"","phonetic":""}],"learned":false},{"id":28,"word":"Where","meanings":[{"text":"nơi mà","type":"","phonetic":""}],"learned":false},{"id":29,"word":"Embraced","meanings":[{"text":"đón nhận","type":"","phonetic":""}],"learned":false},{"id":30,"word":"Up to","meanings":[{"text":"lên đến","type":"","phonetic":""}],"learned":false},{"id":31,"word":"Chemicals","meanings":[{"text":"hóa chất","type":"","phonetic":""}],"learned":false},{"id":32,"word":"Fleet","meanings":[{"text":"đội xe / đội tàu","type":"","phonetic":""}],"learned":false},{"id":33,"word":"Occasion","meanings":[{"text":"dịp","type":"","phonetic":""}],"learned":false},{"id":34,"word":"Occasionally","meanings":[{"text":"thỉnh thoảng","type":"","phonetic":""}],"learned":false},{"id":35,"word":"Optimistic","meanings":[{"text":"lạc quan","type":"","phonetic":""},{"text":"lạc quan, yêu đời","type":"adj","phonetic":"/¸ɔpti´mistik/"}],"learned":false},{"id":36,"word":"Suspect","meanings":[{"text":"nghi ngờ","type":"","phonetic":""}],"learned":false},{"id":37,"word":"Wooden","meanings":[{"text":"gỗ","type":"","phonetic":""}],"learned":false},{"id":38,"word":"Deteriorated","meanings":[{"text":"xấu đi","type":"","phonetic":""}],"learned":false},{"id":39,"word":"Unlikely","meanings":[{"text":"không chắc chắn","type":"","phonetic":""}],"learned":false},{"id":40,"word":"Salvaged","meanings":[{"text":"được cứu vớt","type":"","phonetic":""}],"learned":false},{"id":41,"word":"Briefly","meanings":[{"text":"ngắn gọn / trong thời gian ngắn","type":"","phonetic":""}],"learned":false},{"id":42,"word":"Introductory","meanings":[{"text":"giới thiệu","type":"","phonetic":""}],"learned":false},{"id":43,"word":"Flaws","meanings":[{"text":"lỗi / khuyết điểm","type":"","phonetic":""}],"learned":false},{"id":44,"word":"Workforce","meanings":[{"text":"lực lượng lao động","type":"","phonetic":""}],"learned":false},{"id":45,"word":"Retention","meanings":[{"text":"sự giữ lại","type":"","phonetic":""}],"learned":false},{"id":46,"word":"Owing to","meanings":[{"text":"do / bởi vì","type":"","phonetic":""}],"learned":false},{"id":47,"word":"Subsequently","meanings":[{"text":"sau đó","type":"","phonetic":""}],"learned":false},{"id":48,"word":"At one time","meanings":[{"text":"vào một thời điểm","type":"","phonetic":""}],"learned":false},{"id":49,"word":"Satisfaction","meanings":[{"text":"sự hài lòng","type":"","phonetic":""}],"learned":false},{"id":50,"word":"Reluctant","meanings":[{"text":"miễn cưỡng","type":"","phonetic":""}],"learned":false},{"id":51,"word":"In addition to","meanings":[{"text":"ngoài ra","type":"","phonetic":""}],"learned":false},{"id":52,"word":"Overall","meanings":[{"text":"tổng thể","type":"","phonetic":""},{"text":"toàn bộ, toàn thể, bao gồm mọi thứ","type":"adj","phonetic":"/ˈoʊvərˌɔl/"}],"learned":false},{"id":53,"word":"Despite","meanings":[{"text":"mặc dù","type":"","phonetic":""}],"learned":false},{"id":54,"word":"On the whole","meanings":[{"text":"nhìn chung","type":"","phonetic":""}],"learned":false},{"id":55,"word":"Nevertheless","meanings":[{"text":"tuy vậy / tuy nhiên","type":"","phonetic":""}],"learned":false},{"id":56,"word":"Strives","meanings":[{"text":"nỗ lực + to V","type":"","phonetic":""}],"learned":false},{"id":57,"word":"Leadership","meanings":[{"text":"lãnh đạo","type":"","phonetic":""}],"learned":false},{"id":58,"word":"Those","meanings":[{"text":"những ai / những người / những cái mà","type":"","phonetic":""}],"learned":false},{"id":59,"word":"Diminishing","meanings":[{"text":"giảm dần","type":"","phonetic":""}],"learned":false},{"id":60,"word":"Elaborating","meanings":[{"text":"giải thích chi tiết","type":"","phonetic":""}],"learned":false},{"id":61,"word":"Couple","meanings":[{"text":"cặp đôi","type":"","phonetic":""}],"learned":false},{"id":62,"word":"Free","meanings":[{"text":"trống","type":"","phonetic":""}],"learned":false},{"id":63,"word":"Obtain","meanings":[{"text":"có được / lấy","type":"","phonetic":""},{"text":"đạt được, giành được, thu được","type":"v","phonetic":"/əb'teɪn/"}],"learned":false},{"id":64,"word":"Enrich","meanings":[{"text":"làm giàu","type":"","phonetic":""}],"learned":false},{"id":65,"word":"Promote","meanings":[{"text":"quảng cáo / thúc đẩy","type":"","phonetic":""},{"text":"thăng chức, thăng cấp; đề bạt","type":"v","phonetic":"/prəˈmoʊt/"}],"learned":false},{"id":66,"word":"Easing","meanings":[{"text":"làm giảm","type":"","phonetic":""}],"learned":false},{"id":67,"word":"Stimulating","meanings":[{"text":"thúc đẩy","type":"","phonetic":""}],"learned":false},{"id":68,"word":"Soothing","meanings":[{"text":"êm dịu","type":"","phonetic":""}],"learned":false},{"id":69,"word":"Consoling","meanings":[{"text":"an ủi","type":"","phonetic":""}],"learned":false},{"id":70,"word":"Symptoms","meanings":[{"text":"triệu chứng","type":"","phonetic":""}],"learned":false},{"id":71,"word":"Fever","meanings":[{"text":"sốt","type":"","phonetic":""}],"learned":false},{"id":72,"word":"Aches","meanings":[{"text":"đau nhức","type":"","phonetic":""}],"learned":false},{"id":73,"word":"Pains","meanings":[{"text":"đau đớn","type":"","phonetic":""}],"learned":false},{"id":74,"word":"Nasal","meanings":[{"text":"thuộc về mũi","type":"","phonetic":""}],"learned":false},{"id":75,"word":"Cough","meanings":[{"text":"ho","type":"","phonetic":""}],"learned":false},{"id":76,"word":"Throat","meanings":[{"text":"cổ họng","type":"","phonetic":""}],"learned":false},{"id":77,"word":"Conquer","meanings":[{"text":"chinh phục","type":"","phonetic":""}],"learned":false},{"id":78,"word":"Lawn","meanings":[{"text":"bãi cỏ","type":"","phonetic":""}],"learned":false},{"id":79,"word":"Shrub","meanings":[{"text":"bụi cây","type":"","phonetic":""}],"learned":false},{"id":80,"word":"Along","meanings":[{"text":"dọc theo","type":"","phonetic":""}],"learned":false},{"id":81,"word":"Addressed","meanings":[{"text":"gửi đến","type":"","phonetic":""}],"learned":false},{"id":82,"word":"Tremendously","meanings":[{"text":"cực kỳ","type":"","phonetic":""}],"learned":false},{"id":83,"word":"Exponentially","meanings":[{"text":"theo cấp số mũ","type":"","phonetic":""}],"learned":false},{"id":84,"word":"Severely","meanings":[{"text":"nghiêm trọng","type":"","phonetic":""}],"learned":false},{"id":85,"word":"Eagerly","meanings":[{"text":"hăng hái","type":"","phonetic":""}],"learned":false},{"id":86,"word":"Predicting","meanings":[{"text":"dự đoán","type":"","phonetic":""}],"learned":false},{"id":87,"word":"Respective","meanings":[{"text":"tương ứng","type":"","phonetic":""}],"learned":false},{"id":88,"word":"Exclusively","meanings":[{"text":"độc quyền","type":"","phonetic":""}],"learned":false},{"id":89,"word":"Eligible","meanings":[{"text":"đủ điều kiện","type":"","phonetic":""}],"learned":false},{"id":90,"word":"Explicitly","meanings":[{"text":"rõ ràng","type":"","phonetic":""}],"learned":false},{"id":91,"word":"Considering","meanings":[{"text":"xem xét","type":"","phonetic":""}],"learned":false},{"id":92,"word":"Inscription","meanings":[{"text":"dấu khắc","type":"","phonetic":""}],"learned":false},{"id":93,"word":"Expectation","meanings":[{"text":"sự kỳ vọng","type":"","phonetic":""},{"text":"sự mong chờ, ngóng đợi","type":"n","phonetic":"/ˌek.spekˈteɪ.ʃən/"}],"learned":false},{"id":94,"word":"Persevered","meanings":[{"text":"kiên trì","type":"","phonetic":""}],"learned":false},{"id":95,"word":"Provided that","meanings":[{"text":"miễn là","type":"","phonetic":""}],"learned":false},{"id":96,"word":"Rewarding","meanings":[{"text":"đáng giá / bổ ích","type":"","phonetic":""}],"learned":false},{"id":97,"word":"Extensive","meanings":[{"text":"rộng lớn / sâu rộng","type":"","phonetic":""}],"learned":false},{"id":98,"word":"Through","meanings":[{"text":"thông qua","type":"","phonetic":""}],"learned":false},{"id":99,"word":"Precisely","meanings":[{"text":"chính xác","type":"","phonetic":""}],"learned":false},{"id":100,"word":"Even","meanings":[{"text":"ngay cả / thậm chí","type":"","phonetic":""}],"learned":false},{"id":101,"word":"Halted","meanings":[{"text":"dừng lại","type":"","phonetic":""}],"learned":false},{"id":102,"word":"Provided","meanings":[{"text":"với điều kiện là","type":"","phonetic":""}],"learned":false},{"id":103,"word":"Yet","meanings":[{"text":"tuy nhiên","type":"","phonetic":""}],"learned":false},{"id":104,"word":"At any time that","meanings":[{"text":"bất cứ khi nào","type":"","phonetic":""}],"learned":false},{"id":105,"word":"Cheerful","meanings":[{"text":"vui vẻ","type":"","phonetic":""}],"learned":false},{"id":106,"word":"Slightly","meanings":[{"text":"nhẹ nhàng / hơi hơi","type":"","phonetic":""}],"learned":false},{"id":107,"word":"Legal","meanings":[{"text":"hợp pháp","type":"","phonetic":""}],"learned":false},{"id":108,"word":"Considered","meanings":[{"text":"cân nhắc","type":"","phonetic":""}],"learned":false},{"id":109,"word":"Eject","meanings":[{"text":"đẩy ra","type":"","phonetic":""}],"learned":false},{"id":110,"word":"Abandon","meanings":[{"text":"từ bỏ","type":"","phonetic":""}],"learned":false},{"id":111,"word":"Resign","meanings":[{"text":"từ chức","type":"","phonetic":""},{"text":"bỏ việc, từ chức","type":"v","phonetic":"/rɪˈzaɪn/"}],"learned":false},{"id":112,"word":"Discourage","meanings":[{"text":"làm nản lòng","type":"","phonetic":""}],"learned":false},{"id":113,"word":"Appeals","meanings":[{"text":"sức hấp dẫn","type":"","phonetic":""}],"learned":false},{"id":114,"word":"Whoever","meanings":[{"text":"bất cứ ai","type":"","phonetic":""}],"learned":false},{"id":115,"word":"Tough","meanings":[{"text":"khó khăn","type":"","phonetic":""}],"learned":false},{"id":116,"word":"Settled","meanings":[{"text":"đã giải quyết","type":"","phonetic":""}],"learned":false},{"id":117,"word":"Instantly","meanings":[{"text":"ngay lập tức","type":"","phonetic":""}],"learned":false},{"id":118,"word":"Massive","meanings":[{"text":"to lớn","type":"","phonetic":""}],"learned":false},{"id":119,"word":"Intense","meanings":[{"text":"mạnh mẽ / dữ dội","type":"","phonetic":""}],"learned":false},{"id":120,"word":"Sudden","meanings":[{"text":"đột ngột","type":"","phonetic":""}],"learned":false},{"id":121,"word":"Interior","meanings":[{"text":"nội thất","type":"","phonetic":""}],"learned":false},{"id":122,"word":"Intervals","meanings":[{"text":"khoảng thời gian","type":"","phonetic":""}],"learned":false},{"id":123,"word":"Classifications","meanings":[{"text":"sự phân loại","type":"","phonetic":""}],"learned":false},{"id":124,"word":"Detachments","meanings":[{"text":"sự tách rời","type":"","phonetic":""}],"learned":false},{"id":125,"word":"Oversight","meanings":[{"text":"sơ suất","type":"","phonetic":""}],"learned":false},{"id":126,"word":"Combine","meanings":[{"text":"kết hợp","type":"","phonetic":""}],"learned":false},{"id":127,"word":"Inside","meanings":[{"text":"bên trong","type":"","phonetic":""}],"learned":false},{"id":128,"word":"Patience","meanings":[{"text":"kiên nhẫn","type":"","phonetic":""},{"text":"tính kiên nhẫn, tính nhẫn nại; sự bền chí","type":"n","phonetic":"/´peiʃəns/"}],"learned":false},{"id":129,"word":"Particular","meanings":[{"text":"đặc biệt","type":"","phonetic":""}],"learned":false},{"id":130,"word":"In effect","meanings":[{"text":"thực tế là","type":"","phonetic":""}],"learned":false},{"id":131,"word":"Therefore","meanings":[{"text":"do đó","type":"","phonetic":""}],"learned":false},{"id":132,"word":"On occasion","meanings":[{"text":"thỉnh thoảng","type":"","phonetic":""}],"learned":false},{"id":133,"word":"In addition","meanings":[{"text":"ngoài ra","type":"","phonetic":""}],"learned":false},{"id":134,"word":"Survey","meanings":[{"text":"khảo sát","type":"","phonetic":""}],"learned":false},{"id":135,"word":"Thoughts","meanings":[{"text":"suy nghĩ","type":"","phonetic":""}],"learned":false},{"id":136,"word":"Vacuum","meanings":[{"text":"chân không","type":"","phonetic":""}],"learned":false},{"id":137,"word":"Elapse","meanings":[{"text":"trôi qua","type":"","phonetic":""}],"learned":false},{"id":138,"word":"Overlook","meanings":[{"text":"bỏ qua","type":"","phonetic":""}],"learned":false},{"id":139,"word":"Typically","meanings":[{"text":"thông thường","type":"","phonetic":""}],"learned":false},{"id":140,"word":"Sponsor","meanings":[{"text":"tài trợ","type":"","phonetic":""}],"learned":false},{"id":141,"word":"Obligation","meanings":[{"text":"nghĩa vụ","type":"","phonetic":""},{"text":"nghĩa vụ; bổn phận","type":"n","phonetic":"/,ɔbli'geiʃn/"}],"learned":false},{"id":142,"word":"Frustrated","meanings":[{"text":"thất vọng","type":"","phonetic":""}],"learned":false},{"id":143,"word":"Retired","meanings":[{"text":"nghỉ hưu","type":"","phonetic":""}],"learned":false},{"id":144,"word":"Playwright","meanings":[{"text":"nhà viết kịch","type":"","phonetic":""}],"learned":false},{"id":145,"word":"Flat lid","meanings":[{"text":"nắp phẳng","type":"","phonetic":""}],"learned":false},{"id":146,"word":"Decaf","meanings":[{"text":"không caffein","type":"","phonetic":""}],"learned":false},{"id":147,"word":"Scoop","meanings":[{"text":"múc","type":"","phonetic":""}],"learned":false},{"id":148,"word":"Powder","meanings":[{"text":"bột","type":"","phonetic":""}],"learned":false},{"id":149,"word":"Praise","meanings":[{"text":"lời khen ngợi","type":"","phonetic":""}],"learned":false},{"id":150,"word":"Strictly","meanings":[{"text":"nghiêm ngặt","type":"","phonetic":""}],"learned":false},{"id":151,"word":"Hungrily","meanings":[{"text":"đói khát","type":"","phonetic":""}],"learned":false},{"id":152,"word":"Punctually","meanings":[{"text":"đúng giờ","type":"","phonetic":""}],"learned":false},{"id":153,"word":"Consider","meanings":[{"text":"xem xét","type":"","phonetic":""}],"learned":false},{"id":154,"word":"Time sheet","meanings":[{"text":"bảng chấm công","type":"","phonetic":""}],"learned":false},{"id":155,"word":"Fairly","meanings":[{"text":"khá","type":"","phonetic":""}],"learned":false},{"id":156,"word":"Sharply","meanings":[{"text":"sắc bén / mạnh","type":"","phonetic":""}],"learned":false},{"id":157,"word":"Evenly","meanings":[{"text":"đều đặn","type":"","phonetic":""}],"learned":false},{"id":158,"word":"Take off","meanings":[{"text":"tháo khỏi","type":"","phonetic":""}],"learned":false},{"id":159,"word":"Wise","meanings":[{"text":"thông minh","type":"","phonetic":""}],"learned":false},{"id":160,"word":"Assort","meanings":[{"text":"phân loại / hỗn hợp","type":"","phonetic":""}],"learned":false},{"id":161,"word":"Prohibit","meanings":[{"text":"cấm","type":"","phonetic":""},{"text":"cấm, ngăn cấm","type":"v","phonetic":"/proʊ'hɪbɪt/"}],"learned":false},{"id":162,"word":"Almost","meanings":[{"text":"gần như","type":"","phonetic":""}],"learned":false},{"id":163,"word":"Reinforcement","meanings":[{"text":"gia cố","type":"","phonetic":""}],"learned":false},{"id":164,"word":"Accidentally","meanings":[{"text":"vô tình","type":"","phonetic":""}],"learned":false},{"id":165,"word":"In light of","meanings":[{"text":"bởi vì / xét theo","type":"","phonetic":""}],"learned":false},{"id":166,"word":"Supplemental","meanings":[{"text":"bổ sung","type":"","phonetic":""}],"learned":false},{"id":167,"word":"Arbitrary","meanings":[{"text":"tùy ý","type":"","phonetic":""}],"learned":false},{"id":168,"word":"Superfluous","meanings":[{"text":"thừa thãi","type":"","phonetic":""}],"learned":false},{"id":169,"word":"Best of all","meanings":[{"text":"tuyệt vời nhất là","type":"","phonetic":""}],"learned":false},{"id":170,"word":"In any event","meanings":[{"text":"dù sao đi nữa","type":"","phonetic":""}],"learned":false},{"id":171,"word":"As a matter of fact","meanings":[{"text":"thực tế là","type":"","phonetic":""}],"learned":false},{"id":172,"word":"Otherwise","meanings":[{"text":"mặt khác / nếu không","type":"","phonetic":""}],"learned":false},{"id":173,"word":"Indeed","meanings":[{"text":"thật vậy","type":"","phonetic":""}],"learned":false},{"id":174,"word":"Towel","meanings":[{"text":"cái khăn","type":"","phonetic":""},{"text":"cái khăn lau","type":"n","phonetic":"/taʊəl/"}],"learned":false},{"id":175,"word":"Pot","meanings":[{"text":"chậu","type":"","phonetic":""}],"learned":false},{"id":176,"word":"Shelving","meanings":[{"text":"kệ","type":"","phonetic":""}],"learned":false},{"id":177,"word":"Mufflers","meanings":[{"text":"ống xả","type":"","phonetic":""}],"learned":false},{"id":178,"word":"Dozens","meanings":[{"text":"hàng chục","type":"","phonetic":""}],"learned":false},{"id":179,"word":"Chance","meanings":[{"text":"cơ hội","type":"","phonetic":""}],"learned":false},{"id":180,"word":"Seedling","meanings":[{"text":"cây con","type":"","phonetic":""}],"learned":false},{"id":181,"word":"Sincerely","meanings":[{"text":"chân thành","type":"","phonetic":""}],"learned":false},{"id":182,"word":"Deservedly","meanings":[{"text":"xứng đáng","type":"","phonetic":""}],"learned":false},{"id":183,"word":"Procedures","meanings":[{"text":"thủ tục","type":"","phonetic":""}],"learned":false},{"id":184,"word":"Tended","meanings":[{"text":"có xu hướng","type":"","phonetic":""}],"learned":false},{"id":185,"word":"Reentry","meanings":[{"text":"quay lại","type":"","phonetic":""}],"learned":false},{"id":186,"word":"Turnover","meanings":[{"text":"doanh thu","type":"","phonetic":""},{"text":"doanh số, doanh thu","type":"n","phonetic":"/ˈtɝːnˌoʊ.vɚ/"}],"learned":false},{"id":187,"word":"Bidder","meanings":[{"text":"nhà thầu","type":"","phonetic":""}],"learned":false},{"id":188,"word":"If only","meanings":[{"text":"giá như","type":"","phonetic":""}],"learned":false},{"id":189,"word":"Alternatively","meanings":[{"text":"ngoài ra / hoặc","type":"","phonetic":""}],"learned":false},{"id":190,"word":"Whereas","meanings":[{"text":"trong khi đó","type":"","phonetic":""}],"learned":false},{"id":191,"word":"Even though","meanings":[{"text":"mặc dù","type":"","phonetic":""}],"learned":false},{"id":192,"word":"Industry","meanings":[{"text":"ngành công nghiệp","type":"","phonetic":""}],"learned":false},{"id":193,"word":"Reporter","meanings":[{"text":"phóng viên","type":"","phonetic":""}],"learned":false},{"id":194,"word":"In total","meanings":[{"text":"tổng cộng","type":"","phonetic":""}],"learned":false},{"id":195,"word":"Possibly","meanings":[{"text":"có thể","type":"","phonetic":""}],"learned":false},{"id":196,"word":"Surge","meanings":[{"text":"đột biến","type":"","phonetic":""}],"learned":false},{"id":197,"word":"Toward","meanings":[{"text":"hướng tới","type":"","phonetic":""}],"learned":false},{"id":198,"word":"Pouring","meanings":[{"text":"đang rót","type":"","phonetic":""}],"learned":false},{"id":199,"word":"Liquid","meanings":[{"text":"chất lỏng","type":"","phonetic":""}],"learned":false},{"id":200,"word":"Iron","meanings":[{"text":"ủi","type":"","phonetic":""}],"learned":false},{"id":201,"word":"Glance","meanings":[{"text":"liếc","type":"","phonetic":""}],"learned":false},{"id":202,"word":"Monitor","meanings":[{"text":"màn hình","type":"","phonetic":""},{"text":"lớp trưởng, cán bộ lớp (ở trường học)","type":"n","phonetic":"/'mɔnitə/"}],"learned":false},{"id":203,"word":"Jar","meanings":[{"text":"lọ","type":"","phonetic":""}],"learned":false},{"id":204,"word":"Wipe","meanings":[{"text":"lau","type":"","phonetic":""}],"learned":false},{"id":205,"word":"Fireplace","meanings":[{"text":"lò sưởi","type":"","phonetic":""}],"learned":false},{"id":206,"word":"Fallen","meanings":[{"text":"bị đổ / sụp đổ","type":"","phonetic":""}],"learned":false},{"id":207,"word":"Couches","meanings":[{"text":"ghế sofa","type":"","phonetic":""}],"learned":false},{"id":208,"word":"Vase","meanings":[{"text":"cái bình / bình hoa","type":"","phonetic":""}],"learned":false},{"id":209,"word":"Basket","meanings":[{"text":"giỏ","type":"","phonetic":""}],"learned":false},{"id":210,"word":"Noticeably","meanings":[{"text":"đáng kể","type":"","phonetic":""}],"learned":false},{"id":211,"word":"Respectively","meanings":[{"text":"tương ứng","type":"","phonetic":""}],"learned":false},{"id":212,"word":"Closely","meanings":[{"text":"chặt chẽ","type":"","phonetic":""}],"learned":false},{"id":213,"word":"Once","meanings":[{"text":"một lần","type":"","phonetic":""}],"learned":false},{"id":214,"word":"Following","meanings":[{"text":"sau khi","type":"","phonetic":""}],"learned":false},{"id":215,"word":"Rival","meanings":[{"text":"đối thủ","type":"","phonetic":""},{"text":"đối thủ, địch thủ, đối địch, kình địch","type":"n,adj","phonetic":"/raivl/"}],"learned":false},{"id":216,"word":"Numerous","meanings":[{"text":"nhiều","type":"","phonetic":""}],"learned":false},{"id":217,"word":"Gladly","meanings":[{"text":"vui vẻ","type":"","phonetic":""}],"learned":false},{"id":218,"word":"Wholly","meanings":[{"text":"toàn bộ","type":"","phonetic":""}],"learned":false},{"id":219,"word":"Unlike","meanings":[{"text":"khác / không giống","type":"","phonetic":""}],"learned":false},{"id":220,"word":"Likewise","meanings":[{"text":"tương tự","type":"","phonetic":""}],"learned":false},{"id":221,"word":"Suddenly","meanings":[{"text":"đột nhiên","type":"","phonetic":""}],"learned":false},{"id":222,"word":"Fabric","meanings":[{"text":"vải","type":"","phonetic":""}],"learned":false},{"id":223,"word":"Biscuits","meanings":[{"text":"bánh quy","type":"","phonetic":""}],"learned":false},{"id":224,"word":"ability","meanings":[{"text":"năng lực, khả năng","type":"n","phonetic":"/əˈbɪl.ə.t̬i/"}],"learned":false},{"id":225,"word":"abroad","meanings":[{"text":"ở nước ngoài","type":"adv","phonetic":"/əˈbrɑːd/"}],"learned":false},{"id":226,"word":"accept","meanings":[{"text":"chấp nhận, chấp thuận","type":"v","phonetic":"/əkˈsept/"}],"learned":false},{"id":227,"word":"access","meanings":[{"text":"quyền truy cập, sự tiếp cận; truy cập","type":"n, v","phonetic":"/ˈæk.ses/"}],"learned":false},{"id":228,"word":"accessible","meanings":[{"text":"khả năng tiếp cận được","type":"adj","phonetic":"/əkˈses.ə.bəl/"}],"learned":false},{"id":229,"word":"accident","meanings":[{"text":"tai nạn, sự tình cờ","type":"n","phonetic":"/ˈæk.sə.dənt/"}],"learned":false},{"id":230,"word":"accommodate","meanings":[{"text":"dàn xếp, hỗ trợ","type":"v","phonetic":"/əˈkɑː.mə.deɪt/"}],"learned":false},{"id":231,"word":"accommodation","meanings":[{"text":"chỗ ở, nơi ở; sự điều tiết, hòa giải","type":"n","phonetic":"/əˌkɑː.məˈdeɪ.ʃən/"}],"learned":false},{"id":232,"word":"accomplish","meanings":[{"text":"hoàn thành, thực hiện","type":"v","phonetic":"/əˈkɑːm.plɪʃ/"}],"learned":false},{"id":233,"word":"according (to)","meanings":[{"text":"theo như, dựa vào","type":"prep","phonetic":"/əˈkɔːr.dɪŋ ˌtuː/"}],"learned":false},{"id":234,"word":"accordingly","meanings":[{"text":"theo đó, vì vậy","type":"adv","phonetic":"/əˈkɔːr.dɪŋ.li/"}],"learned":false},{"id":235,"word":"accounting","meanings":[{"text":"sự tính toán, thanh toán","type":"n","phonetic":"/əˈkaʊn.t̬ɪŋ/"}],"learned":false},{"id":236,"word":"accurate","meanings":[{"text":"đúng đắn, chính xác","type":"adj","phonetic":"/ˈæk.jɚ.ət/"}],"learned":false},{"id":237,"word":"achieve","meanings":[{"text":"đạt được, giành được","type":"v","phonetic":"/əˈtʃiːv/"}],"learned":false},{"id":238,"word":"acquire","meanings":[{"text":"thu nạp được, giành được","type":"v","phonetic":"/əˈkwaɪɚ/"}],"learned":false},{"id":239,"word":"act","meanings":[{"text":"hành động; thực hiện","type":"n, v","phonetic":"/ækt/"}],"learned":false},{"id":240,"word":"actually","meanings":[{"text":"thực sự, trên thực tế","type":"adv","phonetic":"/ˈæk.tʃu.ə.li/"}],"learned":false},{"id":241,"word":"adapt","meanings":[{"text":"thích nghi, thích ứng","type":"v","phonetic":"/əˈdæpt/"}],"learned":false},{"id":242,"word":"adapter","meanings":[{"text":"thiết bị chuyển đổi, người điều chỉnh tác phẩm (để phù hợp hơn)","type":"n","phonetic":"/əˈdæp.tɚ/"}],"learned":false},{"id":243,"word":"additional","meanings":[{"text":"thêm vào, phụ thêm","type":"adj","phonetic":"/əˈdɪʃ.ən.əl/"}],"learned":false},{"id":244,"word":"adjust","meanings":[{"text":"điều chỉnh","type":"v","phonetic":"/əˈdʒʌst/"}],"learned":false},{"id":245,"word":"adjustment","meanings":[{"text":"sự điều chỉnh, sự thay đổi","type":"n","phonetic":"/əˈdʒʌst.mənt/"}],"learned":false},{"id":246,"word":"administration","meanings":[{"text":"sự quản lý, quản trị","type":"n","phonetic":"/ədˌmɪn.əˈstreɪ.ʃən/"}],"learned":false},{"id":247,"word":"admire","meanings":[{"text":"ngưỡng mộ, thán phục","type":"v","phonetic":"/ədˈmaɪr/"}],"learned":false},{"id":248,"word":"admit","meanings":[{"text":"thừa nhận; tiếp nhận","type":"v","phonetic":"/ədˈmɪt/"}],"learned":false},{"id":249,"word":"admittance","meanings":[{"text":"sự thu nạp, đón nhận","type":"n","phonetic":"/ədˈmɪt̬.əns/"}],"learned":false},{"id":250,"word":"adopt","meanings":[{"text":"nhân nuôi làm theo, áp dụng","type":"v","phonetic":"/əˈdɑːpt/"}],"learned":false},{"id":251,"word":"advance","meanings":[{"text":"sự tiến lên; tiến lên phía trước","type":"n, v","phonetic":"/ədˈvæns/"}],"learned":false},{"id":252,"word":"advanced","meanings":[{"text":"tiến bộ, cấp tiến","type":"adj","phonetic":"/ədˈvænst/"}],"learned":false},{"id":253,"word":"advantage","meanings":[{"text":"lợi thế","type":"n","phonetic":"/ədˈvæn.t̬ɪdʒ/"}],"learned":false},{"id":254,"word":"advantageous","meanings":[{"text":"có lợi, thuận lợi","type":"adj","phonetic":"/ˌæd.vænˈteɪ.dʒəs/"}],"learned":false},{"id":255,"word":"advertise","meanings":[{"text":"quảng cáo, thông báo","type":"v","phonetic":"/ˈæd.vɚ.taɪz/"}],"learned":false},{"id":256,"word":"advertisement","meanings":[{"text":"bản tin quảng cáo","type":"n","phonetic":"/æd.vɝːˈtaɪz.mənt/"}],"learned":false},{"id":257,"word":"advice","meanings":[{"text":"lời khuyên, lời chỉ bảo","type":"n","phonetic":"/ədˈvaɪs/"}],"learned":false},{"id":258,"word":"advise","meanings":[{"text":"đưa ra lời khuyên","type":"v","phonetic":"/ədˈvaɪz/"}],"learned":false},{"id":259,"word":"affect","meanings":[{"text":"ảnh hưởng, tác động","type":"v","phonetic":"/əˈfekt/"}],"learned":false},{"id":260,"word":"afford","meanings":[{"text":"có khả năng, đủ điều kiện; ban phát, cấp phát","type":"v","phonetic":"/əˈfɔːrd/"}],"learned":false},{"id":261,"word":"affordable","meanings":[{"text":"có khả năng chi trả, vừa túi tiền","type":"adj","phonetic":"/əˈfɔːr.də.bəl/"}],"learned":false},{"id":262,"word":"agency","meanings":[{"text":"đại lý, bên môi giới trung gian","type":"n","phonetic":"/ˈeɪ.dʒən.si/"}],"learned":false},{"id":263,"word":"agenda","meanings":[{"text":"chương trình nghị sự, kế hoạch chương trình","type":"n","phonetic":"/əˈdʒen.də/"}],"learned":false},{"id":264,"word":"agree","meanings":[{"text":"đồng ý, tán thành","type":"v","phonetic":"/əˈɡriː/"}],"learned":false},{"id":265,"word":"agreeable","meanings":[{"text":"dễ chịu; thích hợp với","type":"adj","phonetic":"/əˈɡriː.ə.bəl/"}],"learned":false},{"id":266,"word":"agreement","meanings":[{"text":"hợp đồng, giao kèo","type":"n","phonetic":"/əˈɡriː.mənt/"}],"learned":false},{"id":267,"word":"agricultural","meanings":[{"text":"(thuộc) nông nghiệp","type":"adj","phonetic":"/ˌæɡ.rəˈkʌl.tʃɚ.əl/"}],"learned":false},{"id":268,"word":"aid","meanings":[{"text":"sự giúp đỡ; cứu trợ, viện trợ","type":"n, v","phonetic":"/eɪd/"}],"learned":false},{"id":269,"word":"aim","meanings":[{"text":"mục tiêu; nhắm đến, hướng đến","type":"n, v","phonetic":"/eɪm/"}],"learned":false},{"id":270,"word":"airline","meanings":[{"text":"công ty hàng không","type":"n","phonetic":"/ˈer.laɪn/"}],"learned":false},{"id":271,"word":"aisle","meanings":[{"text":"gian hàng, lối đi giữa các dãy ghế","type":"n","phonetic":"/aɪl/"}],"learned":false},{"id":272,"word":"alarm","meanings":[{"text":"sự báo động; báo động","type":"n","phonetic":"/əˈlɑːrm/"}],"learned":false},{"id":273,"word":"allow","meanings":[{"text":"cho phép, để cho","type":"v","phonetic":"/əˈlaʊ/"}],"learned":false},{"id":274,"word":"alternative","meanings":[{"text":"xen kẽ, luân phiên","type":"adj","phonetic":"/ɑːlˈtɝː.nə.t̬ɪv/"}],"learned":false},{"id":275,"word":"ambitious","meanings":[{"text":"tham vọng","type":"adj","phonetic":"/æmˈbɪʃ.əs/"}],"learned":false},{"id":276,"word":"amend","meanings":[{"text":"sửa chữa, cải tạo","type":"v","phonetic":"/əˈmend/"}],"learned":false},{"id":277,"word":"amount","meanings":[{"text":"số lượng; cộng dồn lên tới","type":"n, v","phonetic":"/əˈmaʊnt/"}],"learned":false},{"id":278,"word":"amusing","meanings":[{"text":"vui, có tính hài hước","type":"adj","phonetic":"/əˈmjuː.zɪŋ/"}],"learned":false},{"id":279,"word":"analysis","meanings":[{"text":"sự phân tích, bản phân tích","type":"n","phonetic":"/əˈnæl.ə.sɪs/"}],"learned":false},{"id":280,"word":"analyze","meanings":[{"text":"phân tích","type":"v","phonetic":"/ˈæn.əl.aɪz/"}],"learned":false},{"id":281,"word":"annual","meanings":[{"text":"hằng năm","type":"adj","phonetic":"/ˈæn.ju.əl/"}],"learned":false},{"id":282,"word":"anticipate","meanings":[{"text":"phỏng đoán, dự đoán","type":"v","phonetic":"/ænˈtɪs.ə.peɪt/"}],"learned":false},{"id":283,"word":"anxious","meanings":[{"text":"bồn chồn, lo lắng","type":"adj","phonetic":"/ˈæŋk.ʃəs/"}],"learned":false},{"id":284,"word":"apologize","meanings":[{"text":"xin lỗi","type":"v","phonetic":"/əˈpɑː.lə.dʒaɪz/"}],"learned":false},{"id":285,"word":"appeal","meanings":[{"text":"lời thỉnh cầu, sức lôi cuốn; kêu gọi, hấp dẫn","type":"n, v","phonetic":"/əˈpiːl/"}],"learned":false},{"id":286,"word":"appetizer","meanings":[{"text":"món khai vị","type":"n","phonetic":"/ˈæp.ə.taɪ.zɚ/"}],"learned":false},{"id":287,"word":"appliance","meanings":[{"text":"thiết bị, dụng cụ","type":"n","phonetic":"/əˈplaɪ.əns/"}],"learned":false},{"id":288,"word":"applicant","meanings":[{"text":"người ứng tuyển, nguyên cáo","type":"n","phonetic":"/ˈæp.lə.kənt/"}],"learned":false},{"id":289,"word":"application","meanings":[{"text":"ứng dụng, sự áp dụng","type":"n","phonetic":"/ˌæp.ləˈkeɪ.ʃən/"}],"learned":false},{"id":290,"word":"apply","meanings":[{"text":"áp dụng, ứng tuyển","type":"v","phonetic":"/əˈplaɪ/"}],"learned":false},{"id":291,"word":"appoint","meanings":[{"text":"bổ nhiệm, chỉ định","type":"v","phonetic":"/əˈpɔɪnt/"}],"learned":false},{"id":292,"word":"appointment","meanings":[{"text":"sự bổ nhiệm, cuộc hẹn gặp","type":"n","phonetic":"/əˈpɔɪnt.mənt/"}],"learned":false},{"id":293,"word":"appreciable","meanings":[{"text":"đáng kể","type":"adj","phonetic":"/əˈpriː.ʃə.bəl/"}],"learned":false},{"id":294,"word":"appreciate","meanings":[{"text":"đánh giá cao, cảm kích","type":"v","phonetic":"/əˈpriː.ʃi.eɪt/"}],"learned":false},{"id":295,"word":"appreciation","meanings":[{"text":"sự đánh giá cao, sự cảm kích","type":"n","phonetic":"/əˌpriː.ʃiˈeɪ.ʃən/"}],"learned":false},{"id":296,"word":"appreciative of","meanings":[{"text":"đánh giá cao, ghi nhận","type":"adj","phonetic":"/əˈpriː.ʃə.t̬ɪv/"}],"learned":false},{"id":297,"word":"apprentice","meanings":[{"text":"người học việc","type":"n","phonetic":"/əˈpren.t̬ɪs/"}],"learned":false},{"id":298,"word":"approve","meanings":[{"text":"tán thành, phê chuẩn","type":"v","phonetic":"/əˈpruːv/"}],"learned":false},{"id":299,"word":"approximate","meanings":[{"text":"xấp xỉ, gần đúng","type":"adj","phonetic":"/əˈprɑːk.sə.mət/"}],"learned":false},{"id":300,"word":"arbitrate","meanings":[{"text":"phân xử, làm trọng tài","type":"v","phonetic":"/ˈɑːr.bə.treɪt/"}],"learned":false},{"id":301,"word":"area","meanings":[{"text":"khu vực, lĩnh vực, diện tích","type":"n","phonetic":"/ˈer.i.ə/"}],"learned":false},{"id":302,"word":"argue","meanings":[{"text":"tranh cãi, tranh luận","type":"v","phonetic":"/ˈɑːrɡ.juː/"}],"learned":false},{"id":303,"word":"argument","meanings":[{"text":"cuộc tranh luận","type":"n","phonetic":"/ˈɑːrɡ.jə.mənt/"}],"learned":false},{"id":304,"word":"arrange","meanings":[{"text":"dàn xếp, sắp đặt","type":"v","phonetic":"/əˈreɪndʒ/"}],"learned":false},{"id":305,"word":"arrangement","meanings":[{"text":"sự sắp đặt","type":"n","phonetic":"/əˈreɪndʒ.mənt/"}],"learned":false},{"id":306,"word":"assemble","meanings":[{"text":"lắp ráp, thu thập","type":"v","phonetic":"/əˈsem.bəl/"}],"learned":false},{"id":307,"word":"assess","meanings":[{"text":"đánh giá, định giá","type":"v","phonetic":"/əˈses/"}],"learned":false},{"id":308,"word":"asset","meanings":[{"text":"của cải, tài sản, vốn quý","type":"n","phonetic":"/ˈæs.et/"}],"learned":false},{"id":309,"word":"assign","meanings":[{"text":"phân công, chia việc","type":"v","phonetic":"/əˈsaɪn/"}],"learned":false},{"id":310,"word":"assignment","meanings":[{"text":"sự phân việc, bài tập tiểu luận","type":"n","phonetic":"/əˈsaɪn.mənt/"}],"learned":false},{"id":311,"word":"assist","meanings":[{"text":"hỗ trợ, giúp đỡ","type":"v","phonetic":"/əˈsɪst/"}],"learned":false},{"id":312,"word":"assistance","meanings":[{"text":"sự giúp đỡ, hỗ trợ","type":"n","phonetic":"/əˈsɪs.təns/"}],"learned":false},{"id":313,"word":"assume","meanings":[{"text":"cho rằng, làm ra vẻ","type":"v","phonetic":"/əˈsuːm/"}],"learned":false},{"id":314,"word":"attach","meanings":[{"text":"gán thêm, kèm thêm","type":"v","phonetic":"/əˈtætʃ/"}],"learned":false},{"id":315,"word":"attachment","meanings":[{"text":"sự gắn thêm; phần kèm thêm","type":"n","phonetic":"/əˈtætʃ.mənt/"}],"learned":false},{"id":316,"word":"attend","meanings":[{"text":"tham dự","type":"v","phonetic":"/əˈtend/"}],"learned":false},{"id":317,"word":"attendance","meanings":[{"text":"sự tham gia, có mặt","type":"n","phonetic":"/əˈten.dəns/"}],"learned":false},{"id":318,"word":"attract","meanings":[{"text":"thu hút, hấp dẫn","type":"v","phonetic":"/əˈtrækt/"}],"learned":false},{"id":319,"word":"audience","meanings":[{"text":"khán thính giả","type":"n","phonetic":"/ˈɑː.di.əns/"}],"learned":false},{"id":320,"word":"audit","meanings":[{"text":"kiểm toán","type":"n, v","phonetic":"/ˈɑː.dɪt/"}],"learned":false},{"id":321,"word":"authority","meanings":[{"text":"quyền thế, nhà chức trách, chính quyền","type":"n","phonetic":"/əˈθɔːr.ə.t̬i/"}],"learned":false},{"id":322,"word":"authorize","meanings":[{"text":"ủy quyền, cấp quyền","type":"v","phonetic":"/ˈɑː.θɚ.aɪz/"}],"learned":false},{"id":323,"word":"availability","meanings":[{"text":"tính sẵn có","type":"n","phonetic":"/əˌveɪ.ləˈbɪl.ə.t̬i/"}],"learned":false},{"id":324,"word":"available","meanings":[{"text":"có sẵn để dùng","type":"adj","phonetic":"/əˈveɪ.lə.bəl/"}],"learned":false},{"id":325,"word":"avoid","meanings":[{"text":"tránh xa, ngăn ngừa","type":"v","phonetic":"/əˈvɔɪd/"}],"learned":false},{"id":326,"word":"avid","meanings":[{"text":"khao khát, thèm khát","type":"adj","phonetic":"/ˈæv.ɪd/"}],"learned":false},{"id":327,"word":"awareness","meanings":[{"text":"sự nhận thức, ý thức","type":"n","phonetic":"/əˈwer.nəs/"}],"learned":false},{"id":328,"word":"awkward","meanings":[{"text":"ngại ngùng, khó xử","type":"adj","phonetic":"/ˈɑː.kwɚd/"}],"learned":false},{"id":329,"word":"background","meanings":[{"text":"phông nền, gia cảnh, quá trình học tập","type":"n","phonetic":"/ˈbæk.ɡraʊnd/"}],"learned":false},{"id":330,"word":"backpack","meanings":[{"text":"ba lô đeo sau lưng","type":"n","phonetic":"/ˈbæk.pæk/"}],"learned":false},{"id":331,"word":"baggage claim","meanings":[{"text":"chỗ nhận hành lý","type":"n","phonetic":"/ˈbæɡ.ɪdʒ kleɪm/"}],"learned":false},{"id":332,"word":"balance","meanings":[{"text":"sự cân bằng, trạng thái cân bằng","type":"n","phonetic":"/ˈbæl.əns/"}],"learned":false},{"id":333,"word":"bank","meanings":[{"text":"ngân hàng, bãi sông","type":"n","phonetic":"/bæŋk/"}],"learned":false},{"id":334,"word":"bankrupt","meanings":[{"text":"người phá sản; vỡ nợ, phá sản","type":"n, adj","phonetic":"/ˈbæŋ.krʌpt/"}],"learned":false},{"id":335,"word":"bar code","meanings":[{"text":"mã vạch","type":"n","phonetic":"/ˈbɑːr ˌkoʊd/"}],"learned":false},{"id":336,"word":"bargain","meanings":[{"text":"sự mặc cả, món hời; mặc cả, thương lượng","type":"n, v","phonetic":"/ˈbɑːr.ɡɪn/"}],"learned":false},{"id":337,"word":"beautiful","meanings":[{"text":"xinh đẹp, tốt đẹp","type":"adj","phonetic":"/ˈbjuː.t̬ə.fəl/"}],"learned":false},{"id":338,"word":"behave","meanings":[{"text":"hành xử, cư xử","type":"v","phonetic":"/bɪˈheɪv/"}],"learned":false},{"id":339,"word":"belongings","meanings":[{"text":"tài sản, đồ dùng cá nhân","type":"n","phonetic":"/bɪˈlɑːŋ.ɪŋz/"}],"learned":false},{"id":340,"word":"beneficial","meanings":[{"text":"có ích, có lợi","type":"adj","phonetic":"/ˌben.əˈfɪʃ.əl/"}],"learned":false},{"id":341,"word":"benefit","meanings":[{"text":"ích lợi","type":"n","phonetic":"/ˈben.ə.fɪt/"}],"learned":false},{"id":342,"word":"beverage","meanings":[{"text":"đồ uống, đồ giải khát","type":"n","phonetic":"/ˈbev.ɚ.ɪdʒ/"}],"learned":false},{"id":343,"word":"bill","meanings":[{"text":"hóa đơn","type":"n","phonetic":"/bɪl/"}],"learned":false},{"id":344,"word":"binder","meanings":[{"text":"bìa ôm, bìa rời","type":"n","phonetic":"/ˈbaɪn.dɚ/"}],"learned":false},{"id":345,"word":"blanket","meanings":[{"text":"chăn, mền","type":"n","phonetic":"/ˈblæŋ.kɪt/"}],"learned":false},{"id":346,"word":"block","meanings":[{"text":"khối, tảng, trướng ngại vật; làm cản trở, phong tỏa","type":"n, v","phonetic":"/blɑːk/"}],"learned":false},{"id":347,"word":"board","meanings":[{"text":"tấm ván, bảng, mạn thuyền","type":"n","phonetic":"/bɔːrd/"}],"learned":false},{"id":348,"word":"boardroom","meanings":[{"text":"phòng họp ban giám đốc","type":"n","phonetic":"/ˈbɔːrd.ruːm/, /ˈbɔːrd.rʊm/"}],"learned":false},{"id":349,"word":"boast","meanings":[{"text":"sự khoe khoang; khoác lác","type":"n, v","phonetic":"/boʊst/"}],"learned":false},{"id":350,"word":"book","meanings":[{"text":"cuốn sách; đặt phòng, đặt vé","type":"n, v","phonetic":"/bʊk/"}],"learned":false},{"id":351,"word":"boost","meanings":[{"text":"đẩy mạnh, kích thích; sự tăng lên","type":"v, n","phonetic":"/buːst/"}],"learned":false},{"id":352,"word":"bored","meanings":[{"text":"buồn chán, tẻ nhạt","type":"adj","phonetic":"/bɔːrd/"}],"learned":false},{"id":353,"word":"bother","meanings":[{"text":"điều gây khó chịu; làm phiền, bận tâm","type":"n, v","phonetic":"/ˈbɑː.ðɚ/"}],"learned":false},{"id":354,"word":"bottom line","meanings":[{"text":"điểm mấu chốt, cốt yếu","type":"n","phonetic":"/ˌbɑː.t̬əm ˈlaɪn/"}],"learned":false},{"id":355,"word":"branch","meanings":[{"text":"cành cây, chi nhánh","type":"n","phonetic":"/bræntʃ/"}],"learned":false},{"id":356,"word":"brand","meanings":[{"text":"nhãn hàng, thương hiệu","type":"n","phonetic":"/brænd/"}],"learned":false},{"id":357,"word":"briefcase","meanings":[{"text":"cặp tài liệu","type":"n","phonetic":"/ˈbriːf.keɪs/"}],"learned":false},{"id":358,"word":"briefing","meanings":[{"text":"sự chỉ dẫn, hướng dẫn","type":"n","phonetic":"/ˈbriː.fɪŋ/"}],"learned":false},{"id":359,"word":"broadcast","meanings":[{"text":"chương trình phát thanh; truyền bá, phát thanh","type":"n, v","phonetic":"/ˈbrɑːd.kæst/"}],"learned":false},{"id":360,"word":"broaden","meanings":[{"text":"mở rộng, nới rộng","type":"v","phonetic":"/ˈbrɑː.dən/"}],"learned":false},{"id":361,"word":"browser","meanings":[{"text":"trình duyệt","type":"n","phonetic":"/ˈbraʊ.zɚ/"}],"learned":false},{"id":362,"word":"brush","meanings":[{"text":"lược, bàn chải; chải, quét","type":"n, v","phonetic":"/brʌʃ/"}],"learned":false},{"id":363,"word":"budget","meanings":[{"text":"ngân sách; dự thảo ngân sách","type":"n, v","phonetic":"/ˈbʌdʒ.ɪt/"}],"learned":false},{"id":364,"word":"bulletin","meanings":[{"text":"bảng thông báo, tập san","type":"n","phonetic":"/ˈbʊl.ə.t̬ɪn/"}],"learned":false},{"id":365,"word":"cabin crew","meanings":[{"text":"đội bay, tiếp viên hàng không","type":"n","phonetic":"/ˈkæb.ɪn ˌkruː/"}],"learned":false},{"id":366,"word":"cafeteria","meanings":[{"text":"quán ăn tự phục vụ, phòng cà phê","type":"n","phonetic":"/ˌkæf.əˈtɪr.i.ə/"}],"learned":false},{"id":367,"word":"calculate","meanings":[{"text":"tính toán, suy tính","type":"v","phonetic":"/ˈkæl.kjə.leɪt/"}],"learned":false},{"id":368,"word":"calculation","meanings":[{"text":"sự tính toán","type":"n","phonetic":"/ˌkæl.kjəˈleɪ.ʃən/"}],"learned":false},{"id":369,"word":"calculator","meanings":[{"text":"máy tính bỏ túi","type":"n","phonetic":"/ˈkæl.kjə.leɪ.t̬ɚ/"}],"learned":false},{"id":370,"word":"campaign","meanings":[{"text":"chiến dịch, cuộc vận động","type":"n","phonetic":"/kæmˈpeɪn/"}],"learned":false},{"id":371,"word":"cancel","meanings":[{"text":"hủy bỏ, xóa","type":"v","phonetic":"/ˈkæn.səl/"}],"learned":false},{"id":372,"word":"cancellation","meanings":[{"text":"sự xóa bỏ, bãi bỏ","type":"n","phonetic":"/ˌkæn.səlˈeɪ.ʃən/"}],"learned":false},{"id":373,"word":"candidacy","meanings":[{"text":"sự ứng cử","type":"n","phonetic":"/ˈkæn.dɪ.də.si/"}],"learned":false},{"id":374,"word":"candidate","meanings":[{"text":"ứng cử viên","type":"n","phonetic":"/ˈkæn.dɪ.dət/, /ˈkæn.dɪ.deɪt/"}],"learned":false},{"id":375,"word":"capacity","meanings":[{"text":"năng lực, sức chứa","type":"n","phonetic":"/kəˈpæs.ə.t̬i/"}],"learned":false},{"id":376,"word":"capital","meanings":[{"text":"thủ đô, nguồn vốn, chữ viết hoa","type":"n","phonetic":"/ˈkæp.ə.t̬əl/"}],"learned":false},{"id":377,"word":"career","meanings":[{"text":"sự nghiệp","type":"n","phonetic":"/kəˈrɪr/"}],"learned":false},{"id":378,"word":"careless","meanings":[{"text":"bất cẩn, cẩu thả","type":"adj","phonetic":"/ˈker.ləs/"}],"learned":false},{"id":379,"word":"cash","meanings":[{"text":"tiền mặt","type":"n","phonetic":"/kæʃ/"}],"learned":false},{"id":380,"word":"cashier","meanings":[{"text":"nhân viên thu ngân","type":"n","phonetic":"/kæʃˈɪr/"}],"learned":false},{"id":381,"word":"cause","meanings":[{"text":"nguyên nhân, lý do; gây ra","type":"n, v","phonetic":"/kɑːz/"}],"learned":false},{"id":382,"word":"cautious","meanings":[{"text":"thận trọng, cẩn thận","type":"adj","phonetic":"/ˈkɑː.ʃəs/"}],"learned":false},{"id":383,"word":"celebrate","meanings":[{"text":"kỉ niệm, tán dương","type":"v","phonetic":"/ˈsel.ə.breɪt/"}],"learned":false},{"id":384,"word":"celebration","meanings":[{"text":"lễ kỉ niệm","type":"n","phonetic":"/ˌsel.əˈbreɪ.ʃən/"}],"learned":false},{"id":385,"word":"certificate","meanings":[{"text":"giấy chứng nhận","type":"n","phonetic":"/sɚˈtɪf.ə.kət/"}],"learned":false},{"id":386,"word":"certification","meanings":[{"text":"sự cấp giấy chứng nhận","type":"n","phonetic":"/ˌsɜ˞ː.t̬ə.fɪˈkeɪ.ʃən/"}],"learned":false},{"id":387,"word":"chain","meanings":[{"text":"dây xích, chuỗi","type":"n","phonetic":"/tʃeɪn/"}],"learned":false},{"id":388,"word":"chain store","meanings":[{"text":"cửa hàng theo chuỗi, hệ thống cửa hàng","type":"n","phonetic":"/ˈtʃeɪn ˌstɔːr/"}],"learned":false},{"id":389,"word":"chair","meanings":[{"text":"ghế ngồi","type":"n","phonetic":"/tʃer/"}],"learned":false},{"id":390,"word":"chairperson","meanings":[{"text":"chủ tịch","type":"n","phonetic":"/ˈtʃerˌpɝː.sən/"}],"learned":false},{"id":391,"word":"characteristic","meanings":[{"text":"đặc điểm, tính cách","type":"n","phonetic":"/ˌker.ək.təˈrɪs.tɪk/"}],"learned":false},{"id":392,"word":"characterize","meanings":[{"text":"biểu thị đặc điểm, mô tả đặc điểm","type":"v","phonetic":"/ˈker.ək.tɚ.aɪz/"}],"learned":false},{"id":393,"word":"charge","meanings":[{"text":"chi phí, tiền công; tính giá, đòi trả","type":"n, v","phonetic":"/tʃɑːrdʒ/"}],"learned":false},{"id":394,"word":"charity","meanings":[{"text":"lòng từ bi, tổ chức từ thiện","type":"n","phonetic":"/ˈtʃer.ə.t̬i/"}],"learned":false},{"id":395,"word":"cheap","meanings":[{"text":"rẻ tiền, xấu","type":"adj","phonetic":"/tʃiːp/"}],"learned":false},{"id":396,"word":"check in","meanings":[{"text":"đăng ký phòng, vé máy bay...","type":"v","phonetic":"/tʃek ɪn/"}],"learned":false},{"id":397,"word":"check out","meanings":[{"text":"trả phòng, thanh toán","type":"v","phonetic":"/tʃek aʊt/"}],"learned":false},{"id":398,"word":"chef","meanings":[{"text":"đầu bếp","type":"n","phonetic":"/ʃef/"}],"learned":false},{"id":399,"word":"circumstances","meanings":[{"text":"hoàn cảnh, tình huống","type":"n","phonetic":"/ˈsɝː.kəm.stæns/"}],"learned":false},{"id":400,"word":"claim","meanings":[{"text":"quyền đòi sở hữu; đòi hỏi, nhận","type":"n, v","phonetic":"/kleɪm/"}],"learned":false},{"id":401,"word":"claimant","meanings":[{"text":"người thỉnh cầu, người đòi hỏi","type":"n","phonetic":"/ˈkleɪ.mənt/"}],"learned":false},{"id":402,"word":"classify","meanings":[{"text":"phân loại","type":"v","phonetic":"/ˈklæs.ə.faɪ/"}],"learned":false},{"id":403,"word":"client","meanings":[{"text":"khách hàng (của luật sư, cửa hàng...)","type":"n","phonetic":"/ˈklaɪ.ənt/"}],"learned":false},{"id":404,"word":"climate","meanings":[{"text":"khí hậu, thời tiết","type":"n","phonetic":"/ˈklaɪ.mət/"}],"learned":false},{"id":405,"word":"commence","meanings":[{"text":"bắt đầu, mở đầu, khởi đầu","type":"v","phonetic":"/kəˈmens/"}],"learned":false},{"id":406,"word":"commission","meanings":[{"text":"hội đồng, ủy ban, tiền hoa hồng","type":"n","phonetic":"/kəˈmɪʃ.ən/"}],"learned":false},{"id":407,"word":"committee","meanings":[{"text":"ủy ban","type":"n","phonetic":"/kəˈmɪt̬.i/"}],"learned":false},{"id":408,"word":"commonly","meanings":[{"text":"thông thường, bình thường","type":"adv","phonetic":"/ˈkɑː.mən.li/"}],"learned":false},{"id":409,"word":"commute","meanings":[{"text":"thay đổi cho nhau, di chuyển đều đặn bằng tàu, xe...","type":"v","phonetic":"/kəˈmjuːt/"}],"learned":false},{"id":410,"word":"commuter","meanings":[{"text":"người đi lại bằng vé tháng trên tàu, xe...","type":"n","phonetic":"/kəˈmjuː.t̬ɚ/"}],"learned":false},{"id":411,"word":"company","meanings":[{"text":"công ty, bạn bè, bằng hữu","type":"n","phonetic":"/ˈkʌm.pə.ni/"}],"learned":false},{"id":412,"word":"compare","meanings":[{"text":"so sánh, đối chiếu","type":"v","phonetic":"/kəmˈper/"}],"learned":false},{"id":413,"word":"compatible","meanings":[{"text":"tương thích, phù hợp","type":"adj","phonetic":"/kəmˈpæt̬.ə.bəl/"}],"learned":false},{"id":414,"word":"compensate","meanings":[{"text":"đền bù, bồi thường","type":"v","phonetic":"/ˈkɑːm.pən.seɪt/"}],"learned":false},{"id":415,"word":"compensation","meanings":[{"text":"sự đền bù, vật bồi thường","type":"n","phonetic":"/ˌkɑːm.penˈseɪ.ʃən/"}],"learned":false},{"id":416,"word":"competent","meanings":[{"text":"có khả năng, đủ trình độ","type":"adj","phonetic":"/ˈkɑːm.pə.t̬ənt/"}],"learned":false},{"id":417,"word":"competitive","meanings":[{"text":"có tính cạnh tranh, ganh đua","type":"adj","phonetic":"/kəmˈpet̬.ə.t̬ɪv/"}],"learned":false},{"id":418,"word":"competitor","meanings":[{"text":"người cạnh tranh, đối thủ","type":"n","phonetic":"/kəmˈpet̬.ə.t̬ɚ/"}],"learned":false},{"id":419,"word":"complain","meanings":[{"text":"kêu ca, phàn nàn, oán trách","type":"v","phonetic":"/kəmˈpleɪn/"}],"learned":false},{"id":420,"word":"complaint","meanings":[{"text":"lời than phiền, lời phàn nàn","type":"n","phonetic":"/kəmˈpleɪnt/"}],"learned":false},{"id":421,"word":"complete","meanings":[{"text":"đầy đủ, hoàn thiện","type":"adj","phonetic":"/kəmˈpliːt/"}],"learned":false},{"id":422,"word":"complex","meanings":[{"text":"khu phức hợp; phức tạp","type":"n, adj","phonetic":"/ˈkɑːm.pleks/, /kɑːmˈpleks/"}],"learned":false},{"id":423,"word":"complexity","meanings":[{"text":"sự phức tạp","type":"n","phonetic":"/kəmˈplek.sə.t̬i/"}],"learned":false},{"id":424,"word":"compliment","meanings":[{"text":"lời khen, sự ca tụng","type":"n","phonetic":"/ˈkɑːm.plə.mənt/"}],"learned":false},{"id":425,"word":"complimentary","meanings":[{"text":"ngợi khen, đánh giá cao","type":"adj","phonetic":"/ˌkɑːm.pləˈmen.t̬ɚ.i/"}],"learned":false},{"id":426,"word":"comply","meanings":[{"text":"tuân theo, làm theo","type":"v","phonetic":"/kəmˈplaɪ/"}],"learned":false},{"id":427,"word":"comprehensive","meanings":[{"text":"toàn diện, thông minh","type":"adj","phonetic":"/ˌkɑːm.prəˈhen.sɪv/"}],"learned":false},{"id":428,"word":"compromise","meanings":[{"text":"sự thỏa hiệp; dàn xếp, thỏa hiệp","type":"n, v","phonetic":"/ˈkɑːm.prə.maɪz/"}],"learned":false},{"id":429,"word":"compulsory","meanings":[{"text":"bắt buộc, ép buộc","type":"adj","phonetic":"/kəmˈpʌl.sɚ.i/"}],"learned":false},{"id":430,"word":"concede","meanings":[{"text":"thừa nhận","type":"v","phonetic":"/kənˈsiːd/"}],"learned":false},{"id":431,"word":"concern","meanings":[{"text":"mối bận tâm, chuyện đáng lo; liên quan, dính líu tới","type":"n, v","phonetic":"/kənˈsɝːn/"}],"learned":false},{"id":432,"word":"conclude","meanings":[{"text":"kết thúc, chấm dứt, kết luận","type":"v","phonetic":"/kənˈkluːd/"}],"learned":false},{"id":433,"word":"conclusion","meanings":[{"text":"kết luận","type":"n","phonetic":"/kənˈkluː.ʒən/"}],"learned":false},{"id":434,"word":"concourse","meanings":[{"text":"đám đông, sự tụ họp","type":"n","phonetic":"/ˈkɑːn.kɔːrs/"}],"learned":false},{"id":435,"word":"condition","meanings":[{"text":"điều kiện, tình cảnh, tình trạng; là điều kiện của, tùy thuộc vào","type":"n, v","phonetic":"/kənˈdɪʃ.ən/"}],"learned":false},{"id":436,"word":"conduct","meanings":[{"text":"hạnh kiểm, đạo đức; tiến hành, chỉ đạo","type":"n, v","phonetic":"/ˈkɑːn.dʌkt/, /kənˈdʌkt/"}],"learned":false},{"id":437,"word":"confirmation","meanings":[{"text":"sự xác nhận, chứng thực","type":"n","phonetic":"/ˌkɑːn.fɚˈmeɪ.ʃən/"}],"learned":false},{"id":438,"word":"confusion","meanings":[{"text":"sự bối rối, khó hiểu","type":"n","phonetic":"/kənˈfjuː.ʒən/"}],"learned":false},{"id":439,"word":"connect","meanings":[{"text":"nối lại, kết nối","type":"v","phonetic":"/kəˈnekt/"}],"learned":false},{"id":440,"word":"consequence","meanings":[{"text":"hậu quả, kết quả","type":"n","phonetic":"/ˈkɑːn.sə.kwəns/"}],"learned":false},{"id":441,"word":"considerable","meanings":[{"text":"đáng kể, lớn lao","type":"adj","phonetic":"/kənˈsɪd.ɚ.ə.bəl/"}],"learned":false},{"id":442,"word":"consignment","meanings":[{"text":"hoạt động gửi hàng để bán","type":"n","phonetic":"/kənˈsaɪn.mənt/"}],"learned":false},{"id":443,"word":"consistently","meanings":[{"text":"kiên định, trước sau như một, đồng nhất","type":"adv","phonetic":"/kənˈsɪs.tənt.li/"}],"learned":false},{"id":444,"word":"constant","meanings":[{"text":"liên tục, liên tiếp, kiên trì","type":"adj","phonetic":"/ˈkɑːn.stənt/"}],"learned":false},{"id":445,"word":"consultant","meanings":[{"text":"tư vấn viên, cố vấn","type":"n","phonetic":"/kənˈsʌl.tənt/"}],"learned":false},{"id":446,"word":"consume","meanings":[{"text":"sử dụng, tiêu dùng, tiêu thụ","type":"v","phonetic":"/kənˈsuːm/"}],"learned":false},{"id":447,"word":"consumer","meanings":[{"text":"người tiêu dùng","type":"n","phonetic":"/kənˈsuː.mɚ/"}],"learned":false},{"id":448,"word":"continual","meanings":[{"text":"liên tục, liên miên","type":"adj","phonetic":"/kənˈtɪn.ju.əl/"}],"learned":false},{"id":449,"word":"continue","meanings":[{"text":"tiếp tục, duy trì","type":"v","phonetic":"/kənˈtɪn.juː/"}],"learned":false},{"id":450,"word":"contribute","meanings":[{"text":"đóng góp, góp phần","type":"v","phonetic":"/kənˈtrɪb.juːt/"}],"learned":false},{"id":451,"word":"control","meanings":[{"text":"sự điều khiển, cầm lái; điều khiển, chỉ huy, kiểm soát","type":"n, v","phonetic":"/kənˈtroʊl/"}],"learned":false},{"id":452,"word":"control panel","meanings":[{"text":"bảng điều khiển","type":"n","phonetic":"/kənˈtroʊl ˌpæn.əl/"}],"learned":false},{"id":453,"word":"conveniently","meanings":[{"text":"thuận tiện, tiện lợi","type":"adv","phonetic":"/kənˈviː.ni.ənt.li/"}],"learned":false},{"id":454,"word":"convince","meanings":[{"text":"thuyết phục","type":"v","phonetic":"/kənˈvɪns/"}],"learned":false},{"id":455,"word":"corporate","meanings":[{"text":"công ty, tập đoàn; (thuộc) đoàn thể","type":"n, v","phonetic":"/ˈkɔːr.pɚ.ət/"}],"learned":false},{"id":456,"word":"corporation","meanings":[{"text":"đoàn thể, tập đoàn","type":"n","phonetic":"corporation"}],"learned":false},{"id":457,"word":"cost","meanings":[{"text":"giá, chi phí; định giá, trả giá","type":"n, v","phonetic":"/kɑːst/"}],"learned":false},{"id":458,"word":"counter","meanings":[{"text":"quầy hàng, quầy thu ngân; phản đối, chống lại","type":"n, v","phonetic":"/ˈkaʊn.t̬ɚ/"}],"learned":false},{"id":459,"word":"courier","meanings":[{"text":"người đưa thư, đưa tin","type":"n","phonetic":"/ˈkʊr.i.ɚ/"}],"learned":false},{"id":460,"word":"cover letter","meanings":[{"text":"thư trình bày thông tin, nguyện vọng","type":"n","phonetic":"/ˈkʌv.ə ˌlet.ər/"}],"learned":false},{"id":461,"word":"coverage","meanings":[{"text":"mức độ bao phủ, che phủ bản tin sự kiện","type":"n","phonetic":"/ˈkʌv.ɚ.ɪdʒ/"}],"learned":false},{"id":462,"word":"coworker","meanings":[{"text":"đồng nghiệp","type":"n","phonetic":"/ˌkoʊˈwɝː.kɚ/"}],"learned":false},{"id":463,"word":"crash","meanings":[{"text":"sự va đập, sụp đổ; rơi vỡ, va đập","type":"n, v","phonetic":"/kræʃ/"}],"learned":false},{"id":464,"word":"credentials","meanings":[{"text":"giấy ủy nhiệm, chứng chỉ","type":"n","phonetic":"/krɪˈden·ʃəlz/"}],"learned":false},{"id":465,"word":"credit","meanings":[{"text":"danh tiếng, tín dụng, tín chỉ","type":"n","phonetic":"/ˈkred.ɪt/"}],"learned":false},{"id":466,"word":"criterion","meanings":[{"text":"tiêu chí đánh giá","type":"n","phonetic":"/kraɪˈtɪr.i.ən/"}],"learned":false},{"id":467,"word":"critical","meanings":[{"text":"phê bình, phê phán nguy kịch","type":"adj","phonetic":"/ˈkrɪt̬.ɪ.kəl/"}],"learned":false},{"id":468,"word":"criticize","meanings":[{"text":"phê bình, chỉ trích","type":"v","phonetic":"/ˈkrɪt̬.ɪ.saɪz/"}],"learned":false},{"id":469,"word":"crowd","meanings":[{"text":"đám đông, đống; xúm lại, tụ tập","type":"n, v","phonetic":"/kraʊd/"}],"learned":false},{"id":470,"word":"crowded","meanings":[{"text":"đông đúc nhiều, đầy","type":"adj","phonetic":"/ˈkraʊ.dɪd/"}],"learned":false},{"id":471,"word":"crucial","meanings":[{"text":"có tính quyết định, trọng yếu","type":"adj","phonetic":"/ˈkruː.ʃəl/"}],"learned":false},{"id":472,"word":"cruise","meanings":[{"text":"chuyến du lịch, đi chơi trên biển; đi chơi bằng tàu thủy","type":"n, v","phonetic":"/kruːz/"}],"learned":false},{"id":473,"word":"currency","meanings":[{"text":"tiền tệ","type":"n","phonetic":"/ˈkɝː.ən.si/"}],"learned":false},{"id":474,"word":"current","meanings":[{"text":"dòng, luồng; hiện tại, hiện thời","type":"n, adj","phonetic":"/ˈkɝː.ənt/"}],"learned":false},{"id":475,"word":"custom","meanings":[{"text":"phong tục, tục lệ","type":"n","phonetic":"/ˈkʌs.təm/"}],"learned":false},{"id":476,"word":"customer","meanings":[{"text":"khách hàng","type":"n","phonetic":"/ˈkʌs.tə.mɚ/"}],"learned":false},{"id":477,"word":"cutting edge","meanings":[{"text":"đột phá, vượt trội","type":"adj","phonetic":"/ˌkʌt̬.ɪŋ ˈedʒ/"}],"learned":false},{"id":478,"word":"cycle","meanings":[{"text":"chu kỳ, chu trình","type":"n","phonetic":"/ˈsaɪ.kəl/"}],"learned":false},{"id":479,"word":"daily","meanings":[{"text":"hằng ngày","type":"adj","phonetic":"/ˈdeɪ.li/"}],"learned":false},{"id":480,"word":"damage","meanings":[{"text":"mối gây hại; làm hại, hư hỏng","type":"n","phonetic":"/ˈdæm.ɪdʒ/"}],"learned":false},{"id":481,"word":"deadline","meanings":[{"text":"hạn cuối, hạn hoàn thành","type":"n","phonetic":"/ˈded.laɪn/"}],"learned":false},{"id":482,"word":"deal","meanings":[{"text":"thỏa thuận mua bán; giải quyết, đối phó","type":"n, v","phonetic":"/diːl/"}],"learned":false},{"id":483,"word":"debit","meanings":[{"text":"món nợ; ghi nợ","type":"n","phonetic":"/ˈdeb.ɪt/"}],"learned":false},{"id":484,"word":"debt","meanings":[{"text":"khoản nợ","type":"n","phonetic":"/det/"}],"learned":false},{"id":485,"word":"decision","meanings":[{"text":"quyết định","type":"n","phonetic":"/dɪˈsɪʒ.ən/"}],"learned":false},{"id":486,"word":"decorate","meanings":[{"text":"trang trí, trang hoàng","type":"v","phonetic":"/ˈdek.ər.eɪt/"}],"learned":false},{"id":487,"word":"decrease","meanings":[{"text":"sự sụt giảm; làm giảm đi","type":"n","phonetic":"/ˈdiː.kriːs/"}],"learned":false},{"id":488,"word":"dedicate","meanings":[{"text":"cống hiến, tận hiến","type":"v","phonetic":"/ˈded.ə.keɪt/"}],"learned":false},{"id":489,"word":"deduct","meanings":[{"text":"khấu trừ, trừ đi","type":"v","phonetic":"/dɪˈdʌkt/"}],"learned":false},{"id":490,"word":"definite","meanings":[{"text":"xác định rõ, rõ ràng","type":"adj","phonetic":"/ˈdef.ən.ət/"}],"learned":false},{"id":491,"word":"definitely","meanings":[{"text":"rõ ràng, dứt khoát, chắc chắn","type":"adv","phonetic":"/ˈdef.ən.ət.li/"}],"learned":false},{"id":492,"word":"degree","meanings":[{"text":"mức độ, trình độ, cấp bậc độ, nhiệt độ","type":"n","phonetic":"/dɪˈɡriː/"}],"learned":false},{"id":493,"word":"delay","meanings":[{"text":"sự chậm trễ, trì hoãn; làm chậm, hoãn lại","type":"n, v","phonetic":"/dɪˈleɪ/"}],"learned":false},{"id":494,"word":"delighted","meanings":[{"text":"hài lòng, vui mừng","type":"adj","phonetic":"/dɪˈlaɪ.t̬ɪd/"}],"learned":false},{"id":495,"word":"deliver","meanings":[{"text":"phân phối, giao hàng, đem tới phát biểu","type":"v","phonetic":"/dɪˈlɪv.ɚ/"}],"learned":false},{"id":496,"word":"delivery","meanings":[{"text":"sự phân phát, giao hàng sự phát biểu","type":"n","phonetic":"/dɪˈlɪv.ɚ.i/"}],"learned":false},{"id":497,"word":"demand","meanings":[{"text":"sự đòi hỏi; yêu cầu","type":"n, v","phonetic":"/dɪˈmænd/"}],"learned":false},{"id":498,"word":"demanding","meanings":[{"text":"yêu cầu cao, đòi hỏi khắt khe","type":"adj","phonetic":"/dɪˈmæn.dɪŋ/"}],"learned":false},{"id":499,"word":"demonstrate","meanings":[{"text":"làm mẫu, giải thích biểu tình","type":"v","phonetic":"/ˈdem.ən.streɪt/"}],"learned":false},{"id":500,"word":"depart","meanings":[{"text":"rời đi từ giã","type":"v","phonetic":"/dɪˈpɑːrt/"}],"learned":false},{"id":501,"word":"department","meanings":[{"text":"khoa, bộ","type":"n","phonetic":"/dɪˈpɑːrt.mənt/"}],"learned":false},{"id":502,"word":"depend","meanings":[{"text":"phụ thuộc, lệ thuộc","type":"v","phonetic":"/dɪˈpend/"}],"learned":false},{"id":503,"word":"dependence","meanings":[{"text":"sự phụ thuộc","type":"n","phonetic":"/dɪˈpen.dəns/"}],"learned":false},{"id":504,"word":"deposit","meanings":[{"text":"tiền cọc; đặt cọc","type":"n, v","phonetic":"/dɪˈpɑː.zɪt/"}],"learned":false},{"id":505,"word":"description","meanings":[{"text":"bản mô tả, sự mô tả","type":"n","phonetic":"/dɪˈskrɪp.ʃən/"}],"learned":false},{"id":506,"word":"designate","meanings":[{"text":"chỉ định, bổ nhiệm","type":"v","phonetic":"/ˈdez.ɪɡ.neɪt/"}],"learned":false},{"id":507,"word":"dessert","meanings":[{"text":"món tráng miệng","type":"n","phonetic":"/dɪˈzɝːt/"}],"learned":false},{"id":508,"word":"destination","meanings":[{"text":"đích đến, điểm đến dự định","type":"n","phonetic":"/ˌdes.təˈneɪ.ʃən/"}],"learned":false},{"id":509,"word":"detail","meanings":[{"text":"chi tiết, tiểu tiết; trình bày chi tiết, làm rõ","type":"n, v","phonetic":"/ˈdiː.teɪl/"}],"learned":false},{"id":510,"word":"detailed","meanings":[{"text":"chi tiết, cụ thể","type":"adj","phonetic":"/ˈdiː.teɪld/"}],"learned":false},{"id":511,"word":"detect","meanings":[{"text":"dò ra, tìm ra, phát hiện","type":"v","phonetic":"/dɪˈtekt/"}],"learned":false},{"id":512,"word":"deterioration","meanings":[{"text":"sự hư hại, xuống cấp, sa đọa","type":"n","phonetic":"/dɪˌtɪr.i.əˈreɪ.ʃən/"}],"learned":false},{"id":513,"word":"determine","meanings":[{"text":"xác định rõ, định rõ quyết định, quyết tâm","type":"v","phonetic":"/dɪˈtɝː.mɪn/"}],"learned":false},{"id":514,"word":"determined","meanings":[{"text":"quyết tâm, kiên quyết","type":"adj","phonetic":"/dɪˈtɝː.mɪnd/"}],"learned":false},{"id":515,"word":"develop","meanings":[{"text":"phát triển, tiến triển","type":"v","phonetic":"/dɪˈvel.əp/"}],"learned":false},{"id":516,"word":"developer","meanings":[{"text":"người phát triển, lập trình viên","type":"n","phonetic":"/dɪˈvel.ə.pɚ/"}],"learned":false},{"id":517,"word":"development","meanings":[{"text":"sự phát triển","type":"n","phonetic":"/dɪˈvel.əp.mənt/"}],"learned":false},{"id":518,"word":"device","meanings":[{"text":"thiết bị, máy móc phương sách","type":"n","phonetic":"/dɪˈvaɪs/"}],"learned":false},{"id":519,"word":"diagnose","meanings":[{"text":"chẩn đoán","type":"v","phonetic":"/ˌdaɪ.əɡˈnoʊz/"}],"learned":false},{"id":520,"word":"differential","meanings":[{"text":"khác biệt, chênh lệch","type":"adj","phonetic":"/ˌdɪf.əˈren.ʃəl/"}],"learned":false},{"id":521,"word":"diligent","meanings":[{"text":"chăm chỉ, cần cù","type":"adj","phonetic":"/ˈdɪl.ə.dʒənt/"}],"learned":false},{"id":522,"word":"director","meanings":[{"text":"giám đốc, người điều hành, đạo diễn","type":"n","phonetic":"/daɪˈrek.tɚ/, /dɪˈrek.tɚ/"}],"learned":false},{"id":523,"word":"disagree","meanings":[{"text":"bất đồng, không khớp với nhau","type":"v","phonetic":"/ˌdɪs.əˈɡriː/"}],"learned":false},{"id":524,"word":"disagreement","meanings":[{"text":"sự bất đồng, mối bất hòa, mâu thuẫn","type":"n","phonetic":"/ˌdɪs.əˈɡriː.mənt/"}],"learned":false},{"id":525,"word":"disappointing","meanings":[{"text":"đáng thất vọng","type":"adj","phonetic":"/ˌdɪs.əˈpɔɪn.t̬ɪŋ/"}],"learned":false},{"id":526,"word":"disconnect","meanings":[{"text":"ngắt kết nối","type":"v","phonetic":"/ˌdɪs.kəˈnekt/"}],"learned":false},{"id":527,"word":"discount","meanings":[{"text":"sự giảm giá, chiết khấu; giảm giá, bớt giá","type":"n, v","phonetic":"/ˈdɪs.kaʊnt/"}],"learned":false},{"id":528,"word":"discrepancy","meanings":[{"text":"khác biệt, chênh lệch, điểm không đồng nhất","type":"n","phonetic":"/dɪˈskrep.ən.si/"}],"learned":false},{"id":529,"word":"discrimination","meanings":[{"text":"sự phân biệt đối xử","type":"n","phonetic":"/dɪˌskrɪm.əˈneɪ.ʃən/"}],"learned":false},{"id":530,"word":"discuss","meanings":[{"text":"thảo luận, tranh luận","type":"v","phonetic":"/dɪˈskʌs/"}],"learned":false},{"id":531,"word":"discussion","meanings":[{"text":"cuộc tranh luận, thảo luận","type":"n","phonetic":"/dɪˈskʌʃ.ən/"}],"learned":false},{"id":532,"word":"dish","meanings":[{"text":"đĩa đựng thức ăn, món ăn","type":"n","phonetic":"/dɪʃ/"}],"learned":false},{"id":533,"word":"dismiss","meanings":[{"text":"giải tán, thải hồi","type":"v","phonetic":"/dɪˈsmɪs/"}],"learned":false},{"id":534,"word":"dismissive","meanings":[{"text":"thô bạo, tùy tiện","type":"adj","phonetic":"/dɪˈsmɪs.ɪv/"}],"learned":false},{"id":535,"word":"display","meanings":[{"text":"sự bày biện; trưng bày, phô diễn","type":"n, v","phonetic":"/dɪˈspleɪ/"}],"learned":false},{"id":536,"word":"disposable","meanings":[{"text":"dùng một lần, sẵn có để dùng","type":"adj","phonetic":"/dɪˈspoʊ.zə.bəl/"}],"learned":false},{"id":537,"word":"dispose","meanings":[{"text":"vứt bỏ, giải quyết","type":"v","phonetic":"/dɪˈspoʊz/"}],"learned":false},{"id":538,"word":"dispute","meanings":[{"text":"cuộc bàn cãi, cuộc tranh luận; tranh luận","type":"n, v","phonetic":"/dɪˈspjuːt/, /ˈdɪs.pjuːt/"}],"learned":false},{"id":539,"word":"disruption","meanings":[{"text":"sự phá vỡ, đập gãy","type":"n","phonetic":"/dɪsˈrʌp.ʃən/"}],"learned":false},{"id":540,"word":"distinctive","meanings":[{"text":"đặc biệt, độc đáo","type":"adj","phonetic":"/dɪˈstɪŋk.tɪv/"}],"learned":false},{"id":541,"word":"distinguish","meanings":[{"text":"phân biệt, nhận ra","type":"v","phonetic":"/dɪˈstɪŋ.ɡwɪʃ/"}],"learned":false},{"id":542,"word":"distribute","meanings":[{"text":"phân phát, phân bổ","type":"v","phonetic":"/dɪˈstrɪb.juːt/"}],"learned":false},{"id":543,"word":"distribution","meanings":[{"text":"sự phân phát","type":"n","phonetic":"/ˌdɪs.trɪˈbjuː.ʃən/"}],"learned":false},{"id":544,"word":"dividend","meanings":[{"text":"số bị chia","type":"n","phonetic":"/ˈdɪv.ə.dend/, /ˈdɪv.ə.dənd/"}],"learned":false},{"id":545,"word":"document","meanings":[{"text":"văn kiện, tài liệu; dẫn chứng tư liệu","type":"n","phonetic":"/ˈdɑː.kjə.mənt/"}],"learned":false},{"id":546,"word":"donate","meanings":[{"text":"quyên góp, đóng góp","type":"v","phonetic":"/ˈdoʊ.neɪt/"}],"learned":false},{"id":547,"word":"donation","meanings":[{"text":"sự quyên góp, sự hiến tặng","type":"n","phonetic":"/doʊˈneɪ.ʃən/"}],"learned":false},{"id":548,"word":"double","meanings":[{"text":"nhân đôi, gấp dôi","type":"n, adj, adv","phonetic":"/ˈdʌb.əl/"}],"learned":false},{"id":549,"word":"download","meanings":[{"text":"tải xuống","type":"v","phonetic":"/ˈdaʊn.loʊd/"}],"learned":false},{"id":550,"word":"downsize","meanings":[{"text":"cắt giảm","type":"v","phonetic":"/ˈdaʊn.saɪz/"}],"learned":false},{"id":551,"word":"downturn","meanings":[{"text":"sự suy sụp","type":"n","phonetic":"/ˈdaʊn.tɝːn/"}],"learned":false},{"id":552,"word":"downward","meanings":[{"text":"trở xuống, trở về sau","type":"adv","phonetic":"/ˈdaʊn.wɚd/"}],"learned":false},{"id":553,"word":"drastically","meanings":[{"text":"mạnh mẽ, quyết liệt","type":"adv","phonetic":"/ˈdræs.tɪ.kəl.i/"}],"learned":false},{"id":554,"word":"draw","meanings":[{"text":"kéo, lôi, thu hút vẽ","type":"v","phonetic":"/drɑː/"}],"learned":false},{"id":555,"word":"drawer","meanings":[{"text":"ngăn kéo","type":"n","phonetic":"/drɑː/"}],"learned":false},{"id":556,"word":"drive","meanings":[{"text":"cuộc đua; lái xe","type":"n, v","phonetic":"/draɪv/"}],"learned":false},{"id":557,"word":"dull","meanings":[{"text":"chậm hiểu, đần độn cùn","type":"adj","phonetic":"/dʌl/"}],"learned":false},{"id":558,"word":"duration","meanings":[{"text":"khoảng thời gian, thời hạn","type":"n","phonetic":"/djʊəˈreɪ.ʃən/"}],"learned":false},{"id":559,"word":"duty-free","meanings":[{"text":"miễn thuế","type":"adj, adv","phonetic":"/ˌduː.t̬iˈfriː/"}],"learned":false},{"id":560,"word":"earn","meanings":[{"text":"kiếm được, giành được","type":"v","phonetic":"/ɝːn/"}],"learned":false},{"id":561,"word":"earnings","meanings":[{"text":"số tiền kiếm được","type":"n","phonetic":"/ˈɝː.nɪŋz/"}],"learned":false},{"id":562,"word":"economical","meanings":[{"text":"tiết kiệm, kinh tế","type":"adj","phonetic":"/ˌiː.kəˈnɑː.mɪ.kəl/, /ek.əˈnɑː.mɪ.kəl/"}],"learned":false},{"id":563,"word":"economize","meanings":[{"text":"tiết kiệm","type":"v","phonetic":"/iˈkɑː.nə.maɪz/"}],"learned":false},{"id":564,"word":"economy","meanings":[{"text":"nền kinh tế","type":"n","phonetic":"/iˈkɑː.nə.mi/"}],"learned":false},{"id":565,"word":"effective","meanings":[{"text":"hiệu quả, có hiệu lực","type":"adj","phonetic":"/əˈfek.tɪv/"}],"learned":false},{"id":566,"word":"effectively","meanings":[{"text":"có hiệu quả","type":"adv","phonetic":"/əˈfek.tɪv.li/"}],"learned":false},{"id":567,"word":"effectiveness","meanings":[{"text":"sự hiệu quả","type":"n","phonetic":"/əˈfek.tɪv.nəs/"}],"learned":false},{"id":568,"word":"efficiency","meanings":[{"text":"năng lực, hiệu suất, năng suất","type":"n","phonetic":"/ɪˈfɪʃ.ən.si/"}],"learned":false},{"id":569,"word":"efficient","meanings":[{"text":"năng suất cao, hiệu suất tốt","type":"adj","phonetic":"/ɪˈfɪʃ.ənt/"}],"learned":false},{"id":570,"word":"efficiently","meanings":[{"text":"có hiệu nghiệm","type":"adv","phonetic":"/ɪˈfɪʃ.ənt.li/"}],"learned":false},{"id":571,"word":"elderly","meanings":[{"text":"có tuổi, lớn tuổi","type":"adj","phonetic":"/ˈel.dɚ.li/"}],"learned":false},{"id":572,"word":"elevator","meanings":[{"text":"thang máy, máy nâng","type":"n","phonetic":"/ˈel.ə.veɪ.t̬ɚ/"}],"learned":false},{"id":573,"word":"embark","meanings":[{"text":"bắt đầu, lên đường, dấn thân vào","type":"v","phonetic":"/ɪmˈbɑːrk/"}],"learned":false},{"id":574,"word":"emergency","meanings":[{"text":"trường hợp khẩn cấp","type":"n","phonetic":"/ɪˈmɝː.dʒən.si/"}],"learned":false},{"id":575,"word":"emphasize","meanings":[{"text":"nhấn mạnh","type":"v","phonetic":"/ˈem.fə.saɪz/"}],"learned":false},{"id":576,"word":"employer","meanings":[{"text":"người làm chủ, người sử dụng lao động","type":"n","phonetic":"/ɪmˈplɔɪ.ɚ/"}],"learned":false},{"id":577,"word":"employment","meanings":[{"text":"việc làm, sự thuê người làm","type":"n","phonetic":"/ɪmˈplɔɪ.mənt/"}],"learned":false},{"id":578,"word":"enable","meanings":[{"text":"cho phép, làm cho có khả năng làm gì đó","type":"v","phonetic":"/ɪˈneɪ.bəl/"}],"learned":false},{"id":579,"word":"enclose","meanings":[{"text":"vây quanh, rào quanh, gửi kèm","type":"v","phonetic":"/ɪnˈkloʊz/"}],"learned":false},{"id":580,"word":"encourage","meanings":[{"text":"động viên, cổ vũ","type":"v","phonetic":"/ɪnˈkɝː.ɪdʒ/"}],"learned":false},{"id":581,"word":"endure","meanings":[{"text":"chịu đựng, cam chịu","type":"v","phonetic":"/ɪnˈdʊr/"}],"learned":false},{"id":582,"word":"engineer","meanings":[{"text":"kỹ sư","type":"n","phonetic":"/ˌen.dʒɪˈnɪr/"}],"learned":false},{"id":583,"word":"engineering","meanings":[{"text":"công việc kỹ sư","type":"n","phonetic":"/ˌen.dʒɪˈnɪr.ɪŋ/"}],"learned":false},{"id":584,"word":"enhance","meanings":[{"text":"làm tăng thêm, đề cao, đẩy mạnh","type":"v","phonetic":"/ɪnˈhæns/"}],"learned":false},{"id":585,"word":"enlighten","meanings":[{"text":"làm sáng tỏ, khai sáng","type":"v","phonetic":"/ɪnˈlaɪ.t̬ən/"}],"learned":false},{"id":586,"word":"enroll","meanings":[{"text":"đăng ký, ghi tên","type":"v","phonetic":"/ɪnˈrəʊl/"}],"learned":false},{"id":587,"word":"ensure","meanings":[{"text":"bảo đảm, chắc chắn","type":"v","phonetic":"/ɪnˈʃʊr/"}],"learned":false},{"id":588,"word":"enterprise","meanings":[{"text":"xí nghiệp, doanh nghiệp","type":"n","phonetic":"/ˈen.t̬ɚ.praɪz/"}],"learned":false},{"id":589,"word":"enthusiastic","meanings":[{"text":"nhiệt tình, hứng khởi","type":"adj","phonetic":"/ɪnˌθuː.ziˈæs.tɪk/"}],"learned":false},{"id":590,"word":"enthusiastically","meanings":[{"text":"hăng say, nhiệt tình","type":"adv","phonetic":"/ɪnˌθuː.ziˈæs.tɪ.kəl.i/"}],"learned":false},{"id":591,"word":"entitlement","meanings":[{"text":"quyền hạn, sự được phép làm","type":"n","phonetic":"/ɪnˈtaɪ.t̬əl.mənt/"}],"learned":false},{"id":592,"word":"entrée","meanings":[{"text":"món chính sự gia nhập, thâm nhập, tiến vào","type":"n","phonetic":"/ˈɑːn.treɪ/"}],"learned":false},{"id":593,"word":"environment","meanings":[{"text":"môi trường","type":"n","phonetic":"/ɪnˈvaɪ.rən.mənt/"}],"learned":false},{"id":594,"word":"environmental","meanings":[{"text":"(thuộc) môi trường","type":"adj","phonetic":"/ɪnˌvaɪ.rənˈmen.t̬əl/"}],"learned":false},{"id":595,"word":"equivalent","meanings":[{"text":"tương đương; vật tương đương","type":"adj, n","phonetic":"/ɪˈkwɪv.əl.ənt/"}],"learned":false},{"id":596,"word":"essential","meanings":[{"text":"(thuộc) bản chất, cốt lõi","type":"adj","phonetic":"/ɪˈsen.ʃəl/"}],"learned":false},{"id":597,"word":"estimate","meanings":[{"text":"ước tính, dự đoán","type":"v","phonetic":"/ˈes.tə.meɪt/"}],"learned":false},{"id":598,"word":"evaluate","meanings":[{"text":"ước lượng, đánh giá","type":"v","phonetic":"/ɪˈvæl.ju.eɪt/"}],"learned":false},{"id":599,"word":"evolve","meanings":[{"text":"tiến hóa","type":"v","phonetic":"/ɪˈvɑːlv/"}],"learned":false},{"id":600,"word":"event","meanings":[{"text":"sự kiện, sự việc","type":"n","phonetic":"/ɪˈvent/"}],"learned":false},{"id":601,"word":"evidence","meanings":[{"text":"bằng chứng, chứng cớ","type":"n","phonetic":"/ˈev.ə.dəns/"}],"learned":false},{"id":602,"word":"exact","meanings":[{"text":"chính xác, đúng","type":"adj","phonetic":"/ɪɡˈzækt/"}],"learned":false},{"id":603,"word":"examination","meanings":[{"text":"sự khám xét, kỳ thi","type":"n","phonetic":"/ɪɡˌzæm.əˈneɪ.ʃən/"}],"learned":false},{"id":604,"word":"examine","meanings":[{"text":"khảo sát, kiểm tra","type":"v","phonetic":"/ɪɡˈzæm.ɪn/"}],"learned":false},{"id":605,"word":"excel","meanings":[{"text":"hơn, vượt trội","type":"v","phonetic":"/ɪkˈsel/"}],"learned":false},{"id":606,"word":"excellent","meanings":[{"text":"xuất sắc, ưu tú","type":"adj","phonetic":"/ˈek.səl.ənt/"}],"learned":false},{"id":607,"word":"executive","meanings":[{"text":"(thuộc) chấp hành, sự thi hành; tổ chức hành pháp","type":"adj, n","phonetic":"/ɪɡˈzek.jə.t̬ɪv/"}],"learned":false},{"id":608,"word":"exhibit","meanings":[{"text":"trưng bày, triển lãm","type":"v","phonetic":"/ɪɡˈzɪb.ɪt/"}],"learned":false},{"id":609,"word":"expand","meanings":[{"text":"mở rộng, nở phồng","type":"v","phonetic":"/ɪkˈspænd/"}],"learned":false},{"id":610,"word":"expansion","meanings":[{"text":"sử mở rộng, giãn nở","type":"n","phonetic":"/ɪkˈspæn.ʃən/"}],"learned":false},{"id":611,"word":"expect","meanings":[{"text":"chờ đợi, trông chờ","type":"v","phonetic":"/ɪkˈspekt/"}],"learned":false},{"id":612,"word":"expenditure","meanings":[{"text":"sự tiêu dùng, phí tổn","type":"n","phonetic":"/ɪkˈspen.də.tʃɚ/"}],"learned":false},{"id":613,"word":"expense","meanings":[{"text":"chi phí, sự tiêu dùng","type":"n","phonetic":"/ɪkˈspens/"}],"learned":false},{"id":614,"word":"expensive","meanings":[{"text":"đắt tiền, đắt đỏ","type":"adj","phonetic":"/ɪkˈspen.sɪv/"}],"learned":false},{"id":615,"word":"experience","meanings":[{"text":"trải nghiệm, kinh nghiệm","type":"n","phonetic":"/ɪkˈspɪr.i.əns/"}],"learned":false},{"id":616,"word":"experienced","meanings":[{"text":"người từng trải, người có kinh nghiệm","type":"adj","phonetic":"/ɪkˈspɪə.ri.ənst/"}],"learned":false},{"id":617,"word":"experiment","meanings":[{"text":"thí nghiệm, thử nghiệm","type":"n, v","phonetic":"/ɪkˈsper.ə.mənt/"}],"learned":false},{"id":618,"word":"exploration","meanings":[{"text":"cuộc thăm dò, thám hiểm","type":"n","phonetic":"/ˌek.spləˈreɪ.ʃən/"}],"learned":false},{"id":619,"word":"express","meanings":[{"text":"công văn hỏa tốc; trình bày, diễn đạt","type":"n, v","phonetic":"/ɪkˈspres/"}],"learned":false},{"id":620,"word":"extend","meanings":[{"text":"duỗi thẳng, nới rộng, gia hạn","type":"v","phonetic":"/ɪkˈstend/"}],"learned":false},{"id":621,"word":"extension","meanings":[{"text":"sự mở rộng, gia hạn","type":"n","phonetic":"/ɪkˈsten.ʃən/"}],"learned":false},{"id":622,"word":"external","meanings":[{"text":"bên ngoài, đối ngoại","type":"adj","phonetic":"/ɪkˈstɝː.nəl/"}],"learned":false},{"id":623,"word":"facility","meanings":[{"text":"điều kiện thuận lợi, sự dễ dàng, thuận lợi","type":"n","phonetic":"/fəˈsɪl.ə.t̬i/"}],"learned":false},{"id":624,"word":"factor","meanings":[{"text":"nhân tố","type":"n","phonetic":"/ˈfæk.tɚ/"}],"learned":false},{"id":625,"word":"factory","meanings":[{"text":"nhà máy, xí nghiệp","type":"n","phonetic":"/ˈfæk.tɚ.i/"}],"learned":false},{"id":626,"word":"fail","meanings":[{"text":"thất bại, trượt (kì thi)","type":"v","phonetic":"/feɪl/"}],"learned":false},{"id":627,"word":"failure","meanings":[{"text":"sự thất bại","type":"n","phonetic":"/ˈfeɪ.ljɚ/"}],"learned":false},{"id":628,"word":"fair","meanings":[{"text":"hội chợ, phiên chợ; công bằng, không thiên vị","type":"n, adj","phonetic":"/fer/"}],"learned":false},{"id":629,"word":"famed","meanings":[{"text":"nổi tiếng, lừng danh","type":"adj","phonetic":"/feɪmd/"}],"learned":false},{"id":630,"word":"fare","meanings":[{"text":"tiền xe, tiền vé đi đường, đi du lịch","type":"n, v","phonetic":"/fer/"}],"learned":false},{"id":631,"word":"fault","meanings":[{"text":"lỗi, sai lầm","type":"n","phonetic":"/fɑːlt/"}],"learned":false},{"id":632,"word":"faulty","meanings":[{"text":"có thiếu sót, mắc khuyết điểm","type":"adj","phonetic":"/ˈfɑːl.t̬i/"}],"learned":false},{"id":633,"word":"favor","meanings":[{"text":"thiện ý, sự yêu mến; ưu đãi, thiên vị","type":"n, v","phonetic":"/ˈfeɪ.vɚ/"}],"learned":false},{"id":634,"word":"fax","meanings":[{"text":"bản fax","type":"n","phonetic":"/fæks/"}],"learned":false},{"id":635,"word":"feature","meanings":[{"text":"nét, đặc điểm","type":"n","phonetic":"/ˈfiː.tʃɚ/"}],"learned":false},{"id":636,"word":"fee","meanings":[{"text":"lệ phí, tiền thù lao","type":"n","phonetic":"/fiː/"}],"learned":false},{"id":637,"word":"feedback","meanings":[{"text":"phản hồi, góp ý","type":"n, v","phonetic":"/ˈfiːd.bæk/"}],"learned":false},{"id":638,"word":"figure","meanings":[{"text":"hình dáng, nhân vật; đánh giá, tính toán","type":"n, v","phonetic":"/ˈfɪɡ.jɚ/"}],"learned":false},{"id":639,"word":"file","meanings":[{"text":"hồ sơ, túi đựng tài liệu","type":"n","phonetic":"/faɪl/"}],"learned":false},{"id":640,"word":"fill","meanings":[{"text":"làm đầy, nhồi nhét","type":"v","phonetic":"/fɪl/"}],"learned":false},{"id":641,"word":"final","meanings":[{"text":"cuối cùng","type":"adj","phonetic":"/ˈfaɪ.nəl/"}],"learned":false},{"id":642,"word":"finance","meanings":[{"text":"tài chính; hỗ trợ tài chính","type":"n, v","phonetic":"/ˈfaɪ.næns/"}],"learned":false},{"id":643,"word":"financial","meanings":[{"text":"(thuộc) tài chính","type":"adj","phonetic":"/faɪˈnæn.ʃəl/, /fəˈnæn.ʃəl/"}],"learned":false},{"id":644,"word":"fix","meanings":[{"text":"sửa chữa gắn chặt, cố định","type":"n, v","phonetic":"/fɪks/"}],"learned":false},{"id":645,"word":"flexible","meanings":[{"text":"linh hoạt, không cố định","type":"adj","phonetic":"/ˈflek.sə.bəl/"}],"learned":false},{"id":646,"word":"flight","meanings":[{"text":"chuyến bay, sự rút chạy","type":"n","phonetic":"/flaɪt/"}],"learned":false},{"id":647,"word":"flight attendant","meanings":[{"text":"tiếp viên hàng không","type":"n","phonetic":"/ˈflaɪt əˌten.dənt/"}],"learned":false},{"id":648,"word":"fluctuate","meanings":[{"text":"dao động, lên xuống","type":"v","phonetic":"/ˈflʌk.tʃu.eɪt/"}],"learned":false},{"id":649,"word":"fluctuation","meanings":[{"text":"sự dao động","type":"n","phonetic":"/ˌflʌk.tʃuˈeɪ.ʃən/"}],"learned":false},{"id":650,"word":"focus","meanings":[{"text":"tập trung","type":"v, n","phonetic":"/ˈfoʊ.kəs/"}],"learned":false},{"id":651,"word":"focused","meanings":[{"text":"tập trung, chú ý","type":"adj","phonetic":"/ˈfoʊ.kəst/"}],"learned":false},{"id":652,"word":"folder","meanings":[{"text":"bìa cứng, xấp tài liệu","type":"n","phonetic":"/ˈfoʊl.dɚ/"}],"learned":false},{"id":653,"word":"force","meanings":[{"text":"sức mạnh, quyền lực","type":"n","phonetic":"/fɔːrs/"}],"learned":false},{"id":654,"word":"forecast","meanings":[{"text":"dự đoán, tiên đoán","type":"n, v","phonetic":"/ˈfɔːr.kæst/"}],"learned":false},{"id":655,"word":"foreign","meanings":[{"text":"nước ngoài, ngoại quốc","type":"adj","phonetic":"/ˈfɔːr.ən/"}],"learned":false},{"id":656,"word":"forget","meanings":[{"text":"quên","type":"v","phonetic":"/fɚˈɡet/"}],"learned":false},{"id":657,"word":"forgetful","meanings":[{"text":"tính hay quên, có trí nhớ tồi","type":"adj","phonetic":"/fɚˈɡet.fəl/"}],"learned":false},{"id":658,"word":"form","meanings":[{"text":"dáng hình; tạo hình","type":"n","phonetic":"/fɔːrm/"}],"learned":false},{"id":659,"word":"forward","meanings":[{"text":"về phía trước, tiến lên","type":"adv","phonetic":"/ˈfɔːr.wɚd/"}],"learned":false},{"id":660,"word":"frank","meanings":[{"text":"ngay thẳng, bộc trực","type":"adj","phonetic":"/fræŋk/"}],"learned":false},{"id":661,"word":"frankly","meanings":[{"text":"thẳng thắn","type":"adv","phonetic":"/ˈfræŋ.kli/"}],"learned":false},{"id":662,"word":"fuel","meanings":[{"text":"chất đốt, nhiên liệu","type":"n","phonetic":"/ˈfjuː.əl/"}],"learned":false},{"id":663,"word":"fulfill","meanings":[{"text":"làm đầy","type":"v","phonetic":"/fʊlˈfɪl/"}],"learned":false},{"id":664,"word":"function","meanings":[{"text":"hoạt động; chức năng","type":"v, n","phonetic":"/ˈfʌŋk.ʃən/"}],"learned":false},{"id":665,"word":"functional","meanings":[{"text":"(thuộc) chức năng","type":"adj","phonetic":"/ˈfʌŋk.ʃən.əl/"}],"learned":false},{"id":666,"word":"fundraising","meanings":[{"text":"sự huy động vốn","type":"n","phonetic":"/ˈfʌndˌreɪ.zɪŋ/"}],"learned":false},{"id":667,"word":"furniture","meanings":[{"text":"đồ đạc","type":"n","phonetic":"/ˈfɝː.nɪ.tʃɚ/"}],"learned":false},{"id":668,"word":"further","meanings":[{"text":"xa hơn, kỹ hơn","type":"adj, adv","phonetic":"/ˈfɝː.ðɚ/"}],"learned":false},{"id":669,"word":"gesture","meanings":[{"text":"điệu bộ, cử chỉ","type":"n","phonetic":"/ˈdʒes.tʃɚ/"}],"learned":false},{"id":670,"word":"goal","meanings":[{"text":"khung thành, cầu môn mục tiêu","type":"n","phonetic":"/ɡoʊl/"}],"learned":false},{"id":671,"word":"goods","meanings":[{"text":"của cải, hàng hóa","type":"n","phonetic":"/ɡʊdz/"}],"learned":false},{"id":672,"word":"gradually","meanings":[{"text":"dần dần, từ từ","type":"adv","phonetic":"/ˈɡrædʒ.u.ə.li/"}],"learned":false},{"id":673,"word":"grievance","meanings":[{"text":"lời than trách","type":"n","phonetic":"/ˈɡriː.vəns/"}],"learned":false},{"id":674,"word":"grill","meanings":[{"text":"chả nướng; nướng, thiêu đốt","type":"n, v","phonetic":"/ɡrɪl/"}],"learned":false},{"id":675,"word":"growth","meanings":[{"text":"sự tăng trưởng, mức độ tăng trưởng","type":"n","phonetic":"/ɡroʊθ/"}],"learned":false},{"id":676,"word":"guarantee","meanings":[{"text":"sự đảm bảo; cam kết","type":"n, v","phonetic":"/ˌɡer.ənˈtiː/"}],"learned":false},{"id":677,"word":"guideline","meanings":[{"text":"quy tắc, nguyên tắc","type":"n","phonetic":"/ˈɡaɪd.laɪn/"}],"learned":false},{"id":678,"word":"haggle","meanings":[{"text":"sự mặc cả; tranh cãi","type":"n, v","phonetic":"/ˈhæɡ.əl/"}],"learned":false},{"id":679,"word":"handle","meanings":[{"text":"cán cầm, tay cầm; xử lý","type":"n, v","phonetic":"/ˈhæn.dəl/"}],"learned":false},{"id":680,"word":"handy","meanings":[{"text":"thuận tiện, sẵn tiện","type":"adj","phonetic":"/ˈhæn.di/"}],"learned":false},{"id":681,"word":"harbor","meanings":[{"text":"bến cảng; che giấu nuôi dưỡng","type":"n, v","phonetic":"/ˈhɑː.bər/"}],"learned":false},{"id":682,"word":"harmful","meanings":[{"text":"gây tai hại, có hại","type":"adj","phonetic":"/ˈhɑːrm.fəl/"}],"learned":false},{"id":683,"word":"hazardous","meanings":[{"text":"mạo hiểm, nguy hiểm","type":"adj","phonetic":"/ˈhæz.ɚ.dəs/"}],"learned":false},{"id":684,"word":"head office","meanings":[{"text":"cơ quan đầu não, tổng công ty","type":"n","phonetic":"/ˌhed ˈɑː.fɪs/"}],"learned":false},{"id":685,"word":"headquarters","meanings":[{"text":"sở chỉ huy, bộ chỉ huy","type":"n","phonetic":"/ˈhedˌkwɔːr.t̬ɚz/"}],"learned":false},{"id":686,"word":"hesitate","meanings":[{"text":"do dự, ngập ngừng","type":"v","phonetic":"/ˈhez.ə.teɪt/"}],"learned":false},{"id":687,"word":"hesitation","meanings":[{"text":"sự ngập ngừng, do dự","type":"n","phonetic":"/ˌhez.əˈteɪ.ʃən/"}],"learned":false},{"id":688,"word":"hide","meanings":[{"text":"che giấu, che đậy","type":"n, v","phonetic":"/haɪd/"}],"learned":false},{"id":689,"word":"highlight","meanings":[{"text":"điểm nổi bật; làm nổi bật","type":"n, v","phonetic":"/ˈhaɪ.laɪt/"}],"learned":false},{"id":690,"word":"highly","meanings":[{"text":"rất, lắm, tốt","type":"adv","phonetic":"/ˈhaɪ.li/"}],"learned":false},{"id":691,"word":"hike","meanings":[{"text":"cuộc đi bộ, cuộc hành quân; đi bộ đường dài","type":"n","phonetic":"/haɪk/"}],"learned":false},{"id":692,"word":"hire","meanings":[{"text":"sự thuê; thuê, mướn","type":"n, v","phonetic":"/haɪr/"}],"learned":false},{"id":693,"word":"hold","meanings":[{"text":"sự cầm, nắm; cầm, giữ","type":"n, v","phonetic":"/hoʊld/"}],"learned":false},{"id":694,"word":"host","meanings":[{"text":"chủ nhà, người chủ trì; tổ chức, đăng cai","type":"n, v","phonetic":"/hoʊst/"}],"learned":false},{"id":695,"word":"identification","meanings":[{"text":"sự phát hiện, nhận diện","type":"n","phonetic":"/aɪˌden.t̬ə.fəˈkeɪ.ʃən/"}],"learned":false},{"id":696,"word":"identify","meanings":[{"text":"nhận diện, nhận biết","type":"v","phonetic":"/aɪˈden.t̬ə.faɪ/"}],"learned":false},{"id":697,"word":"imaginative","meanings":[{"text":"tưởng tượng, không có thực","type":"adj","phonetic":"/ɪˈmædʒ.ə.nə.t̬ɪv/"}],"learned":false},{"id":698,"word":"immediate","meanings":[{"text":"ngay lập tức, trực tiếp","type":"adj","phonetic":"/ɪˈmiː.di.ət/"}],"learned":false},{"id":699,"word":"immediately","meanings":[{"text":"ngay lập tức, tức thì","type":"adv","phonetic":"/ɪˈmiː.di.ət.li/"}],"learned":false},{"id":700,"word":"impact","meanings":[{"text":"tác động, ảnh hưởng","type":"n, v","phonetic":"/ˈɪm.pækt/"}],"learned":false},{"id":701,"word":"impatient","meanings":[{"text":"thiếu kiên nhẫn","type":"adj","phonetic":"/ɪmˈpeɪ.ʃənt/"}],"learned":false},{"id":702,"word":"impersonate","meanings":[{"text":"mạo danh, đóng vai, nhại lại","type":"v","phonetic":"/ɪmˈpɝː.sən.eɪt/"}],"learned":false},{"id":703,"word":"implement","meanings":[{"text":"dụng cụ, phương tiện; thi hành, thực hiện, áp dụng","type":"n, v","phonetic":"/ˈɪm.plə.ment/"}],"learned":false},{"id":704,"word":"imply","meanings":[{"text":"ngụ ý, ý nói","type":"v","phonetic":"/ɪmˈplaɪ/"}],"learned":false},{"id":705,"word":"impression","meanings":[{"text":"ấn tượng dấu vết","type":"n","phonetic":"/ɪmˈpreʃ.ən/"}],"learned":false},{"id":706,"word":"improper","meanings":[{"text":"không thích hợp, không phù hợp","type":"adj","phonetic":"/ɪmˈprɑː.pɚ/"}],"learned":false},{"id":707,"word":"improve","meanings":[{"text":"cải thiện","type":"v","phonetic":"/ɪmˈpruːv/"}],"learned":false},{"id":708,"word":"improvement","meanings":[{"text":"sự cải thiện, cải tiến","type":"n","phonetic":"/ɪmˈpruːv.mənt/"}],"learned":false},{"id":709,"word":"incentive","meanings":[{"text":"khuyến khích; sự khích lệ, thúc đẩy","type":"adj, n","phonetic":"/ɪnˈsen.t̬ɪv/"}],"learned":false},{"id":710,"word":"inclined","meanings":[{"text":"có thiên hướng, khuynh hướng","type":"adj","phonetic":"/ɪnˈklaɪnd/"}],"learned":false},{"id":711,"word":"include","meanings":[{"text":"bao gồm, gồm có","type":"v","phonetic":"/ɪnˈkluːd/"}],"learned":false},{"id":712,"word":"inclusion","meanings":[{"text":"sự bao gồm, tính vào","type":"n","phonetic":"/ɪnˈkluː.ʒən/"}],"learned":false},{"id":713,"word":"income","meanings":[{"text":"thu nhập, lợi tức","type":"n","phonetic":"/ˈɪn.kʌm/"}],"learned":false},{"id":714,"word":"inconvenience","meanings":[{"text":"sự bất tiện, phiền hà","type":"n","phonetic":"/ˌɪn.kənˈviːn.jəns/"}],"learned":false},{"id":715,"word":"increase","meanings":[{"text":"sự tăng lên; tăng thêm","type":"v, n","phonetic":"/ɪnˈkriːs/"}],"learned":false},{"id":716,"word":"indicate","meanings":[{"text":"chỉ ra, chứng tỏ, biểu thị","type":"v","phonetic":"/ˈɪn.də.keɪt/"}],"learned":false},{"id":717,"word":"indication","meanings":[{"text":"sự biểu thị, biểu lộ","type":"n","phonetic":"/ˌɪn.dəˈkeɪ.ʃən/"}],"learned":false},{"id":718,"word":"individual","meanings":[{"text":"cá nhân; riêng lẻ, tách biệt","type":"n, v","phonetic":"/ˌɪn.dəˈvɪdʒ.u.əl/"}],"learned":false},{"id":719,"word":"individually","meanings":[{"text":"riêng lẻ","type":"adv","phonetic":"/ˌɪn.dəˈvɪdʒ.u.ə.li/"}],"learned":false},{"id":720,"word":"inexperienced","meanings":[{"text":"thiếu kinh nghiệm","type":"adj","phonetic":"/ˌɪn.ɪkˈspɪr.i.ənst/"}],"learned":false},{"id":721,"word":"infer","meanings":[{"text":"suy ra, kết luận","type":"v","phonetic":"/-ˈfɝː/"}],"learned":false},{"id":722,"word":"inflate","meanings":[{"text":"bơm phồng, thổi phồng","type":"v","phonetic":"/ɪnˈfleɪt/"}],"learned":false},{"id":723,"word":"inflation","meanings":[{"text":"sự bơm phồng, lạm phát","type":"n","phonetic":"/ɪnˈfleɪ.ʃən/"}],"learned":false},{"id":724,"word":"influence","meanings":[{"text":"ảnh hưởng, uy lực; chi phối, tác động","type":"v","phonetic":"/ˈɪn.flu.əns/"}],"learned":false},{"id":725,"word":"influential","meanings":[{"text":"có ảnh hưởng, có tác dụng","type":"adj","phonetic":"/ˌɪn.fluˈen.ʃəl/"}],"learned":false},{"id":726,"word":"information","meanings":[{"text":"thông tin","type":"n","phonetic":"/ˌɪn.fɚˈmeɪ.ʃən/"}],"learned":false},{"id":727,"word":"input","meanings":[{"text":"dữ liệu đầu vào","type":"n","phonetic":"/ˈɪn.pʊt/"}],"learned":false},{"id":728,"word":"inquiry","meanings":[{"text":"sự điều tra, thẩm vấn","type":"n","phonetic":"/ˈɪŋ.kwɚ.i/"}],"learned":false},{"id":729,"word":"install","meanings":[{"text":"cài đặt, tải xuống","type":"v","phonetic":"/ɪnˈstɑːl/"}],"learned":false},{"id":730,"word":"installation","meanings":[{"text":"sự cài đặt","type":"n","phonetic":"/ˌɪn.stəˈleɪ.ʃən/"}],"learned":false},{"id":731,"word":"insurance","meanings":[{"text":"sự bảo hiểm, hợp đồng bảo hiểm","type":"n","phonetic":"/ɪnˈʃɜ.r.əns/"}],"learned":false},{"id":732,"word":"insure","meanings":[{"text":"bảo hiểm, đảm bảo","type":"v","phonetic":"/ɪnˈʃʊr/"}],"learned":false},{"id":733,"word":"intention","meanings":[{"text":"dự định, ý định","type":"n","phonetic":"/ɪnˈten.ʃən/"}],"learned":false},{"id":734,"word":"intently","meanings":[{"text":"chăm chú, chú ý","type":"adv","phonetic":"/ɪnˈtent.li/"}],"learned":false},{"id":735,"word":"intern","meanings":[{"text":"thực tập sinh","type":"n","phonetic":"/ɪnˈtɝːn/"}],"learned":false},{"id":736,"word":"internal","meanings":[{"text":"bên trong, nội bộ","type":"adj","phonetic":"/ɪnˈtɝː.nəl/"}],"learned":false},{"id":737,"word":"international","meanings":[{"text":"quốc tế, đa quốc gia","type":"adj","phonetic":"/ˌɪn.t̬ɚˈnæʃ.ən.əl/"}],"learned":false},{"id":738,"word":"internship","meanings":[{"text":"kỳ thực tập","type":"n","phonetic":"/ˈɪn.tɝːn.ʃɪp/"}],"learned":false},{"id":739,"word":"interrupt","meanings":[{"text":"làm gián đoạn, ngắt quãng","type":"v","phonetic":"/ˌɪn.t̬əˈrʌpt/"}],"learned":false},{"id":740,"word":"interview","meanings":[{"text":"phỏng vấn","type":"n, v","phonetic":"/ˈɪn.t̬ɚ.vjuː/"}],"learned":false},{"id":741,"word":"invaluable","meanings":[{"text":"vô giá","type":"adj","phonetic":"/ɪnˈvæl.jə.bəl/"}],"learned":false},{"id":742,"word":"invent","meanings":[{"text":"phát minh, sáng chế","type":"v","phonetic":"/ɪnˈvent/"}],"learned":false},{"id":743,"word":"invention","meanings":[{"text":"sự phát minh, sáng kiến, sáng chế","type":"n","phonetic":"/ɪnˈven.ʃən/"}],"learned":false},{"id":744,"word":"inventory","meanings":[{"text":"sự kiểm kê, bản kiểm kê","type":"n","phonetic":"/ˈɪn.vən.tɔːr.i/"}],"learned":false},{"id":745,"word":"invest","meanings":[{"text":"đầu tư","type":"v","phonetic":"/ɪnˈvest/"}],"learned":false},{"id":746,"word":"investigation","meanings":[{"text":"sự điều tra, nghiên cứu","type":"n","phonetic":"/ɪnˌves.təˈɡeɪ.ʃən/"}],"learned":false},{"id":747,"word":"investment","meanings":[{"text":"sự đầu tư, vốn đầu tư","type":"n","phonetic":"/ɪnˈvest.mənt/"}],"learned":false},{"id":748,"word":"invite","meanings":[{"text":"mời, rủ lôi cuốn, hấp dẫn","type":"v","phonetic":"/ɪnˈvaɪt/"}],"learned":false},{"id":749,"word":"invoice","meanings":[{"text":"hóa đơn","type":"n","phonetic":"/ˈɪn.vɔɪs/"}],"learned":false},{"id":750,"word":"isolate","meanings":[{"text":"cô lập, cách ly","type":"v","phonetic":"/ˈaɪ.sə.leɪt/"}],"learned":false},{"id":751,"word":"item","meanings":[{"text":"món đồ tin tức","type":"n","phonetic":"/ˈaɪ.t̬əm/"}],"learned":false},{"id":752,"word":"itemize","meanings":[{"text":"trình bày thành từng khoản, từng món","type":"v","phonetic":"/ˈaɪ.t̬ə.maɪz/"}],"learned":false},{"id":753,"word":"itinerary","meanings":[{"text":"hành trình, lịch trình","type":"n","phonetic":"/aɪˈtɪn.ə.rer.i/"}],"learned":false},{"id":754,"word":"jealous","meanings":[{"text":"ghen ghét, đố kỵ","type":"adj","phonetic":"/ˈdʒel.əs/"}],"learned":false},{"id":755,"word":"jeopardize","meanings":[{"text":"gây nguy hại, đe dọa","type":"v","phonetic":"/ˈdʒep.ɚ.daɪz/"}],"learned":false},{"id":756,"word":"jeopardy","meanings":[{"text":"nguy cơ, sự nguy hiểm","type":"n","phonetic":"/ˈdʒep.ɚ.di/"}],"learned":false},{"id":757,"word":"jobless","meanings":[{"text":"thất nghiệp, không có việc làm","type":"adj","phonetic":"/ˈdʒɑːb.ləs/"}],"learned":false},{"id":758,"word":"join","meanings":[{"text":"nối, ghép tham gia","type":"v","phonetic":"/dʒɔɪn/"}],"learned":false},{"id":759,"word":"joint","meanings":[{"text":"mối nối, khớp; chung","type":"n, adj","phonetic":"/dʒɔɪnt/"}],"learned":false},{"id":760,"word":"journal","meanings":[{"text":"báo, tạp chí","type":"n","phonetic":"/ˈdʒɝː.nəl/"}],"learned":false},{"id":761,"word":"journey","meanings":[{"text":"cuộc hành trình","type":"n","phonetic":"/ˈdʒɝː.ni/"}],"learned":false},{"id":762,"word":"judge","meanings":[{"text":"quan toàn, thẩm phán, người phán xử; xét xử, phân xử","type":"n, v","phonetic":"/dʒʌdʒ/"}],"learned":false},{"id":763,"word":"justification","meanings":[{"text":"sự bào chữa, biện hộ","type":"n","phonetic":"/ˌdʒʌs.tə.fəˈkeɪ.ʃən/"}],"learned":false},{"id":764,"word":"justify","meanings":[{"text":"bào chữa, phân bua, biện hộ","type":"v","phonetic":"/ˈdʒʌs.tə.faɪ/"}],"learned":false},{"id":765,"word":"keen","meanings":[{"text":"say mê, ham thích","type":"adj","phonetic":"/kiːn/"}],"learned":false},{"id":766,"word":"keep","meanings":[{"text":"giữ lại, giam giữ","type":"v","phonetic":"/kiːp/"}],"learned":false},{"id":767,"word":"knowledge","meanings":[{"text":"kiến thức, sự hiểu biết","type":"n","phonetic":"/ˈnɑː.lɪdʒ/"}],"learned":false},{"id":768,"word":"knowledgeable","meanings":[{"text":"thông thạo, thành thạo, am tường","type":"adj","phonetic":"/´nɔlidʒəbl/"}],"learned":false},{"id":769,"word":"label","meanings":[{"text":"nhãn, nhãn hiệu","type":"n","phonetic":"/'leɪbl/"}],"learned":false},{"id":770,"word":"labor","meanings":[{"text":"lao động, công việc chân tay","type":"n","phonetic":"/'leibə/"}],"learned":false},{"id":771,"word":"lack","meanings":[{"text":"sự thiếu, thiếu sót","type":"n, v","phonetic":"/læk/"}],"learned":false},{"id":772,"word":"landlord","meanings":[{"text":"chủ nhà (nhà cho thuê)","type":"n","phonetic":"/'lændlɔ:d/"}],"learned":false},{"id":773,"word":"laptop","meanings":[{"text":"máy tính","type":"n","phonetic":"/´læp¸tɔp/"}],"learned":false},{"id":774,"word":"launch","meanings":[{"text":"Xuồng lớn","type":"n","phonetic":"/lɔ:ntʃ/"}],"learned":false},{"id":775,"word":"law","meanings":[{"text":"luật, nội quy, quy định","type":"n","phonetic":"/lɑː/"}],"learned":false},{"id":776,"word":"lay","meanings":[{"text":"bài thơ ngắn, bài vè ngắn","type":"n","phonetic":"/lei/"}],"learned":false},{"id":777,"word":"leak","meanings":[{"text":"lỗ thủng, lỗ rò, khe hở","type":"n","phonetic":"/li:k/"}],"learned":false},{"id":778,"word":"lean","meanings":[{"text":"độ nghiêng, độ dốc","type":"n","phonetic":"/li:n/"}],"learned":false},{"id":779,"word":"lease","meanings":[{"text":"hợp đồng cho thuê (bất động sản)","type":"n","phonetic":"/li:s/"}],"learned":false},{"id":780,"word":"leisure","meanings":[{"text":"thì giờ rỗi rãi, lúc thư nhàn","type":"n","phonetic":"/ˈliʒər , ˈlɛʒər/"}],"learned":false},{"id":781,"word":"lend","meanings":[{"text":"cho vay, cho mượn","type":"v","phonetic":"/lend/"}],"learned":false},{"id":782,"word":"liability","meanings":[{"text":"trách nhiệm pháp lý, nghĩa vụ pháp lý","type":"n","phonetic":"/,laiə'biliti/"}],"learned":false},{"id":783,"word":"license","meanings":[{"text":"bản quyền","type":"n","phonetic":"/lái:sn/"}],"learned":false},{"id":784,"word":"licensing","meanings":[{"text":"sự cấp giấy phép","type":"n","phonetic":"/ˈlaɪ.sən.sɪŋ/"}],"learned":false},{"id":785,"word":"lie","meanings":[{"text":"sự nói dối, sự nói láo, sự nói điêu, sự dối trá","type":"n","phonetic":"/lai/"}],"learned":false},{"id":786,"word":"limited","meanings":[{"text":"hạn chế, có giới hạn","type":"adj","phonetic":"/ˈlɪmɪtɪd/"}],"learned":false},{"id":787,"word":"limousine","meanings":[{"text":"xe hơi","type":"n","phonetic":"/´limə¸zi:n/"}],"learned":false},{"id":788,"word":"list","meanings":[{"text":"danh sách, sổ, bản kê khai","type":"n","phonetic":"/list/"}],"learned":false},{"id":789,"word":"livestock","meanings":[{"text":"vật nuôi, thú nuôi","type":"n","phonetic":"/´laiv¸stɔk/"}],"learned":false},{"id":790,"word":"loan","meanings":[{"text":"sự vay nợ","type":"n","phonetic":"/ləʊn/"}],"learned":false},{"id":791,"word":"lobby","meanings":[{"text":"hành lang","type":"n","phonetic":"/lɒb.i/"}],"learned":false},{"id":792,"word":"local","meanings":[{"text":"địa phương","type":"adj","phonetic":"/'ləʊk(ə)l/"}],"learned":false},{"id":793,"word":"locate","meanings":[{"text":"trụ sở ở, nằm ở","type":"v","phonetic":"/loʊˈkeɪt/"}],"learned":false},{"id":794,"word":"log on","meanings":[{"text":"kết nối với hệ thống","type":"v","phonetic":"/lɔg/"}],"learned":false},{"id":795,"word":"log","meanings":[{"text":"khúc gỗ mới đốn hạ","type":"n","phonetic":"/lɔg/"}],"learned":false},{"id":796,"word":"loyal","meanings":[{"text":"trung thành, trung nghĩa, trung kiên","type":"adj","phonetic":"/'lɔiəl/"}],"learned":false},{"id":797,"word":"luggage","meanings":[{"text":"hành lý","type":"n","phonetic":"/'lʌgiʤ/"}],"learned":false},{"id":798,"word":"luxurious","meanings":[{"text":"sang trọng, lộng lẫy; xa hoa","type":"adj","phonetic":"/lʌg´zjuəriəs/"}],"learned":false},{"id":799,"word":"luxury","meanings":[{"text":"sự xa xỉ, sự xa hoa","type":"n","phonetic":"/lʌk.ʃər.i/"}],"learned":false},{"id":800,"word":"maintain","meanings":[{"text":"giữ gìn, duy trì; bảo vệ","type":"v","phonetic":"/mein´tein/"}],"learned":false},{"id":801,"word":"maintenance","meanings":[{"text":"sự giữ gìn, sự duy trì; sự bảo vệ","type":"n","phonetic":"/´meintənəns/"}],"learned":false},{"id":802,"word":"major","meanings":[{"text":"chuyên đề","type":"n","phonetic":"/ˈmeɪdʒər/"}],"learned":false},{"id":803,"word":"manage","meanings":[{"text":"quản lý","type":"v","phonetic":"/'mænɪʤ/"}],"learned":false},{"id":804,"word":"managerial","meanings":[{"text":"(thuộc) người quản lý, (thuộc) giám đốc","type":"adj","phonetic":"/¸mæni´dʒiəriəl/"}],"learned":false},{"id":805,"word":"mandatory","meanings":[{"text":"có tính cách bắt buộc","type":"adj","phonetic":"/'mændətəri/"}],"learned":false},{"id":806,"word":"manufacture","meanings":[{"text":"sự chế tạo, sự sản xuất","type":"n","phonetic":"/,mænju'fæktʃə/"}],"learned":false},{"id":807,"word":"manufacturing","meanings":[{"text":"sự sản xuất; sự chế tạo; sự gia công","type":"n","phonetic":"/¸mænju´fæktʃəriη/"}],"learned":false},{"id":808,"word":"marketing","meanings":[{"text":"tiếp thị","type":"n","phonetic":"/'mɑ:kitiɳ/"}],"learned":false},{"id":809,"word":"mechanic","meanings":[{"text":"thợ máy, công nhân cơ khí","type":"n","phonetic":"/məˈkænɪk/"}],"learned":false},{"id":810,"word":"medical","meanings":[{"text":"(thuộc) y học","type":"adj","phonetic":"/'medikə/"}],"learned":false},{"id":811,"word":"medication","meanings":[{"text":"sự bốc thuốc, sự cho thuốc","type":"n","phonetic":"/ˌmɛdɪˈkeɪʃən/"}],"learned":false},{"id":812,"word":"medicine","meanings":[{"text":"y học","type":"n","phonetic":"/'medisn/"}],"learned":false},{"id":813,"word":"meeting","meanings":[{"text":"(chính trị) cuộc mít tinh, cuộc biểu tình","type":"n","phonetic":"/'mi:tiɳ/"}],"learned":false},{"id":814,"word":"membership","meanings":[{"text":"tư cách hội viên, địa vị hội viên","type":"n","phonetic":"/'membəʃip/"}],"learned":false},{"id":815,"word":"memorandum","meanings":[{"text":"bản ghi nhớ","type":"n","phonetic":"/¸memə´rændəm/"}],"learned":false},{"id":816,"word":"mention","meanings":[{"text":"sự kể ra, sự nói đến, sự đề cập","type":"n","phonetic":"/'menʃn/"}],"learned":false},{"id":817,"word":"merchandise","meanings":[{"text":"hàng hóa","type":"n","phonetic":"/´mə:tʃən¸daiz/"}],"learned":false},{"id":818,"word":"mere","meanings":[{"text":"ao hồ","type":"n","phonetic":"/miə/"}],"learned":false},{"id":819,"word":"merge","meanings":[{"text":"hoà vào; kết hợp; hợp nhất","type":"v","phonetic":"/mə:dʤ/"}],"learned":false},{"id":820,"word":"merger","meanings":[{"text":"sự liên doanh liên kết","type":"n","phonetic":"/´mə:dʒə/"}],"learned":false},{"id":821,"word":"mileage","meanings":[{"text":"tổng số dặm đã đi được","type":"n","phonetic":"/´mailidʒ/"}],"learned":false},{"id":822,"word":"million","meanings":[{"text":"một triệu","type":"n","phonetic":"/´miljən/"}],"learned":false},{"id":823,"word":"mimic","meanings":[{"text":"giả; bắt chước","type":"adj","phonetic":"/´mimik/"}],"learned":false},{"id":824,"word":"mishear","meanings":[{"text":"nghe lầm","type":"v","phonetic":"/¸mis´hiə/"}],"learned":false},{"id":825,"word":"misleading","meanings":[{"text":"làm cho lạc đường, làm cho lạc lối","type":"adj","phonetic":"/mis´li:diη/"}],"learned":false},{"id":826,"word":"misrepresent","meanings":[{"text":"trình bày sai, miêu tả sai","type":"v","phonetic":"/¸misrepri´zent/"}],"learned":false},{"id":827,"word":"monument","meanings":[{"text":"vật kỷ niệm, đài kỷ niệm, bia kỷ niệm","type":"n","phonetic":"/'mɔnjumənt/"}],"learned":false},{"id":828,"word":"moral","meanings":[{"text":"(thuộc) đạo đức, phẩm hạnh tinh thần bài học, lời răn dạy","type":"adj","phonetic":"/ˈmɔːr.əl/"}],"learned":false},{"id":829,"word":"mortgage","meanings":[{"text":"cầm cố, thế chấp","type":"n","phonetic":"/'mɔ:gidʤ/"}],"learned":false},{"id":830,"word":"motivate","meanings":[{"text":"thúc đẩy, làm động cơ thúc đẩy","type":"v","phonetic":"/´mouti¸veit/"}],"learned":false},{"id":831,"word":"motivation","meanings":[{"text":"sự thúc đẩy, động cơ thúc đẩy","type":"n","phonetic":"/,mouti'veiʃn/"}],"learned":false},{"id":832,"word":"napkin","meanings":[{"text":"khăn ăn","type":"n","phonetic":"/'næpkin/"}],"learned":false},{"id":833,"word":"narrow","meanings":[{"text":"hẹp, chật hẹp, eo hẹp","type":"adj","phonetic":"/'nærou/"}],"learned":false},{"id":834,"word":"narrowing","meanings":[{"text":"sự thu hẹp, sự co hẹp","type":"n","phonetic":"/'nærouwiŋ/"}],"learned":false},{"id":835,"word":"neighborhood","meanings":[{"text":"hàng xóm","type":"n","phonetic":"/ˈneɪbərˌhʊd/"}],"learned":false},{"id":836,"word":"network","meanings":[{"text":"lưới, đồ dùng kiểu lưới","type":"n","phonetic":"/'netwə:k/"}],"learned":false},{"id":837,"word":"nominate","meanings":[{"text":"chỉ định, chọn, bổ nhiệm","type":"v","phonetic":"/'nɔmineit/"}],"learned":false},{"id":838,"word":"nomination","meanings":[{"text":"sự chỉ định, sự bổ nhiệm","type":"n","phonetic":"/,nɔmi'neiʃn/"}],"learned":false},{"id":839,"word":"notice","meanings":[{"text":"thông tri, yết thị, thông báo","type":"n","phonetic":"/'nəƱtis/"}],"learned":false},{"id":840,"word":"notify","meanings":[{"text":"báo, khai báo; thông báo","type":"v","phonetic":"/nəʊ.tɪ.faɪ/"}],"learned":false},{"id":841,"word":"objection","meanings":[{"text":"sự phản đối, sự chống đối","type":"n","phonetic":"/əb'ʤekʃn/"}],"learned":false},{"id":842,"word":"objective","meanings":[{"text":"khách quan","type":"adj","phonetic":"/əb´dʒektiv/"}],"learned":false},{"id":843,"word":"oblige","meanings":[{"text":"bắt buộc, cưỡng bách; đặt nghĩa vụ cho","type":"v","phonetic":"/ə'blaiʤ/"}],"learned":false},{"id":844,"word":"obviously","meanings":[{"text":"một cách rõ ràng; có thể thấy được","type":"adv","phonetic":"/'ɔbviəsli/"}],"learned":false},{"id":845,"word":"occupation","meanings":[{"text":"sự chiếm giữ, sự chiếm đóng","type":"n","phonetic":"/,ɔkju'peiʃn/"}],"learned":false},{"id":846,"word":"occur","meanings":[{"text":"xảy ra, xảy đến, xuất hiện, tìm thấy","type":"v","phonetic":"/ə'kə:/"}],"learned":false},{"id":847,"word":"officer","meanings":[{"text":"sĩ quan","type":"n","phonetic":"/´ɔfisə/"}],"learned":false},{"id":848,"word":"official","meanings":[{"text":"(thuộc) chính quyền; (thuộc) văn phòng","type":"adj","phonetic":"/ə'fiʃəl/"}],"learned":false},{"id":849,"word":"onward","meanings":[{"text":"về phía trước, tiến lên, hướng tới","type":"adj","phonetic":"/'ɔnwəd/"}],"learned":false},{"id":850,"word":"operate","meanings":[{"text":"hoạt động; đang làm việc, thi hành (máy...)","type":"v","phonetic":"/'ɔpəreit/"}],"learned":false},{"id":851,"word":"operation","meanings":[{"text":"sự hoạt động; quá trình hoạt động","type":"n","phonetic":"/,ɔpə'reiʃn/"}],"learned":false},{"id":852,"word":"opinion","meanings":[{"text":"ý kiến, quan điểm","type":"n","phonetic":"/ə'pinjən/"}],"learned":false},{"id":853,"word":"opportunity","meanings":[{"text":"cơ hội, thời cơ, dịp may","type":"n","phonetic":"/ɒpərˈtyunɪti/"}],"learned":false},{"id":854,"word":"order","meanings":[{"text":"thứ, bậc, ngôi, hàng, cấp, loại, giai cấp","type":"n","phonetic":"/'ɔ:də/"}],"learned":false},{"id":855,"word":"organization","meanings":[{"text":"sự tổ chức, sự cấu tạo","type":"n","phonetic":"/,ɔ:gənai'zeiʃn/"}],"learned":false},{"id":856,"word":"organize","meanings":[{"text":"tổ chức, cấu tạo, thiết lập","type":"v","phonetic":"/´ɔ:gə¸naiz/"}],"learned":false},{"id":857,"word":"organized","meanings":[{"text":"có trật tự, ngăn nắp, hữu hiệu","type":"adj","phonetic":"/ˈɔːr.ɡən.aɪzd/"}],"learned":false},{"id":858,"word":"outline","meanings":[{"text":"nét phác thảo, đề cương; sự vạch ra những nét chính","type":"n","phonetic":"/´aut¸lain/"}],"learned":false},{"id":859,"word":"outlook","meanings":[{"text":"quang cảnh, viễn cảnh","type":"n","phonetic":"/´aut¸luk/"}],"learned":false},{"id":860,"word":"outstanding","meanings":[{"text":"nổi bật, đáng chú ý; nổi tiếng, vượt trội","type":"adj","phonetic":"/¸aut´stændiη/"}],"learned":false},{"id":861,"word":"overdraft","meanings":[{"text":"số tiền chi trội; số tiền rút quá số tiền gửi","type":"n","phonetic":"/´ouvə¸dra:ft/"}],"learned":false},{"id":862,"word":"overtime","meanings":[{"text":"quá giờ, ngoài giờ (quy định)","type":"adj","phonetic":"/´ouvətaim/"}],"learned":false},{"id":863,"word":"overview","meanings":[{"text":"sự khái quát; miêu tả chung, ngắn gọn","type":"n","phonetic":"/´ouvə¸vju:/"}],"learned":false},{"id":864,"word":"owe","meanings":[{"text":"nợ, hàm ơn","type":"v","phonetic":"/ou/"}],"learned":false},{"id":865,"word":"package","meanings":[{"text":"đóng gói, đóng kiện, xếp vào bao bì","type":"v","phonetic":"/pæk.ɪdʒ/"},{"text":"gói đồ, bưu kiện; hộp để đóng hàng, thùng hàng","type":"n","phonetic":"/pæk.ɪdʒ/"}],"learned":false},{"id":866,"word":"parcel","meanings":[{"text":"gói; bưu kiện","type":"n","phonetic":"/'pɑ:s(ə)l/"}],"learned":false},{"id":867,"word":"parking","meanings":[{"text":"bãi đỗ xe","type":"n","phonetic":"/ˈpɑːr.kɪŋ/"}],"learned":false},{"id":868,"word":"participant","meanings":[{"text":"người tham gia, người tham dự","type":"n","phonetic":"/pa:´tisipənt/"}],"learned":false},{"id":869,"word":"particularly","meanings":[{"text":"đặc biệt, đặc thù; cá biệt, riêng biệt","type":"adv","phonetic":"/pə´tikjuləli/"}],"learned":false},{"id":870,"word":"passenger","meanings":[{"text":"hành khách (đi tàu xe...)","type":"n","phonetic":"/'pæsindʤə/"}],"learned":false},{"id":871,"word":"patented","meanings":[{"text":"đã có bằng sáng chế, môn bài","type":"adj","phonetic":"/ˈpeɪtəntɪd, ˈpætəntɪd/"}],"learned":false},{"id":872,"word":"payment","meanings":[{"text":"sự trả tiền, số tiền trả; sự bồi thường, tiền bồi thường","type":"n","phonetic":"/'peim(ə)nt/"}],"learned":false},{"id":873,"word":"perform","meanings":[{"text":"biểu diễn, trình diễn (kịch, điệu nhảy...); đóng","type":"v","phonetic":"/pə´fɔ:m/"}],"learned":false},{"id":874,"word":"performance","meanings":[{"text":"sự biểu diễn, việc đóng (phim, kịch...); cuộc biểu diễn","type":"n","phonetic":"/pə'fɔ:məns/"}],"learned":false},{"id":875,"word":"permanent","meanings":[{"text":"lâu dài, vĩnh cửu; thường xuyên","type":"adj","phonetic":"/'pə:mənənt/"}],"learned":false},{"id":876,"word":"permission","meanings":[{"text":"sự cho phép, sự chấp nhận; giấy phép","type":"n","phonetic":"/pə'miʃn/"}],"learned":false},{"id":877,"word":"permit","meanings":[{"text":"cho phép, cho cơ hội; thừa nhận","type":"v","phonetic":"/'pər'mɪt/"}],"learned":false},{"id":878,"word":"personal","meanings":[{"text":"cá nhân, tư, riêng","type":"adj","phonetic":"/'pə:snl/"}],"learned":false},{"id":879,"word":"personalized","meanings":[{"text":"cá nhân hoá","type":"v","phonetic":"/´pə:sənə¸laiz/"}],"learned":false},{"id":880,"word":"personnel","meanings":[{"text":"nhân viên, công chức (cơ quan, nhà máy...)","type":"n","phonetic":"/¸pə:sə´nel/"}],"learned":false},{"id":881,"word":"persuade","meanings":[{"text":"thuyết phục","type":"v","phonetic":"/pə'sweid/"}],"learned":false},{"id":882,"word":"pessimistic","meanings":[{"text":"bi quan, yếm thế","type":"adj","phonetic":"/¸pesi´mistik/"}],"learned":false},{"id":883,"word":"plant","meanings":[{"text":"thực vật","type":"n","phonetic":"/plænt , plɑnt/"}],"learned":false},{"id":884,"word":"platform","meanings":[{"text":"nền, bục, bệ","type":"n","phonetic":"/'plætfɔ:m/"}],"learned":false},{"id":885,"word":"pleasant","meanings":[{"text":"vui vẻ, dễ thương (người...)","type":"adj","phonetic":"/'plezənt/"}],"learned":false},{"id":886,"word":"plow","meanings":[{"text":"cái cày; công cụ giống như cái cày","type":"n","phonetic":"/plau/"}],"learned":false},{"id":887,"word":"plug","meanings":[{"text":"phích cắm; ổ cắm điện","type":"n","phonetic":"/plʌg/"}],"learned":false},{"id":888,"word":"plumber","meanings":[{"text":"thợ hàn chì, thợ ống nước","type":"n","phonetic":"/´plʌmə/"}],"learned":false},{"id":889,"word":"point","meanings":[{"text":"điểm","type":"n","phonetic":"/pɔint/"}],"learned":false},{"id":890,"word":"pointless","meanings":[{"text":"vô nghĩa, không ý vị, lạc lõng","type":"adj","phonetic":"/´pɔintlis/"}],"learned":false},{"id":891,"word":"policy","meanings":[{"text":"chính sách (của chính phủ, đảng...)","type":"n","phonetic":"/pɔlisi/"}],"learned":false},{"id":892,"word":"polite","meanings":[{"text":"lễ phép, có lễ độ; lịch sự, lịch thiệp","type":"adj","phonetic":"/pəˈlaɪt/"}],"learned":false},{"id":893,"word":"politician","meanings":[{"text":"nhà chính trị; chính khách","type":"n","phonetic":"/,pɒlə'tɪʃn/"}],"learned":false},{"id":894,"word":"politics","meanings":[{"text":"hoạt động chính trị, công việc chính trị","type":"n","phonetic":"/'pɔlitiks/"}],"learned":false},{"id":895,"word":"poll","meanings":[{"text":"sự bầu cử; số phiếu bầu","type":"n","phonetic":"/poul/"}],"learned":false},{"id":896,"word":"pollute","meanings":[{"text":"làm ô nhiễm, làm nhơ bẩn (nước...)","type":"v","phonetic":"/pəˈlut/"}],"learned":false},{"id":897,"word":"popular","meanings":[{"text":"được nhiều người ưa chuộng, được nhiều người ngưỡng mộ","type":"adj","phonetic":"/ˈpɑːpjələr/"}],"learned":false},{"id":898,"word":"popularity","meanings":[{"text":"tính đại chúng; tính phổ biến","type":"n","phonetic":"/ˌpɒpyəˈlærɪti/"}],"learned":false},{"id":899,"word":"position","meanings":[{"text":"vị trí, chỗ (của một vật gì)","type":"n","phonetic":"/pəˈzɪʃən/"}],"learned":false},{"id":900,"word":"postpone","meanings":[{"text":"hoãn lại, trì hoãn","type":"v","phonetic":"/pəʊst pəʊn/"}],"learned":false},{"id":901,"word":"postponement","meanings":[{"text":"sự trì hoãn; trường hợp bị trì hoãn","type":"n","phonetic":"/poust´pounmənt/"}],"learned":false},{"id":902,"word":"potential","meanings":[{"text":"tiềm năng; tiềm tàng","type":"adj","phonetic":"/pəˈtenʃl/"}],"learned":false},{"id":903,"word":"power","meanings":[{"text":"khả năng; tài năng, năng lực","type":"n","phonetic":"/ˈpauə(r)/"}],"learned":false},{"id":904,"word":"practical","meanings":[{"text":"thực hành (đối với lý thuyết)","type":"adj","phonetic":"/ˈpræktɪkəl/"}],"learned":false},{"id":905,"word":"practically","meanings":[{"text":"về mặt thực hành (đối với lý thuyết)","type":"adv","phonetic":"/´præktikəli/"}],"learned":false},{"id":906,"word":"predict","meanings":[{"text":"nói trước, tiên đoán, dự đoán","type":"v","phonetic":"/pri'dikt/"}],"learned":false},{"id":907,"word":"predictable","meanings":[{"text":"có thể đoán trước, có thể dự đoán, dự báo","type":"adj","phonetic":"/pri'diktəbl/"}],"learned":false},{"id":908,"word":"prefer","meanings":[{"text":"thích hơn, ưa hơn","type":"v","phonetic":"/pri'fə:/"}],"learned":false},{"id":909,"word":"preference","meanings":[{"text":"sở thích; sự thích hơn, sự ưa hơn","type":"n","phonetic":"/'prefərəns/"}],"learned":false},{"id":910,"word":"premises","meanings":[{"text":"biệt thự","type":"n","phonetic":"/'premis/"}],"learned":false},{"id":911,"word":"present","meanings":[{"text":"hiện tại, hiện thời, hiện giờ, hiện nay","type":"n","phonetic":"prezənt"}],"learned":false},{"id":912,"word":"press","meanings":[{"text":"sự ép, sự nén, sự bóp, sự ấn","type":"n","phonetic":"/pres/"}],"learned":false},{"id":913,"word":"prevent","meanings":[{"text":"ngăn cản; ngăn chặn, ngăn ngừa","type":"v","phonetic":"/pri'vent/"}],"learned":false},{"id":914,"word":"prevention","meanings":[{"text":"sự ngăn cản, sự ngăn trở","type":"n","phonetic":"/pri'ven∫n/"}],"learned":false},{"id":915,"word":"priceless","meanings":[{"text":"vô giá; không định giá được","type":"adj","phonetic":"/ˈpraɪslɪs/"}],"learned":false},{"id":916,"word":"principle","meanings":[{"text":"gốc, nguồn gốc, yếu tố cơ bản","type":"n","phonetic":"/ˈprɪntsɪpl/"}],"learned":false},{"id":917,"word":"priority","meanings":[{"text":"sự ưu thế (về cấp bậc); quyền ưu tiên","type":"n","phonetic":"/prai´ɔriti/"}],"learned":false},{"id":918,"word":"private","meanings":[{"text":"riêng, tư, cá nhân","type":"adj","phonetic":"/ˈpraɪvɪt/"}],"learned":false},{"id":919,"word":"probability","meanings":[{"text":"sự có thể có, khả năng có thể xảy ra","type":"n","phonetic":"/ˌprɒbəˈbɪlɪti/"}],"learned":false},{"id":920,"word":"probably","meanings":[{"text":"có khả năng, có lẽ, có thể","type":"adv","phonetic":"/´prɔbəbli/"}],"learned":false},{"id":921,"word":"probationary","meanings":[{"text":"đang trong thời gian thử thách","type":"adj","phonetic":"/prə´beiʃənəri/"}],"learned":false},{"id":922,"word":"process","meanings":[{"text":"quá trình, sự tiến triển","type":"n","phonetic":"/'prouses/"}],"learned":false},{"id":923,"word":"profession","meanings":[{"text":"nghề, nghề nghiệp","type":"n","phonetic":"/prə´feʃ(ə)n/"}],"learned":false},{"id":924,"word":"professional","meanings":[{"text":"(thuộc) nghề, (thuộc) nghề nghiệp; có tay nghề","type":"adj","phonetic":"/prə'feʃənl/"}],"learned":false},{"id":925,"word":"profile","meanings":[{"text":"tiểu sử sơ lược; mô tả sơ lược","type":"n","phonetic":"/´proufail/"}],"learned":false},{"id":926,"word":"profit","meanings":[{"text":"thuận lợi; lợi ích, bổ ích","type":"n","phonetic":"/ˈprɒfɪt/"}],"learned":false},{"id":927,"word":"profitability","meanings":[{"text":"sự có lợi, sự có ích; sự thuận lợi","type":"n","phonetic":"/'prɔfitə'biləti/"}],"learned":false},{"id":928,"word":"profitable","meanings":[{"text":"có lợi, có ích; thuận lợi","type":"adj","phonetic":"/´prɑ:fɪtəbl/"}],"learned":false},{"id":929,"word":"progressive","meanings":[{"text":"tiến lên, tiến tới","type":"adj","phonetic":"/prəˈgrɛsɪv/"}],"learned":false},{"id":930,"word":"project","meanings":[{"text":"đề án, dự án; kế hoạch","type":"n","phonetic":"/ˈprɒdʒɛkt/"}],"learned":false},{"id":931,"word":"promotion","meanings":[{"text":"sự thăng chức, sự đề bạt","type":"n","phonetic":"/prə'mou∫n/"}],"learned":false},{"id":932,"word":"promptly","meanings":[{"text":"mau lẹ, nhanh chóng; ngay lập tức","type":"adv","phonetic":"/´prɔmptli/"}],"learned":false},{"id":933,"word":"properly","meanings":[{"text":"đúng đắn, hợp thức, hợp lệ","type":"adv","phonetic":"/´prɔpəli/"}],"learned":false},{"id":934,"word":"property","meanings":[{"text":"tài sản, của cải, vật sở hữu, người giàu có","type":"n","phonetic":"/'prɔpəti/"}],"learned":false},{"id":935,"word":"protect","meanings":[{"text":"bảo vệ, bảo hộ, che chở","type":"v","phonetic":"/prə'tekt/"}],"learned":false},{"id":936,"word":"protection","meanings":[{"text":"sự bảo vệ, sự bảo hộ, sự che chở","type":"n","phonetic":"/prə'tek∫n/"}],"learned":false},{"id":937,"word":"publicity","meanings":[{"text":"sự công khai","type":"n","phonetic":"/pʌb'lɪsətɪ /"}],"learned":false},{"id":938,"word":"publicize","meanings":[{"text":"đưa ra công khai; làm cho thiên hạ biết đến","type":"v","phonetic":"/´pʌbli¸saiz/"}],"learned":false},{"id":939,"word":"purchase","meanings":[{"text":"sự mua, tậu; vật mua được, vật tậu được","type":"n","phonetic":"/'pə:t∫əs/"}],"learned":false},{"id":940,"word":"purpose","meanings":[{"text":"mục đích, ý định","type":"n","phonetic":"/'pɜ:pəs/"}],"learned":false},{"id":941,"word":"pursue","meanings":[{"text":"đuổi theo, đuổi bắt, truy nã, truy kích","type":"v","phonetic":"/pə'sju:/"}],"learned":false},{"id":942,"word":"qualification","meanings":[{"text":"phẩm chất, năng lực","type":"n","phonetic":"/,kwalifi'keiSn/"}],"learned":false},{"id":943,"word":"qualified","meanings":[{"text":"đủ tư cách, khả năng, điều kiện","type":"adj","phonetic":"/ˈkwɒləˌfaɪd/"}],"learned":false},{"id":944,"word":"qualify","meanings":[{"text":"đủ tư cách, khả năng, điều kiện","type":"v","phonetic":"/'´kwɔli¸fai/"}],"learned":false},{"id":945,"word":"questionnaire","meanings":[{"text":"bản câu hỏi (để điều tra, để thăm dò ý kiến)","type":"n","phonetic":"/ˌkwɛstʃəˈnɛər/"}],"learned":false},{"id":946,"word":"quotation","meanings":[{"text":"sự trích dẫn, sự được trích dẫn","type":"n","phonetic":"/kwou'teiʃn/"}],"learned":false},{"id":947,"word":"quote","meanings":[{"text":"lời trích dẫn; đoạn trích dẫn","type":"n","phonetic":"/kwout/"}],"learned":false},{"id":948,"word":"range","meanings":[{"text":"dãy, hàng","type":"n","phonetic":"/reɪndʒ/"}],"learned":false},{"id":949,"word":"rare","meanings":[{"text":"hiếm, hiếm có, ít có","type":"adj","phonetic":"/reə/"}],"learned":false},{"id":950,"word":"rate","meanings":[{"text":"tỷ lệ","type":"n","phonetic":"/reit/"}],"learned":false},{"id":951,"word":"rational","meanings":[{"text":"có lý trí, dựa trên lý trí","type":"adj","phonetic":"/´ræʃənəl/"}],"learned":false},{"id":952,"word":"raw","meanings":[{"text":"sống, thô","type":"adj","phonetic":"/rɔ:/"}],"learned":false},{"id":953,"word":"reach","meanings":[{"text":"sự chìa ra, sự trải ra","type":"n","phonetic":"/ri:tʃ/"}],"learned":false},{"id":954,"word":"realize","meanings":[{"text":"thấy rõ, hiểu rõ, nhận thức rõ (việc gì...)","type":"v","phonetic":"/'riəlaiz/"}],"learned":false},{"id":955,"word":"rearrange","meanings":[{"text":"sắp xếp lại, bố trí lại, sắp đặt lại","type":"v","phonetic":"/'ri:ə'reindʤ/"}],"learned":false},{"id":956,"word":"reasonable","meanings":[{"text":"có lý, hợp lý","type":"adj","phonetic":"/´ri:zənəbl/"}],"learned":false},{"id":957,"word":"reasonably","meanings":[{"text":"hợp lý","type":"adv","phonetic":"/ˈriː.zən.ə.bli/"}],"learned":false},{"id":958,"word":"receipt","meanings":[{"text":"công thức (làm bánh, nấu món ăn...)","type":"n","phonetic":"/ri´si:t/"}],"learned":false},{"id":959,"word":"receive","meanings":[{"text":"nhận, lĩnh, thu","type":"v","phonetic":"/ri'si:v/"}],"learned":false},{"id":960,"word":"recent","meanings":[{"text":"gần đây, xảy ra gần đây, mới đây","type":"adj","phonetic":"/´ri:sənt/"}],"learned":false},{"id":961,"word":"reception","meanings":[{"text":"sự nhận, sự thu nhận, sự lĩnh","type":"n","phonetic":"/ri'sep∫n/"}],"learned":false},{"id":962,"word":"receptive","meanings":[{"text":"dễ tiếp thu, dễ lĩnh hội","type":"adj","phonetic":"/ri'septiv/"}],"learned":false},{"id":963,"word":"recipe","meanings":[{"text":"công thức làm món ăn","type":"n","phonetic":"/´resəpi/"}],"learned":false},{"id":964,"word":"recognize","meanings":[{"text":"công nhận, thừa nhận, chấp nhận","type":"v","phonetic":"/'rekəgnaiz/"}],"learned":false},{"id":965,"word":"recommend","meanings":[{"text":"giới thiệu, tiến cử (người, vật...)","type":"v","phonetic":"/rekə'mend/"}],"learned":false},{"id":966,"word":"recommendation","meanings":[{"text":"sự giới thiệu, sự tiến cử","type":"n","phonetic":"/¸rekəmen´deiʃən/"}],"learned":false},{"id":967,"word":"recruit","meanings":[{"text":"tuyển, chiêu mộ (lính mới); tìm thêm","type":"v","phonetic":"/ri'kru:t/"}],"learned":false},{"id":968,"word":"recruitment","meanings":[{"text":"sự tuyển mộ (lính), sự lấy thêm","type":"n","phonetic":"/ ri'kru;tm(ə)nt/"}],"learned":false},{"id":969,"word":"reduce","meanings":[{"text":"thu nhỏ, làm giảm bớt","type":"v","phonetic":"/ri'dju:s/"}],"learned":false},{"id":970,"word":"reduction","meanings":[{"text":"sự thu nhỏ, sự giảm bớt","type":"n","phonetic":"/ri´dʌkʃən/"}],"learned":false},{"id":971,"word":"redundant","meanings":[{"text":"thừa, dư","type":"adj","phonetic":"/ri'dʌndənt/"}],"learned":false},{"id":972,"word":"refrigerator","meanings":[{"text":"tủ lạnh","type":"n","phonetic":"/rɪˈfrɪdʒ.ər.eɪ.tər/"}],"learned":false},{"id":973,"word":"refund","meanings":[{"text":"trả lại, sự trả lại","type":"n, v","phonetic":"/ˈrifʌnd/"}],"learned":false},{"id":974,"word":"refundable","meanings":[{"text":"có thể được trả lại tiền","type":"adj","phonetic":"/ri´fʌndəbl/"}],"learned":false},{"id":975,"word":"refusal","meanings":[{"text":"sự từ chối, sự khước từ; sự bị từ chối","type":"n","phonetic":"ri´fju:zl/"}],"learned":false},{"id":976,"word":"refuse","meanings":[{"text":"từ chối, khước từ, cự tuyệt","type":"v","phonetic":"/rɪˈfyuz/"}],"learned":false},{"id":977,"word":"regarding","meanings":[{"text":"về ( ai/cái gì), về việc, đối với (vấn đề...)","type":"n","phonetic":"/ri´ga:diη/"}],"learned":false},{"id":978,"word":"regardless","meanings":[{"text":"bất chấp, không đếm xỉa tới, không chú ý tới","type":"adv","phonetic":"/ri´ga:dlis/"}],"learned":false},{"id":979,"word":"regional","meanings":[{"text":"(thuộc) vùng; địa phương","type":"adj","phonetic":"/ˈridʒənl/"}],"learned":false},{"id":980,"word":"registration","meanings":[{"text":"sự đăng ký, sự ghi vào sổ","type":"n","phonetic":"/,redʤis'treiʃn/"}],"learned":false},{"id":981,"word":"regret","meanings":[{"text":"hối tiếc; sự ân hận","type":"n, v","phonetic":"/ri'gret/"}],"learned":false},{"id":982,"word":"regular","meanings":[{"text":"đều đặn, thường xuyên","type":"adj","phonetic":"/ˈreɡ.jə.lɚ/"}],"learned":false},{"id":983,"word":"regularly","meanings":[{"text":"đều đặn, thường xuyên","type":"adv","phonetic":"/´regjuləli/"}],"learned":false},{"id":984,"word":"regulate","meanings":[{"text":"điều khiển","type":"v","phonetic":"/ˈreɡ.jə.leɪt/"}],"learned":false},{"id":985,"word":"reject","meanings":[{"text":"vật bị loại, vật bỏ đi, vật không được chọn","type":"n, v","phonetic":"/'ri:ʤekt/"}],"learned":false},{"id":986,"word":"relax","meanings":[{"text":"thư giãn, nghỉ ngơi","type":"v","phonetic":"/rɪˈlæks/"}],"learned":false},{"id":987,"word":"relaxation","meanings":[{"text":"sự dịu đi, sự bớt căng thẳng","type":"n","phonetic":"/¸ri:læk´seiʃən/"}],"learned":false},{"id":988,"word":"release","meanings":[{"text":"thả ra, trả lại tự do","type":"v","phonetic":"/rɪˈliːs/"}],"learned":false},{"id":989,"word":"relevant","meanings":[{"text":"thích đáng, thích hợp; xác đáng","type":"adj","phonetic":"/´reləvənt/"}],"learned":false},{"id":990,"word":"remain","meanings":[{"text":"duy trì","type":"v","phonetic":"/rɪˈmeɪn/"}],"learned":false},{"id":991,"word":"remarkable","meanings":[{"text":"đáng chú ý, đáng để ý","type":"adj","phonetic":"/ri'ma:kəb(ə)l/"}],"learned":false},{"id":992,"word":"remind","meanings":[{"text":"nhắc lại, nhớ lại","type":"v","phonetic":"/rɪˈmaɪnd/"}],"learned":false},{"id":993,"word":"reminder","meanings":[{"text":"vật làm nhớ lại, cái làm nhớ lại","type":"n","phonetic":"/ri´maində/"}],"learned":false},{"id":994,"word":"remittance","meanings":[{"text":"sự gửi tiền, sự gửi hàng","type":"n","phonetic":"/ri´mitəns/"}],"learned":false},{"id":995,"word":"remove","meanings":[{"text":"dời đi, di chuyển, dọn, cất dọn","type":"v","phonetic":"/ri'mu:v/"}],"learned":false},{"id":996,"word":"remuneration","meanings":[{"text":"tiền thù lao, tiền trả công","type":"n","phonetic":"/rɪˌmjuː.nəˈreɪ.ʃən/"}],"learned":false},{"id":997,"word":"renovate","meanings":[{"text":"nâng cấp, cải tiến, đổi mới, sửa chữa lại","type":"v","phonetic":"/ˈrɛnəˌveɪt/"}],"learned":false},{"id":998,"word":"renovation","meanings":[{"text":"sự nâng cấp, sự cải tiến","type":"n","phonetic":"/ˌren.əˈveɪ.ʃən/"}],"learned":false},{"id":999,"word":"rent","meanings":[{"text":"sự thuê mướn","type":"n","phonetic":"/rent/"}],"learned":false},{"id":1000,"word":"repair","meanings":[{"text":"sửa chữa, sửa đổi","type":"v","phonetic":"/rɪˈper/"}],"learned":false},{"id":1001,"word":"repayment","meanings":[{"text":"sự trả lại","type":"n","phonetic":"/ri:´peimənt/"}],"learned":false},{"id":1002,"word":"repetitive","meanings":[{"text":"có đặc trưng lặp đi lặp lại","type":"adj","phonetic":"/rɪˈpet̬.ə.t̬ɪv/"}],"learned":false},{"id":1003,"word":"replace","meanings":[{"text":"thay thế, thay chỗ ai/cái gì","type":"v","phonetic":"/rɪpleɪs/"}],"learned":false},{"id":1004,"word":"replacement","meanings":[{"text":"sự thay thế, vật thay thế","type":"n","phonetic":"/rɪˈpleɪs.mənt/"}],"learned":false},{"id":1005,"word":"report","meanings":[{"text":"bản báo cáo, bản tường thuật; biên bản","type":"n","phonetic":"/ri'pɔ:t/"}],"learned":false},{"id":1006,"word":"represent","meanings":[{"text":"miêu tả, hình dung","type":"v","phonetic":"/ˌrep.rɪˈzent/"}],"learned":false},{"id":1007,"word":"representative","meanings":[{"text":"miêu tả, biểu hiện","type":"adj","phonetic":"/,repri'zentətiv/"}],"learned":false},{"id":1008,"word":"request","meanings":[{"text":"yêu cầu","type":"n","phonetic":"/rɪˈkwest/"}],"learned":false},{"id":1009,"word":"require","meanings":[{"text":"đòi hỏi, yêu cầu; quy định","type":"v","phonetic":"/ri'kwaiə(r)/"}],"learned":false},{"id":1010,"word":"requirement","meanings":[{"text":"yêu cầu, cần thiết","type":"n","phonetic":"/rɪˈkwaɪr.mənt/"}],"learned":false},{"id":1011,"word":"reschedule","meanings":[{"text":"lên lịch, sắp xếp lịch","type":"v","phonetic":"/ˌriːˈskedʒ.uːl/"}],"learned":false},{"id":1012,"word":"rescue","meanings":[{"text":"cứu ai đó khỏi nguy hiểm","type":"v","phonetic":"/ˈres.kjuː/"}],"learned":false},{"id":1013,"word":"resemble","meanings":[{"text":"giống nhau, giống ai đó","type":"v","phonetic":"/rɪˈzem.bəl/"}],"learned":false},{"id":1014,"word":"reservation","meanings":[{"text":"dự phòng","type":"n","phonetic":"/ˌrez.ɚˈveɪ.ʃən/"}],"learned":false},{"id":1015,"word":"resist","meanings":[{"text":"chống lại","type":"v","phonetic":"/rɪˈzɪst/"}],"learned":false},{"id":1016,"word":"resolve","meanings":[{"text":"Quyết tâm, ý kiên quyết","type":"n, v","phonetic":"/rɪ'zɑ:lv"}],"learned":false},{"id":1017,"word":"respect","meanings":[{"text":"sự kính trọng; sự ngưỡng mộ","type":"n","phonetic":"/riˈspekt/"}],"learned":false},{"id":1018,"word":"respectable","meanings":[{"text":"đáng trọng; đáng kính","type":"adj","phonetic":"/ris´pektəbl/"}],"learned":false},{"id":1019,"word":"respond","meanings":[{"text":"hưởng ứng","type":"v","phonetic":"/ri'spond/"}],"learned":false},{"id":1020,"word":"responsibility","meanings":[{"text":"trách nhiệm; sự chịu trách nhiệm; bổn phận; nghĩa vụ","type":"n","phonetic":"/rɪˌspɑːn.səˈbɪl.ə.t̬i/"}],"learned":false},{"id":1021,"word":"responsible","meanings":[{"text":"chịu trách nhiệm","type":"adj","phonetic":"/ri'spɔnsəbl/"}],"learned":false},{"id":1022,"word":"restructure","meanings":[{"text":"cơ cấu lại; tổ chức lại; sắp xếp lại","type":"v","phonetic":"/ri:´strʌktʃə/"}],"learned":false},{"id":1023,"word":"resume","meanings":[{"text":"lấy lại, chiếm lại, giành lại; hồi phục lại","type":"v","phonetic":"/ri´zju:m/"}],"learned":false},{"id":1024,"word":"retail","meanings":[{"text":"sự bán lẻ, việc bán lẻ","type":"n, adv","phonetic":"/ˈriteɪl , rɪˈteɪl/"}],"learned":false},{"id":1025,"word":"retire","meanings":[{"text":"rời bỏ, đi ra, rút về, lui về (một nơi nào kín đáo...)","type":"v","phonetic":"/ri´taiə /"}],"learned":false},{"id":1026,"word":"retirement","meanings":[{"text":"sự ẩn dật, sự về hưu","type":"n","phonetic":"/rɪˈtaɪərmənt/"}],"learned":false},{"id":1027,"word":"revamp","meanings":[{"text":"tân trang, sửa chữa","type":"v","phonetic":"/ˌriːˈvæmp/"}],"learned":false},{"id":1028,"word":"revise","meanings":[{"text":"đọc lại, xem lại, duyệt lại, xét lại","type":"v, n","phonetic":"/ri'vaiz/"}],"learned":false},{"id":1029,"word":"revised","meanings":[{"text":"đọc lại, xem lại, duyệt lại, xét lại","type":"v, n","phonetic":"/ri'vaiz/"}],"learned":false},{"id":1030,"word":"right","meanings":[{"text":"điều tốt, điều phải, điều đứng đắn","type":"n","phonetic":"/rait/"}],"learned":false},{"id":1031,"word":"roadside","meanings":[{"text":"bờ đường, lề đường","type":"n,adj","phonetic":"/´roud¸said/"}],"learned":false},{"id":1032,"word":"roughly","meanings":[{"text":"ráp, xù xì, gồ ghề, không bằng phẳng","type":"adv","phonetic":"/'rʌfli/"}],"learned":false},{"id":1033,"word":"route","meanings":[{"text":"tuyến đường; lộ trình; đường đi","type":"n","phonetic":"/raʊt/"}],"learned":false},{"id":1034,"word":"runway","meanings":[{"text":"đường băng","type":"n","phonetic":"/´rʌn¸wei/"}],"learned":false},{"id":1035,"word":"salary","meanings":[{"text":"tiền lương","type":"n","phonetic":"/ˈsæləri/"}],"learned":false},{"id":1036,"word":"sale","meanings":[{"text":"sự bán, việc bán","type":"n","phonetic":"/seil/"}],"learned":false},{"id":1037,"word":"salvage","meanings":[{"text":"sự cứu hộ; sự cứu chạy (khỏi đám cháy, mưa lũ..)","type":"n","phonetic":"/´sælvidʒ/"}],"learned":false},{"id":1038,"word":"sample","meanings":[{"text":"mẫu; vật mẫu, hàng mẫu","type":"n","phonetic":"/´sa:mpl/"}],"learned":false},{"id":1039,"word":"satisfactory","meanings":[{"text":"vừa lòng, vừa ý; thoả mãn (tuy không xuất sắc lắm)","type":"adj","phonetic":"/,sætis'fæktəri/"}],"learned":false},{"id":1040,"word":"satisfied","meanings":[{"text":"cảm thấy hài lòng, cảm thấy vừa ý; thoả mãn","type":"adj","phonetic":"/'sætisfaid/"}],"learned":false},{"id":1041,"word":"satisfy","meanings":[{"text":"làm thoả mãn, làm hài lòng","type":"v","phonetic":"/'sætisfai/"}],"learned":false},{"id":1042,"word":"save","meanings":[{"text":"cứu nguy, cứu vãn","type":"n","phonetic":"/seiv/"}],"learned":false},{"id":1043,"word":"savvy","meanings":[{"text":"sự hiểu biết, nắm rõ","type":"n","phonetic":"/ˈsæv.i/"}],"learned":false},{"id":1044,"word":"scene","meanings":[{"text":"quang cảnh","type":"n","phonetic":"/si:n/"}],"learned":false},{"id":1045,"word":"scenery","meanings":[{"text":"phong cảnh, cảnh vật","type":"n","phonetic":"/'si:nəri/"}],"learned":false},{"id":1046,"word":"schedule","meanings":[{"text":"kế hoạch làm việc, tiến độ thi công","type":"n","phonetic":"/'skedʒu:l/"}],"learned":false},{"id":1047,"word":"scrutinize","meanings":[{"text":"chăm chú, nhìn kỹ; xem xét kỹ lưỡng","type":"v","phonetic":"/´skru:ti¸naiz/"}],"learned":false},{"id":1048,"word":"search","meanings":[{"text":"sự nhìn để tìm, nhìn để tìm, thăm dò","type":"n,v","phonetic":"/sə:t∫/"}],"learned":false},{"id":1049,"word":"secluded","meanings":[{"text":"hẻo lánh; không có nhiều người trông thấy","type":"adj","phonetic":"/si´klu:did/"}],"learned":false},{"id":1050,"word":"secretarial","meanings":[{"text":"(thuộc) thư ký","type":"adj","phonetic":"/¸sekri´tɛəriəl/"}],"learned":false},{"id":1051,"word":"secretary","meanings":[{"text":"thư ký","type":"n","phonetic":"/'sekrətri/"}],"learned":false},{"id":1052,"word":"select","meanings":[{"text":"lựa chọn, chọn lọc, tuyển chọn","type":"v","phonetic":"/si´lekt/"}],"learned":false},{"id":1053,"word":"selection","meanings":[{"text":"sự lựa chọn, sự chọn lọc, sự tuyển lựa","type":"n","phonetic":"/si'lekʃn/"}],"learned":false},{"id":1054,"word":"selective","meanings":[{"text":"có tuyển chọn; dựa trên sự tuyển chọn","type":"adj","phonetic":"/si'lektiv/"}],"learned":false},{"id":1055,"word":"seminar","meanings":[{"text":"hội nghị chuyên đề","type":"n","phonetic":"/¸semi´na:/"}],"learned":false},{"id":1056,"word":"senior","meanings":[{"text":"nhiều tuổi hơn; cao hơn về cấp bậc (chức quyền..); lâu năm hơn","type":"adj","phonetic":"/'si:niə/"}],"learned":false},{"id":1057,"word":"sequel","meanings":[{"text":"sự tiếp tục, nối tiếp, kết quả","type":"n","phonetic":"/ˈsiː.kwəl/"}],"learned":false},{"id":1058,"word":"serious","meanings":[{"text":"đứng đắn, nghiêm trang, nghiêm nghị","type":"adj","phonetic":"/'siəriəs/"}],"learned":false},{"id":1059,"word":"service","meanings":[{"text":"sự phục vụ, sự hầu hạ","type":"n","phonetic":"/'sə:vis/"}],"learned":false},{"id":1060,"word":"several","meanings":[{"text":"vài, riêng, cá nhân; khác nhau","type":"adj","phonetic":"/'sevrəl/"}],"learned":false},{"id":1061,"word":"shape","meanings":[{"text":"hình, hình dạng, hình thù","type":"n","phonetic":"/ʃeip/"}],"learned":false},{"id":1062,"word":"sharp","meanings":[{"text":"sắc, nhọn, bén","type":"adj","phonetic":"/ʃɑrp/"}],"learned":false},{"id":1063,"word":"shift","meanings":[{"text":"sự thay đổi (về vị trí, bản chất, hình dáng..)","type":"n","phonetic":"/ʃift/"}],"learned":false},{"id":1064,"word":"shine","meanings":[{"text":"ánh sáng; ánh nắng; sự chói sáng, độ sáng","type":"n","phonetic":"/ʃain/"}],"learned":false},{"id":1065,"word":"shipment","meanings":[{"text":"việc gửi hàng; việc chất hàng lên tàu","type":"n","phonetic":"/´ʃipmənt/"}],"learned":false},{"id":1066,"word":"shipping","meanings":[{"text":"đang chuyển hàng","type":"n","phonetic":"/ˈʃɪp.ɪŋ/"}],"learned":false},{"id":1067,"word":"shortage","meanings":[{"text":"sự thiếu sót","type":"n","phonetic":"/ˈʃɔːr.t̬ɪdʒ/"}],"learned":false},{"id":1068,"word":"shuttle","meanings":[{"text":"xe đưa đón","type":"n","phonetic":"/ˈʃʌt̬.əl/"}],"learned":false},{"id":1069,"word":"sightseeing","meanings":[{"text":"tham quan","type":"n","phonetic":"/ˈsaɪtˌsiː.ɪŋ/"}],"learned":false},{"id":1070,"word":"significant","meanings":[{"text":"quan trọng","type":"adj","phonetic":"/sɪɡˈnɪf.ə.kənt/"}],"learned":false},{"id":1071,"word":"simplify","meanings":[{"text":"đơn giản hóa","type":"v","phonetic":"/ˈsɪm.plə.faɪ/"}],"learned":false},{"id":1072,"word":"situation","meanings":[{"text":"tình hình","type":"n","phonetic":"/ˌsɪtʃ.uˈeɪ.ʃən/"}],"learned":false},{"id":1073,"word":"slump","meanings":[{"text":"sự sụt giảm","type":"v","phonetic":"/slʌmp/"}],"learned":false},{"id":1074,"word":"software","meanings":[{"text":"phần mềm","type":"n","phonetic":"/ˈsɑːft.wer/"}],"learned":false},{"id":1075,"word":"solar","meanings":[{"text":"hệ mặt trời","type":"adj","phonetic":"/ˈsoʊ.lɚ/"}],"learned":false},{"id":1076,"word":"spacious","meanings":[{"text":"rộng rãi","type":"adj","phonetic":"/ˈspeɪ.ʃəs/"}],"learned":false},{"id":1077,"word":"spare part","meanings":[{"text":"phụ tùng","type":"n","phonetic":"/ˈspeər ˈpɑrt/"}],"learned":false},{"id":1078,"word":"spare time","meanings":[{"text":"thời gian rảnh","type":"n","phonetic":"/ˈspeər ˈtɑɪm/"}],"learned":false},{"id":1079,"word":"specialize","meanings":[{"text":"chuyên môn hóa","type":"v","phonetic":"/ˈspeʃ.ə.laɪz/"}],"learned":false},{"id":1080,"word":"specialty","meanings":[{"text":"chuyên môn","type":"n","phonetic":"/ˈspeʃ.əl.ti/"}],"learned":false},{"id":1081,"word":"specification","meanings":[{"text":"chi tiết, đặc điểm","type":"n","phonetic":"/ˌspes.ə.fəˈkeɪ.ʃən/"}],"learned":false},{"id":1082,"word":"specify","meanings":[{"text":"giải thích, miêu tả","type":"v","phonetic":"/ˈspes.ə.faɪ/"}],"learned":false},{"id":1083,"word":"spectator","meanings":[{"text":"khán giả","type":"n","phonetic":"/spekˈteɪ.t̬ɚ/"}],"learned":false},{"id":1084,"word":"stable","meanings":[{"text":"ổn định","type":"adj","phonetic":"/ˈsteɪ.bəl/"}],"learned":false},{"id":1085,"word":"stadium","meanings":[{"text":"sân vận động","type":"n","phonetic":"/ˈsteɪ.di.əm/"}],"learned":false},{"id":1086,"word":"staff","meanings":[{"text":"nhân viên","type":"n","phonetic":"/stæf/"}],"learned":false},{"id":1087,"word":"stapler","meanings":[{"text":"người phân loại","type":"n","phonetic":"/ˈsteɪ.plɚ/"}],"learned":false},{"id":1088,"word":"stare","meanings":[{"text":"nhìn chằm chằm","type":"v","phonetic":"/ster/"}],"learned":false},{"id":1089,"word":"starter","meanings":[{"text":"người ra lệnh xuất phát, món khai vị","type":"n","phonetic":"/ˈstɑːr.t̬ɚ/"}],"learned":false},{"id":1090,"word":"stationery","meanings":[{"text":"đồ dùng văn phòng","type":"n","phonetic":"/ˈsteɪ.ʃə.ner.i/"}],"learned":false},{"id":1091,"word":"steep","meanings":[{"text":"quá quắt, không biết điều","type":"adj","phonetic":"/stiːp/"}],"learned":false},{"id":1092,"word":"stock","meanings":[{"text":"kho hàng, kho dự trữ","type":"n","phonetic":"/stɑːk/"}],"learned":false},{"id":1093,"word":"strategic","meanings":[{"text":"mang tính chiến lược","type":"adj","phonetic":"/strəˈtiː.dʒɪk/"}],"learned":false},{"id":1094,"word":"strategy","meanings":[{"text":"chiến lược","type":"v","phonetic":"/'strætəʤɪ/"}],"learned":false},{"id":1095,"word":"streamline","meanings":[{"text":"dòng nước, luồng không khí","type":"v","phonetic":"/ˈstriːm.laɪn/"}],"learned":false},{"id":1096,"word":"strike","meanings":[{"text":"đánh đập","type":"v","phonetic":"/straɪk/"}],"learned":false},{"id":1097,"word":"studio","meanings":[{"text":"phòng thu âm","type":"n","phonetic":"/ˈstuː.di.oʊ/"}],"learned":false},{"id":1098,"word":"stunning","meanings":[{"text":"tuyệt vời, lộng lẫy","type":"adj","phonetic":"/ˈstʌn.ɪŋ/"}],"learned":false},{"id":1099,"word":"submit","meanings":[{"text":"xác nhận, gửi đi","type":"v","phonetic":"/səbˈmɪt/"}],"learned":false},{"id":1100,"word":"subscribe","meanings":[{"text":"đăng ký","type":"v","phonetic":"/səbˈskraɪb/"}],"learned":false},{"id":1101,"word":"subscription","meanings":[{"text":"sự đăng ký","type":"n","phonetic":"/səbˈskrɪp.ʃən/"}],"learned":false},{"id":1102,"word":"subsidiary","meanings":[{"text":"sự lệ thuộc","type":"adj","phonetic":"/səbˈsɪd.i.er.i/"}],"learned":false},{"id":1103,"word":"suffocate","meanings":[{"text":"làm ngạt, bóp nghẹt","type":"v","phonetic":"/ˈsʌf.ə.keɪt/"}],"learned":false},{"id":1104,"word":"suggest","meanings":[{"text":"đề xuất","type":"v","phonetic":"/səˈdʒest/"}],"learned":false},{"id":1105,"word":"suggestion","meanings":[{"text":"sự đề xuất","type":"n","phonetic":"/səˈdʒes.tʃən/"}],"learned":false},{"id":1106,"word":"suit","meanings":[{"text":"bộ vest","type":"n","phonetic":"/suːt/"}],"learned":false},{"id":1107,"word":"suitability","meanings":[{"text":"sự thích hợp","type":"n","phonetic":"/ˌsuː.t̬əˈbɪl.ə.t̬i/"}],"learned":false},{"id":1108,"word":"suitable","meanings":[{"text":"phù hợp , thích hợp","type":"adj","phonetic":"/ˈsuː.t̬ə.bəl/"}],"learned":false},{"id":1109,"word":"supervise","meanings":[{"text":"giám sát","type":"v","phonetic":"/ˈsuː.pɚ.vaɪz/"}],"learned":false},{"id":1110,"word":"supervision","meanings":[{"text":"sự giám sát","type":"n","phonetic":"/ˌsuː.pɚˈvɪʒ.ən/"}],"learned":false},{"id":1111,"word":"supplier","meanings":[{"text":"nhà cung cấp","type":"n","phonetic":"/səˈplaɪ.ɚ/"}],"learned":false},{"id":1112,"word":"supply","meanings":[{"text":"cung cấp","type":"v","phonetic":"/səˈplaɪ/"}],"learned":false},{"id":1113,"word":"support","meanings":[{"text":"trợ giúp","type":"v","phonetic":"/səˈpɔːrt/"}],"learned":false},{"id":1114,"word":"supporter","meanings":[{"text":"người trợ giúp","type":"n","phonetic":"/səˈpɔːr.t̬ɚ/"}],"learned":false},{"id":1115,"word":"surrounding","meanings":[{"text":"bao quanh","type":"adj","phonetic":"/səˈraʊn.dɪŋ/"}],"learned":false},{"id":1116,"word":"suspicious","meanings":[{"text":"khả nghi","type":"adj","phonetic":"/səˈspɪʃ.əs/"}],"learned":false},{"id":1117,"word":"switchboard","meanings":[{"text":"tổng đài","type":"n","phonetic":"/ˈswɪtʃ.bɔːrd/"}],"learned":false},{"id":1118,"word":"systematic","meanings":[{"text":"có hệ thống","type":"adj","phonetic":"/ˌsɪs.təˈmæt̬.ɪk/"}],"learned":false},{"id":1119,"word":"takeover","meanings":[{"text":"tiếp quản","type":"n","phonetic":"/ˈteɪkˌoʊ.vɚ/"}],"learned":false},{"id":1120,"word":"tax","meanings":[{"text":"thuế","type":"n","phonetic":"/tæks/"}],"learned":false},{"id":1121,"word":"technical","meanings":[{"text":"có tính kỹ thuật","type":"adj","phonetic":"/ˈtek.nɪ.kəl/"}],"learned":false},{"id":1122,"word":"technician","meanings":[{"text":"kỹ thuật viên","type":"n","phonetic":"/tekˈnɪʃ.ən/"}],"learned":false},{"id":1123,"word":"temporary","meanings":[{"text":"tạm thời","type":"adj","phonetic":"/ˈtem.pə.rer.i/"}],"learned":false},{"id":1124,"word":"tenant","meanings":[{"text":"người thuê nhà","type":"n","phonetic":"/ˈten.ənt/"}],"learned":false},{"id":1125,"word":"terminate","meanings":[{"text":"chấm dứt","type":"v","phonetic":"/ˈtɝː.mə.neɪt/"}],"learned":false},{"id":1126,"word":"terrible","meanings":[{"text":"kinh khủng","type":"adj","phonetic":"/ˈter.ə.bəl/"}],"learned":false},{"id":1127,"word":"terrific","meanings":[{"text":"khủng khiếp","type":"adj","phonetic":"/təˈrɪf.ɪk/"}],"learned":false},{"id":1128,"word":"theoretical","meanings":[{"text":"mang tính lý thuyết","type":"adj","phonetic":"/ˌθiː.əˈret̬.kəl/"}],"learned":false},{"id":1129,"word":"theory","meanings":[{"text":"học thuyết","type":"n","phonetic":"/ˈθɪr.i/"}],"learned":false},{"id":1130,"word":"thorough","meanings":[{"text":"triệt để","type":"adj","phonetic":"/ˈθɝː.ə/"}],"learned":false},{"id":1131,"word":"tidy","meanings":[{"text":"ngăn nắp","type":"adj","phonetic":"/ˈtaɪ.di/"}],"learned":false},{"id":1132,"word":"tip","meanings":[{"text":"tiền boa","type":"n","phonetic":"/tɪp/"}],"learned":false},{"id":1133,"word":"tour","meanings":[{"text":"chuyến du lịch","type":"n","phonetic":"/tʊr/"}],"learned":false},{"id":1134,"word":"tourism","meanings":[{"text":"du lịch","type":"n","phonetic":"/ˈtʊr.ɪ.zəm/"}],"learned":false},{"id":1135,"word":"tourist","meanings":[{"text":"du khách","type":"n","phonetic":"/ˈtʊr.ɪst/"}],"learned":false},{"id":1136,"word":"tower","meanings":[{"text":"tòa nhà, tháp","type":"n","phonetic":"/ˈtaʊ.ɚ/"}],"learned":false},{"id":1137,"word":"track","meanings":[{"text":"con đường","type":"n","phonetic":"/træk/"}],"learned":false},{"id":1138,"word":"trade","meanings":[{"text":"sự trao đổi (hàng hóa, vật phẩm)","type":"n","phonetic":"/treɪd/"}],"learned":false},{"id":1139,"word":"tradition","meanings":[{"text":"sự truyền thống","type":"n","phonetic":"/trəˈdɪʃ.ən/"}],"learned":false},{"id":1140,"word":"traffic","meanings":[{"text":"giao thông","type":"n","phonetic":"/ˈtræf.ɪk/"}],"learned":false},{"id":1141,"word":"training","meanings":[{"text":"sự huấn luyện, sự đào tạo","type":"n","phonetic":"/ˈtreɪ.nɪŋ/"}],"learned":false},{"id":1142,"word":"transfer","meanings":[{"text":"chuyển khoản","type":"v","phonetic":"/ˈtræns.fɝː/"}],"learned":false},{"id":1143,"word":"transform","meanings":[{"text":"biến đổi","type":"v","phonetic":"/trænsˈfɔːrm/"}],"learned":false},{"id":1144,"word":"transformation","meanings":[{"text":"sự biến đổi","type":"n","phonetic":"/ˌtræns.fɚˈmeɪ.ʃən/"}],"learned":false},{"id":1145,"word":"transit","meanings":[{"text":"vận chuyển","type":"n","phonetic":"/ˈtræn.zɪt/"}],"learned":false},{"id":1146,"word":"transportation","meanings":[{"text":"sự vận chuyển","type":"n","phonetic":"/ˌtræn.spɚˈteɪ.ʃən/"}],"learned":false},{"id":1147,"word":"trend","meanings":[{"text":"xu hướng","type":"n","phonetic":"/trend/"}],"learned":false},{"id":1148,"word":"trial","meanings":[{"text":"thử nghiệm","type":"n","phonetic":"/traɪəl/"}],"learned":false},{"id":1149,"word":"triumph","meanings":[{"text":"chiến thắng","type":"n","phonetic":"/ˈtraɪ.əmf/"}],"learned":false},{"id":1150,"word":"trust","meanings":[{"text":"tin, tin tưởng","type":"v","phonetic":"/trʌst/"}],"learned":false},{"id":1151,"word":"unconditional","meanings":[{"text":"vô điều kiện","type":"adj","phonetic":"/ˌʌn.kənˈdɪʃ.ən.əl/"}],"learned":false},{"id":1152,"word":"understand","meanings":[{"text":"hiểu, nắm bắt được","type":"v","phonetic":"/ˌʌn.dɚˈstænd/"}],"learned":false},{"id":1153,"word":"unfavorable","meanings":[{"text":"không thuận lợi","type":"adj","phonetic":"/ʌnˈfeɪ.vər.ə.bəl/"}],"learned":false},{"id":1154,"word":"unfortunately","meanings":[{"text":"không may mắn","type":"adj","phonetic":"/ʌnˈfɔːr.tʃən.ət.li/"}],"learned":false},{"id":1155,"word":"uniform","meanings":[{"text":"đồng phục","type":"n","phonetic":"/ˈjuː.nə.fɔːrm/"}],"learned":false},{"id":1156,"word":"unspoiled","meanings":[{"text":"hoang sơ","type":"adj","phonetic":"/ʌnˈspɔɪld/"}],"learned":false},{"id":1157,"word":"unwrap","meanings":[{"text":"bóc, mở","type":"v","phonetic":"/ʌnˈræp/"}],"learned":false},{"id":1158,"word":"upcoming","meanings":[{"text":"sắp xảy ra","type":"adj","phonetic":"/ˈʌpˌkʌm.ɪŋ/"}],"learned":false},{"id":1159,"word":"update","meanings":[{"text":"nâng cấp","type":"v","phonetic":"/ʌpˈdeɪt/"}],"learned":false},{"id":1160,"word":"upgrade","meanings":[{"text":"nâng cấp","type":"v","phonetic":"/ʌpˈɡreɪd/"}],"learned":false},{"id":1161,"word":"upset","meanings":[{"text":"buồn bã, lo lắng","type":"v, adj","phonetic":"/ʌpˈset/"}],"learned":false},{"id":1162,"word":"upstairs","meanings":[{"text":"tầng trên","type":"n","phonetic":"/ʌpˈsterz/"}],"learned":false},{"id":1163,"word":"utility bill","meanings":[{"text":"hóa đơn điện nước","type":"n","phonetic":"/juːˈtɪl.ə.t̬i/ /bɪl/"}],"learned":false},{"id":1164,"word":"vacancy","meanings":[{"text":"vị trí bỏ trống","type":"n","phonetic":"/ˈveɪ.kən.si/"}],"learned":false},{"id":1165,"word":"vacant","meanings":[{"text":"bỏ trống","type":"v","phonetic":"/ˈveɪ.kənt/"}],"learned":false},{"id":1166,"word":"vacation","meanings":[{"text":"kì nghỉ","type":"n","phonetic":"/veɪˈkeɪ.ʃən/"}],"learned":false},{"id":1167,"word":"vaccination","meanings":[{"text":"tiêm chủng","type":"n","phonetic":"/ˌvæk.səˈneɪ.ʃən/"}],"learned":false},{"id":1168,"word":"valuables","meanings":[{"text":"vật có giá trị","type":"n","phonetic":"/ˈvæl.jə.bəlz/"}],"learned":false},{"id":1169,"word":"varied","meanings":[{"text":"đa dạng","type":"adj","phonetic":"/ˈver.ɪd/"}],"learned":false},{"id":1170,"word":"variety","meanings":[{"text":"sự đa dạng","type":"n","phonetic":"/vəˈraɪ.ə.t̬i/"}],"learned":false},{"id":1171,"word":"various","meanings":[{"text":"đa dạng","type":"adj","phonetic":"/ˈver.i.əs/"}],"learned":false},{"id":1172,"word":"vendor","meanings":[{"text":"người bán","type":"n","phonetic":"/ˈven.dɚ/"}],"learned":false},{"id":1173,"word":"venture","meanings":[{"text":"liên doanh","type":"n","phonetic":"/ˈven.tʃɚ/"}],"learned":false},{"id":1174,"word":"venue","meanings":[{"text":"địa điểm","type":"n","phonetic":"/ˈven.juː/"}],"learned":false},{"id":1175,"word":"virus","meanings":[{"text":"virus","type":"n","phonetic":"/ˈvaɪ.rəs/"}],"learned":false},{"id":1176,"word":"vital","meanings":[{"text":"thiết yếu","type":"adj","phonetic":"/ˈvaɪ.t̬əl/"}],"learned":false},{"id":1177,"word":"vivid","meanings":[{"text":"chói sáng, rực rỡ, sống động","type":"adj","phonetic":"/ˈvɪv.ɪd/"}],"learned":false},{"id":1178,"word":"wage","meanings":[{"text":"tiền công","type":"n","phonetic":"/weɪdʒ/"}],"learned":false},{"id":1179,"word":"walkway","meanings":[{"text":"lối đi","type":"n","phonetic":"/ˈwɑː.kweɪ/"}],"learned":false},{"id":1180,"word":"warehouse","meanings":[{"text":"kho hàng","type":"n","phonetic":"/ˈwer.haʊs/"}],"learned":false},{"id":1181,"word":"warn","meanings":[{"text":"cảnh báo","type":"v","phonetic":"/wɔːrn/"}],"learned":false},{"id":1182,"word":"warning","meanings":[{"text":"sự cảnh báo","type":"n","phonetic":"/ˈwɔːr.nɪŋ/"}],"learned":false},{"id":1183,"word":"warrant","meanings":[{"text":"bảo đảm","type":"v","phonetic":"/ˈwɔːr.ənt/"}],"learned":false},{"id":1184,"word":"warranty","meanings":[{"text":"sự bảo đảm","type":"n","phonetic":"/ˈwɔːr.ən.t̬i/"}],"learned":false},{"id":1185,"word":"wastage","meanings":[{"text":"lãng phí","type":"adj","phonetic":"/ˈweɪ.stɪdʒ/"}],"learned":false},{"id":1186,"word":"waterproof","meanings":[{"text":"chống nước","type":"adj","phonetic":"/ˈwɑː.t̬ɚ.pruːf/"}],"learned":false},{"id":1187,"word":"wealth","meanings":[{"text":"giàu có","type":"adj","phonetic":"/welθ/"}],"learned":false},{"id":1188,"word":"website","meanings":[{"text":"trang web","type":"n","phonetic":"/ˈweb.saɪt/"}],"learned":false},{"id":1189,"word":"weight","meanings":[{"text":"cân nặng","type":"n","phonetic":"/weɪt/"}],"learned":false},{"id":1190,"word":"welfare","meanings":[{"text":"phúc lợi","type":"n","phonetic":"/ˈwel.fer/"}],"learned":false},{"id":1191,"word":"wholesale","meanings":[{"text":"bán sỉ, bán buôn","type":"v","phonetic":"/ˈhoʊl.seɪl/"}],"learned":false},{"id":1192,"word":"win","meanings":[{"text":"thắng, chiến thắng","type":"v","phonetic":"/wɪn/"}],"learned":false},{"id":1193,"word":"withdraw","meanings":[{"text":"rút","type":"v","phonetic":"/wɪðˈdrɑː/"}],"learned":false},{"id":1194,"word":"withdrawal","meanings":[{"text":"sự rút ra (tiền)","type":"n","phonetic":"/wɪðˈdrɑː.əl/"}],"learned":false},{"id":1195,"word":"workplace","meanings":[{"text":"nơi làm việc","type":"n","phonetic":"/ˈwɝːk.pleɪs/"}],"learned":false},{"id":1196,"word":"workshop","meanings":[{"text":"hội thảo","type":"n","phonetic":"/ˈwɝːk.ʃɑːp/"}],"learned":false},{"id":1197,"word":"worth","meanings":[{"text":"giá trị","type":"adj","phonetic":"/wɝːθ/"}],"learned":false},{"id":1198,"word":"worthless","meanings":[{"text":"không có giá trị, vô giá trị","type":"adj","phonetic":"/ˈwɝːθ.ləs/"}],"learned":false},{"id":1199,"word":"wrap","meanings":[{"text":"gói, bọc lại","type":"v","phonetic":"/ræp/"}],"learned":false},{"id":1200,"word":"write","meanings":[{"text":"viết, sáng tác","type":"v","phonetic":"/raɪt/"}],"learned":false},{"id":1201,"word":"yearly","meanings":[{"text":"hằng năm","type":"adv","phonetic":"/ˈjɪr.li/"}],"learned":false},{"id":1202,"word":"yield","meanings":[{"text":"sản xuất, cung cấp","type":"v","phonetic":"/jiːld/"}],"learned":false},{"id":1203,"word":"youth","meanings":[{"text":"tuổi trẻ, thời thanh xuân","type":"n","phonetic":"/juːθ/"}],"learned":false},{"id":1204,"word":"zero","meanings":[{"text":"số 0","type":"n","phonetic":"/ˈzɪr.oʊ/"}],"learned":false},{"id":1205,"word":"zone","meanings":[{"text":"vùng, khu vực","type":"n","phonetic":"/zoʊn/"}],"learned":false}];
+  </script>
+  <script>
+// ---------- storage layer (falls back to in-memory if localStorage is blocked) ----------
+const safeStorage = (function () {
+  let mem = {};
+  try {
+    const t = '__ls_test__';
+    window.localStorage.setItem(t, '1');
+    window.localStorage.removeItem(t);
+    return {
+      get(k) { try { return window.localStorage.getItem(k) } catch (e) { return mem[k] ?? null } },
+      set(k, v) { try { window.localStorage.setItem(k, v) } catch (e) { mem[k] = v } }
+    };
+  } catch (e) {
+    console.warn('localStorage không khả dụng, chuyển sang lưu tạm trong phiên làm việc.');
+    return {
+      get(k) { return mem[k] ?? null },
+      set(k, v) { mem[k] = v }
+    };
+  }
+})();
+
+const STORE_KEY = 'toeic_flashcards_v3';
+const OLD_STORE_KEY = 'ecce_flashcards_simple_v2';
+const THEME_KEY = 'toeic_flashcards_theme';
+
+function keyOf(w) { return String(w || '').trim().toLowerCase(); }
+
+function loadCards() {
+  const saved = JSON.parse(safeStorage.get(STORE_KEY) || 'null');
+  if (saved && Array.isArray(saved) && saved.length) return normalizeCards(saved);
+
+  // First run: start from the built-in dictionary, then migrate "learned" flags
+  // from an older version of this app if one is found in this browser.
+  let cards = normalizeCards(DEFAULT_CARDS);
+  try {
+    const old = JSON.parse(safeStorage.get(OLD_STORE_KEY) || 'null');
+    if (old && Array.isArray(old)) {
+      const byKey = {};
+      old.forEach(o => { if (o && o.word) byKey[keyOf(o.word)] = o; });
+      cards.forEach(c => {
+        const o = byKey[keyOf(c.word)];
+        if (o && o.learned) c.learned = true;
+      });
+    }
+  } catch (e) { /* ignore malformed legacy data */ }
+  return cards;
+}
+
+let cards = loadCards();
+let mode = 'all', view = [], currentIndex = 0, editingId = null, reviewMode = 'all';
+let typeFilter = 'all';
+let shuffledIds = [];
+let toastTimer = null;
+let nextId = Math.max(0, ...cards.map(c => c.id)) + 1;
+
+function save() { safeStorage.set(STORE_KEY, JSON.stringify(cards)) }
+
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c])) }
+
+// Display-only: capitalize just the first character. Never mutates stored data,
+// so it works uniformly whether the source text is Vietnamese or English.
+function capFirst(s) {
+  s = String(s || '');
+  if (!s) return s;
+  return s.charAt(0).toLocaleUpperCase('vi') + s.slice(1);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ---------- simple filtering ----------
+// The app intentionally keeps vocabulary simple: only word + meaning.
+// These functions remain as compatibility no-ops for older saved data.
+
+function renderTypeChips() {}
+function setTypeFilter() { typeFilter = 'all'; render(); }
+
+// ---------- view / study flow ----------
+function buildView() {
+  const filtered = cards.filter(c =>
+    mode === 'all' || (mode === 'learned' ? c.learned : !c.learned)
+  );
+  const validIds = filtered.map(c => c.id);
+  shuffledIds = shuffledIds.filter(id => validIds.includes(id));
+  const missingIds = validIds.filter(id => !shuffledIds.includes(id));
+  shuffleArray(missingIds);
+  shuffledIds.push(...missingIds);
+  view = shuffledIds.map(id => filtered.find(c => c.id === id)).filter(Boolean);
+  if (currentIndex >= view.length) currentIndex = Math.max(0, view.length - 1);
+}
+
+function renderMeaningList(card, targetEl) {
+  const multi = card.meanings.length > 1;
+  targetEl.innerHTML = card.meanings.map((m, i) => `
+    <div class="meaningItem">
+      ${multi ? `<div class="mi-head"><span class="mi-num">${i + 1}.</span></div>` : ''}
+      <div>${esc(capFirst(m.text))}</div>
+    </div>`).join('');
+}
+
+function render() {
+  buildView();
+  const learned = cards.filter(c => c.learned).length;
+  const total = cards.length;
+  totalCount.textContent = total;
+  learnedCount.textContent = learned;
+  remainCount.textContent = total - learned;
+  masteryPct.textContent = total ? Math.round(learned / total * 100) + '%' : '0%';
+  cardCount.textContent = view.length ? (currentIndex + 1) + ' / ' + view.length : '';
+  progressBar.style.width = total ? (learned / total * 100) + '%' : '0%';
+
+  ['all', 'learned', 'unlearned'].forEach(m => document.getElementById('mode-' + m).classList.toggle('active', m === mode));
+  flashcard.classList.remove('flipped');
+
+  if (!view.length) {
+    word.textContent = mode === 'learned' ? 'Chưa có thẻ đã thuộc' : mode === 'unlearned' ? 'Bạn đã thuộc hết rồi 🎉' : 'Chưa có flashcard';
+    wordMeta.innerHTML = '';
+    statusText.textContent = 'Không có thẻ';
+    statusDot.className = 'dot';
+    editIconBtn.style.display = 'none';
+    speakIconBtn.style.display = 'none';
+    meaningList.innerHTML = '';
+    return;
+  }
+  editIconBtn.style.display = 'flex';
+  speakIconBtn.style.display = supportsSpeech ? 'flex' : 'none';
+  const c = view[currentIndex];
+  word.textContent = capFirst(c.word);
+  wordMeta.innerHTML = '';
+  renderMeaningList(c, meaningList);
+  statusText.textContent = c.learned ? '✓ Đã thuộc' : '✗ Chưa thuộc';
+  statusDot.className = 'dot ' + (c.learned ? 'ok' : '');
+}
+
+function editCurrentCard() { if (view.length) openEdit(view[currentIndex].id); }
+
+function setMode(m) {
+  mode = m; currentIndex = 0; shuffledIds = [];
+  buildView(); shuffleArray(shuffledIds);
+  render();
+}
+function flipCard() { if (view.length) flashcard.classList.toggle('flipped') }
+function nextCard() { if (view.length) { currentIndex = (currentIndex + 1) % view.length; render() } }
+function previousCard() { if (view.length) { currentIndex = (currentIndex - 1 + view.length) % view.length; render() } }
+
+function mark(value) {
+  if (!view.length) return;
+  const id = view[currentIndex].id;
+  const card = cards.find(c => c.id === id);
+  if (card) card.learned = value;
+  save();
+  if (mode === 'unlearned' && value === true) shuffledIds = shuffledIds.filter(x => x !== id);
+  else if (mode === 'learned' && value === false) shuffledIds = shuffledIds.filter(x => x !== id);
+  buildView();
+  if (currentIndex >= view.length) currentIndex = Math.max(0, view.length - 1);
+  render();
+  showToast(value ? '✓ Đã chuyển vào phần Đã thuộc' : '✗ Đã chuyển vào phần Chưa thuộc');
+}
+
+function shuffleView() {
+  buildView(); shuffleArray(shuffledIds); currentIndex = 0; render();
+  showToast('🔀 Đã trộn ngẫu nhiên các thẻ');
+}
+
+// quick search -> jump straight to a matching card in the "all" pool
+function onQuickSearch() {
+  const q = keyOf(quickSearch.value);
+  if (!q) return;
+  const idx = cards.findIndex(c => keyOf(c.word).includes(q) || c.meanings.some(m => keyOf(m.text).includes(q)));
+  if (idx === -1) return;
+  jumpToCard(cards[idx].id);
+}
+
+function normalizeCards(data) {
+  if (!Array.isArray(data)) return [];
+  return data.filter(c => c && c.word).map((c, i) => ({
+    id: Number.isFinite(Number(c.id)) ? Number(c.id) : i + 1,
+    word: String(c.word).trim(),
+    meanings: Array.isArray(c.meanings)
+      ? c.meanings.map(m => ({ text: String(m?.text ?? m?.meaning ?? '').trim() })).filter(m => m.text)
+      : (c.meaning ? [{ text: String(c.meaning).trim() }] : []),
+    learned: !!c.learned
+  })).filter(c => c.meanings.length);
+}
+
+// ---------- text-to-speech ----------
+const supportsSpeech = ('speechSynthesis' in window);
+function speak(text) {
+  if (!supportsSpeech || !text) return;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.95;
+    window.speechSynthesis.speak(u);
+  } catch (e) { /* speech not available in this environment */ }
+}
+function speakCurrent() { if (view.length) speak(view[currentIndex].word); }
+
+// ---------- modals ----------
+function openModal(id) { document.getElementById(id).classList.add('show') }
+function closeModal(id) { document.getElementById(id).classList.remove('show') }
+
+// ---------- add / edit card (with duplicate-word merge) ----------
+function meaningRowTemplate(m) {
+  m = m || { text: '' };
+  return `<div class="meaningRow">
+    <input class="miText" placeholder="Nghĩa tiếng Việt, ví dụ: chính xác" autocomplete="off">
+    <button type="button" class="rowRemove" onclick="removeMeaningRow(this)" title="Bỏ nghĩa này">×</button>
+  </div>`;
+}
+function addMeaningRow(m) {
+  const wrap = document.createElement('div');
+  wrap.innerHTML = meaningRowTemplate(m);
+  const row = wrap.firstElementChild;
+  row.querySelector('.miText').value = (m && m.text) || '';
+  meaningRows.appendChild(row);
+  return row;
+}
+function removeMeaningRow(btn) {
+  const rows = meaningRows.querySelectorAll('.meaningRow');
+  if (rows.length <= 1) { showToast('Cần giữ lại ít nhất một nghĩa'); return; }
+  btn.closest('.meaningRow').remove();
+}
+
+function openAdd() {
+  editingId = null;
+  editTitle.textContent = 'Thêm flashcard';
+  wordInput.value = '';
+  meaningRows.innerHTML = '';
+  addMeaningRow();
+  openModal('editModal');
+  setTimeout(() => wordInput.focus(), 50);
+}
+function openEdit(id) {
+  const c = cards.find(x => x.id === id); if (!c) return;
+  editingId = id;
+  editTitle.textContent = 'Sửa flashcard';
+  wordInput.value = c.word;
+  meaningRows.innerHTML = '';
+  c.meanings.forEach(m => addMeaningRow(m));
+  openModal('editModal');
+  setTimeout(() => wordInput.focus(), 50);
+}
+
+function collectMeaningRows() {
+  return [...meaningRows.querySelectorAll('.meaningRow')].map(row => ({
+    text: row.querySelector('.miText').value.trim()
+  })).filter(m => m.text);
+}
+
+function saveCard() {
+  const w = wordInput.value.trim();
+  const newMeanings = collectMeaningRows();
+  if (!w || !newMeanings.length) { alert('Vui lòng nhập từ và ít nhất một nghĩa.'); return false; }
+
+  if (editingId !== null) {
+    const c = cards.find(x => x.id === editingId); if (!c) return false;
+    c.word = w;
+    c.meanings = newMeanings;
+    save(); closeModal('editModal'); render(); renderReview(); renderTypeChips();
+    showToast('✅ Đã cập nhật flashcard');
+    return true;
+  }
+
+  // Adding a brand-new card: if the word already exists (case-insensitive), merge
+  // the new meaning(s) into that card instead of creating a duplicate flashcard.
+  const existing = cards.find(c => keyOf(c.word) === keyOf(w));
+  if (existing) {
+    let addedAny = false;
+    newMeanings.forEach(m => {
+      const dup = existing.meanings.some(em => keyOf(em.text) === keyOf(m.text));
+      if (!dup) {
+        existing.meanings.push({ text: m.text });
+        addedAny = true;
+      }
+    });
+    save(); closeModal('editModal'); render(); renderReview(); renderTypeChips();
+    showToast(addedAny ? '🔗 Đã gộp nghĩa mới vào từ "' + capFirst(existing.word) + '"' : 'Từ này đã có sẵn nghĩa đó rồi');
+    return true;
+  }
+
+  cards.unshift({ id: nextId++, word: w, meanings: newMeanings.map(m => ({ text: m.text })), learned: false });
+  mode = 'all'; typeFilter = 'all'; currentIndex = 0;
+  save(); render(); renderReview(); renderTypeChips();
+  showToast('✅ Đã thêm: ' + capFirst(w));
+  closeModal('editModal');
+  return true;
+}
+
+function deleteCard(id) {
+  const c = cards.find(x => x.id === id); if (!c) return;
+  if (!confirm('Xoá toàn bộ thẻ "' + capFirst(c.word) + '" (gồm ' + c.meanings.length + ' nghĩa)?')) return;
+  cards = cards.filter(x => x.id !== id);
+  save(); render(); renderReview(); renderTypeChips();
+  showToast('🗑 Đã xoá flashcard');
+}
+
+// ---------- review / management modal ----------
+function openReview() { reviewMode = 'all'; reviewSearch.value = ''; updateTabs(); renderReview(); openModal('reviewModal') }
+function setReview(m) { reviewMode = m; updateTabs(); renderReview() }
+function updateTabs() {
+  ['all', 'learned', 'unlearned'].forEach(m => document.getElementById('tab-' + m).classList.toggle('active', m === reviewMode));
+  document.getElementById('count-all').textContent = '(' + cards.length + ')';
+  document.getElementById('count-learned').textContent = '(' + cards.filter(c => c.learned).length + ')';
+  document.getElementById('count-unlearned').textContent = '(' + cards.filter(c => !c.learned).length + ')';
+}
+function renderReview() {
+  const q = keyOf(reviewSearch.value);
+  const arr = cards.filter(c =>
+    (reviewMode === 'all' || (reviewMode === 'learned' ? c.learned : !c.learned)) &&
+    (keyOf(c.word).includes(q) || c.meanings.some(m => keyOf(m.text).includes(q)))
+  );
+  const currentId = view.length ? view[currentIndex].id : null;
+  reviewList.innerHTML = arr.length ? arr.map(c => {
+    const summary = c.meanings.map(m => capFirst(m.text)).join('; ');
+    return `<div class="item ${c.learned ? 'learned' : ''} ${c.id === currentId ? 'current' : ''}">
+    <div class="itemInfo" onclick="jumpToCard(${c.id})" title="Bấm để mở thẻ này">
+      <b class="itemWord">${esc(capFirst(c.word))}${c.meanings.length > 1 ? ' <span style="color:var(--ink-faint);font-weight:400">(' + c.meanings.length + ' nghĩa)</span>' : ''}</b>
+      <span class="itemMeaning">${esc(summary)}</span>
+    </div>
+    <button class="${c.learned ? 'success' : 'soft'}" onclick="toggleLearnedInList(${c.id})" title="${c.learned ? 'Đánh dấu chưa thuộc' : 'Đánh dấu đã thuộc'}">${c.learned ? '✓' : '✗'}</button>
+    <button class="soft" onclick="openEdit(${c.id})" title="Sửa">✎</button>
+    <button class="danger" onclick="deleteCard(${c.id})" title="Xoá">🗑</button>
+  </div>`;
+  }).join('') : '<div class="empty">Không có flashcard phù hợp.</div>';
+  updateTabs();
+}
+function toggleLearnedInList(id) {
+  const c = cards.find(x => x.id === id); if (!c) return;
+  c.learned = !c.learned;
+  save(); render(); renderReview();
+  showToast(c.learned ? '✓ Đã chuyển vào phần Đã thuộc' : '✗ Đã chuyển vào phần Chưa thuộc');
+}
+function jumpToCard(id) {
+  mode = 'all'; typeFilter = 'all'; buildView();
+  const idx = view.findIndex(c => c.id === id);
+  if (idx === -1) return;
+  currentIndex = idx;
+  closeModal('reviewModal');
+  render();
+  flashcard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ---------- quiz mode ----------
+let quizState = null;
+function openQuiz() {
+  buildView();
+  const pool = view.length >= 4 ? view : cards;
+  if (pool.length < 4) { showToast('Cần ít nhất 4 thẻ để trắc nghiệm'); return; }
+  const n = Math.min(10, pool.length);
+  const chosen = shuffleArray([...pool]).slice(0, n);
+  quizState = { questions: chosen, i: 0, score: 0, answered: false, pool };
+  openModal('quizModal');
+  renderQuiz();
+}
+function randomWrongMeanings(correctCard, count, pool) {
+  const others = pool.filter(c => c.id !== correctCard.id);
+  shuffleArray(others);
+  return others.slice(0, count).map(c => capFirst(c.meanings[0].text));
+}
+function renderQuiz() {
+  const qb = document.getElementById('quizBody');
+  if (quizState.i >= quizState.questions.length) {
+    qb.innerHTML = `<div style="text-align:center">
+      <div style="font-family:var(--font-display);font-size:40px;margin:10px 0">${quizState.score}/${quizState.questions.length}</div>
+      <p class="note">Số câu trả lời đúng</p>
+      <div class="formBtns" style="justify-content:center">
+        <button class="soft" onclick="closeModal('quizModal')">Đóng</button>
+        <button class="primary" onclick="openQuiz()">Làm lại</button>
+      </div>
+    </div>`;
+    return;
+  }
+  const q = quizState.questions[quizState.i];
+  const correct = capFirst(q.meanings[0].text);
+  const wrongs = randomWrongMeanings(q, 3, quizState.pool);
+  const options = shuffleArray([correct, ...wrongs]);
+  const correctIdx = options.indexOf(correct);
+  quizState.answered = false;
+  quizState.correctIdx = correctIdx;
+  qb.innerHTML = `
+    <div class="quizQ">
+      <div class="note">Câu ${quizState.i + 1} / ${quizState.questions.length} · Điểm: ${quizState.score}</div>
+      <div class="qWord">${esc(capFirst(q.word))}</div>
+      ${q.meanings[0].phonetic ? `<div class="phonTag">${esc(q.meanings[0].phonetic)}</div>` : ''}
+    </div>
+    <div class="quizOptions">
+      ${options.map((o, i) => `<button class="quizOpt" data-idx="${i}">${esc(o)}</button>`).join('')}
+    </div>`;
+  quizOptions().forEach(b => b.addEventListener('click', onQuizOptionClick));
+}
+function onQuizOptionClick(e) {
+  if (quizState.answered) return;
+  quizState.answered = true;
+  const btn = e.currentTarget;
+  const idx = Number(btn.dataset.idx);
+  if (idx === quizState.correctIdx) quizState.score++;
+  quizOptions().forEach(b => {
+    if (Number(b.dataset.idx) === quizState.correctIdx) b.classList.add('correct');
+    else if (b === btn) b.classList.add('wrong');
+    b.disabled = true;
+  });
+  setTimeout(() => { quizState.i++; renderQuiz(); }, 700);
+}
+function quizOptions() { return document.querySelectorAll('#quizBody .quizOpt'); }
+
+// ---------- backup / restore ----------
+function exportData() {
+  const blob = new Blob([JSON.stringify(cards, null, 1)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'flashcard-toeic-backup.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  showToast('⬇ Đã tải xuống file sao lưu');
+}
+function importData(evt) {
+  const file = evt.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (!Array.isArray(data)) throw new Error('bad format');
+      cards = normalizeCards(data);
+      if (!cards.length) throw new Error('empty data');
+      nextId = Math.max(0, ...cards.map(c => c.id || 0)) + 1;
+      save(); render(); renderReview();
+      closeModal('dataModal');
+      showToast('✅ Đã phục hồi dữ liệu từ file');
+    } catch (e) {
+      alert('File không hợp lệ.');
+    }
+    evt.target.value = '';
+  };
+  reader.readAsText(file);
+}
+function resetProgress() {
+  if (!confirm('Đặt lại toàn bộ trạng thái "đã thuộc" về "chưa thuộc"? Các thẻ tự thêm vẫn được giữ nguyên.')) return;
+  cards.forEach(c => c.learned = false);
+  save(); render(); renderReview();
+  closeModal('dataModal');
+  showToast('↺ Đã đặt lại tiến độ học');
+}
+
+// ---------- theme ----------
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = cur === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  safeStorage.set(THEME_KEY, next);
+}
+(function initTheme() {
+  const saved = safeStorage.get(THEME_KEY);
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+})();
+
+// ---------- input wiring ----------
+wordInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const meaningInput = meaningRows.querySelector('.meaningRow .miText');
+    if (meaningInput) {
+      meaningInput.focus();
+      meaningInput.select();
+    }
+  }
+});
+
+meaningRows.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.classList.contains('miText')) {
+    e.preventDefault();
+    saveCard();
+  }
+});
+
+reviewSearch.addEventListener('keydown', e => { if (e.key === 'Enter') e.preventDefault(); });
+quickSearch.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); onQuickSearch(); } });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal('editModal'); closeModal('reviewModal'); closeModal('quizModal'); closeModal('dataModal'); return }
+  if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight') nextCard();
+  if (e.key === 'ArrowLeft') previousCard();
+  if (e.key === ' ') { e.preventDefault(); flipCard() }
+  if (e.key === 'c' || e.key === 'C') { e.preventDefault(); mark(false) }
+  if (e.key === 'v' || e.key === 'V') { e.preventDefault(); mark(true) }
+  if (e.key === 's' || e.key === 'S') { e.preventDefault(); speakCurrent() }
+});
+
+render();
+
+  </script>
+</body>
+
+</html>
